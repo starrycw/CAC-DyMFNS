@@ -4,6 +4,7 @@
 # @Author  : c
 
 import copy
+import math
 
 import DyMFNS.dymfns_generation
 
@@ -30,8 +31,24 @@ class Codec_DyMFNS:
         self._ns1 = copy.deepcopy(ns1) # q_i
         self._ns2 = copy.deepcopy(ns2) # p_i
 
-        self._limitation_max_value = 2*ns2[-1] - 1 # 可编码的最大值
+        self._limitation_max_value = self._get_max_value_limitation()
+        self._limitation_max_data_len = self._get_max_len_of_raw_data()
 
+    def _get_max_value_limitation(self):
+        # 可编码的最大值
+        sum_value = 0
+        for idx_temp in range(0, self.attr_get_n()):
+            if self.attr_get_fault_flag_i(idx=idx_temp) == 0:
+                sum_value = sum_value + self.attr_get_ns2_i(idx=idx_temp)
+            else:
+                assert self.attr_get_fault_flag_i(idx=idx_temp) == 1
+        assert sum_value == 2*self.attr_get_ns2_i(idx=-1) - 1
+        return sum_value
+
+    def _get_max_len_of_raw_data(self):
+        max_value = self._get_max_value_limitation()
+        max_len = math.floor( math.log2(max_value) )
+        return max_len
 
     def attr_get_max_value(self):
         '''
@@ -40,6 +57,14 @@ class Codec_DyMFNS:
         :return:
         '''
         return self._limitation_max_value
+
+    def attr_get_max_data_len(self):
+        '''
+        返回允许输入数据的最大二进制长度
+
+        :return:
+        '''
+        return self._limitation_max_data_len
 
     def attr_get_n(self):
         '''
