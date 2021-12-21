@@ -125,3 +125,22 @@ class Codec_DyMFNS:
         assert len(codeword_msb_to_lsb) == self.attr_get_n()
         assert value == 0 # 应当无余数残留
         return tuple(codeword_msb_to_lsb)
+
+    def decode(self, codeword):
+        '''
+        解码一个码字（codeword, 由左到右应当是msb到lsb），返回码字代表的数值。
+
+        :param codeword:
+        :return:
+        '''
+        assert isinstance(codeword, tuple) or isinstance(codeword, list)
+        assert len(codeword) == self.attr_get_n()
+        sum_value = 0
+
+        for idx_main in range(0, self.attr_get_n()):
+            c_i = codeword[idx_main]
+            assert c_i in (0, 1)
+            d_i = self.attr_get_ns2_i( idx=(self.attr_get_n() - idx_main - 1) )
+            sum_value = c_i * d_i + sum_value
+
+        return sum_value
