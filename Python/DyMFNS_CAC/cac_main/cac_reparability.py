@@ -5,6 +5,7 @@
 
 import DyMFNS.dymfns_codec
 import AdaptiveFNS.adaptivefns_codec
+import cac_overhead
 
 def _traverse_fault_case_get_next(n_f, current_tuple):
     '''
@@ -80,7 +81,7 @@ def _traverse_fault_case_get_next(n_f, current_tuple):
         return tuple(new_list_flag)
 
 
-def get_reparability_dymfns(n_f, len_codeword, data_to_be_transmitted_len):
+def _reparability_dymfns(n_f, len_codeword, data_to_be_transmitted_len, echo_more=False):
     '''
     获得dymfns的修复率。
 
@@ -109,7 +110,8 @@ def get_reparability_dymfns(n_f, len_codeword, data_to_be_transmitted_len):
         cnt_all = cnt_all + 1
         codec01 = DyMFNS.dymfns_codec.Codec_DyMFNS(n=len_codeword, tuple_flags=current_flag_tuple)
         max_data_len = codec01.attr_get_max_data_len()
-        print("{}: {}".format(current_flag_tuple, max_data_len))
+        if echo_more:
+            print("{}: {} ({})".format(current_flag_tuple, max_data_len, data_to_be_transmitted_len))
         if max_data_len >= data_to_be_transmitted_len:
             cnt_sat = cnt_sat + 1
 
@@ -118,7 +120,7 @@ def get_reparability_dymfns(n_f, len_codeword, data_to_be_transmitted_len):
     reparability = cnt_sat / cnt_all
     return reparability, cnt_sat, cnt_all
 
-def get_reparability_adaptivefns(n_f, len_codeword, data_to_be_transmitted_len):
+def _reparability_adaptivefns(n_f, len_codeword, data_to_be_transmitted_len, echo_more = False):
     '''
     获得AdaptiveFNS的修复率。
 
@@ -147,7 +149,8 @@ def get_reparability_adaptivefns(n_f, len_codeword, data_to_be_transmitted_len):
         cnt_all = cnt_all + 1
         codec01 = AdaptiveFNS.adaptivefns_codec.Codec_AdaptiveFNS(n=len_codeword, tuple_flags=current_flag_tuple)
         max_data_len = codec01.attr_get_max_data_len()
-        print("{}: {}".format(current_flag_tuple, max_data_len))
+        if echo_more:
+            print("{}: {} ({})".format(current_flag_tuple, max_data_len, data_to_be_transmitted_len))
         if max_data_len >= data_to_be_transmitted_len:
             cnt_sat = cnt_sat + 1
 
@@ -157,15 +160,70 @@ def get_reparability_adaptivefns(n_f, len_codeword, data_to_be_transmitted_len):
     return reparability, cnt_sat, cnt_all
 
 
+def get_reparabiilty_dymfns_localsr(n_f, n_tsv_signal, n_tsv_redundant, echo_more = False):
+    '''
+    给定故障数目n_f，非冗余TSV数n_tsv_signal，以及冗余TSV数目n_tsv_redundant，获得修复率。
+    编码为DyMFNS，修复方式为普通的局部修复（参照FNS局部修复论文）。
 
-nf = 3
-n_redundant = 1
-len_cw_all = 15
-len_cw_without_redundant = len_cw_all - n_redundant
-codec02 = DyMFNS.dymfns_codec.Codec_DyMFNS(n=len_cw_without_redundant, tuple_flags=len_cw_without_redundant*(0, ))
-len_data_required = codec02.attr_get_max_data_len()
-print(get_reparability_dymfns(n_f=nf, len_codeword=len_cw_all, data_to_be_transmitted_len=len_data_required))
-print(len_data_required)
+    :param n_f:
+    :param n_tsv_signal:
+    :param n_tsv_redundant:
+    :return:
+    '''
+
+    assert isinstance(n_f, int)
+    assert isinstance(n_tsv_signal, int)
+    assert isinstance(n_tsv_redundant, int)
+    assert n_f > 0
+    assert n_tsv_signal > 0
+    assert n_tsv_redundant >= 0
+
+    n_tsv_all = n_tsv_signal + n_tsv_redundant
+    codec02 = DyMFNS.dymfns_codec.Codec_DyMFNS(n=n_tsv_signal, tuple_flags=n_tsv_signal * (0,))
+    len_data_required = codec02.attr_get_max_data_len()
+    return _reparability_dymfns(n_f=n_f, len_codeword=n_tsv_all, data_to_be_transmitted_len=len_data_required, echo_more=echo_more)
+
+
+def get_reparabiilty_adaptivefns_localsr(n_f, n_tsv_signal, n_tsv_redundant, echo_more = False):
+    '''
+    给定故障数目n_f，非冗余TSV数n_tsv_signal，以及冗余TSV数目n_tsv_redundant，获得修复率。
+    编码为AdaptiveFNS，修复方式为普通的局部修复（参照FNS局部修复论文）。
+
+    :param n_f:
+    :param n_tsv_signal:
+    :param n_tsv_redundant:
+    :return:
+    '''
+
+    assert isinstance(n_f, int)
+    assert isinstance(n_tsv_signal, int)
+    assert isinstance(n_tsv_redundant, int)
+    assert n_f > 0
+    assert n_tsv_signal > 0
+    assert n_tsv_redundant >= 0
+
+    n_tsv_all = n_tsv_signal + n_tsv_redundant
+    codec02 = AdaptiveFNS.adaptivefns_codec.Codec_AdaptiveFNS(n=n_tsv_signal, tuple_flags=n_tsv_signal * (0,))
+    len_data_required = codec02.attr_get_max_data_len()
+    return _reparability_adaptivefns(n_f=n_f, len_codeword=n_tsv_all, data_to_be_transmitted_len=len_data_required, echo_more=echo_more)
+
+
+
+#########################
+# main
+
+n_r = 1
+for temp_data_len in range(6, 19):
+    min_cw_len_dymfns = cac_overhead.get_min_codeword_len_dymfns_0fault(data_len=temp_data_len)
+    min_cw_len_adaptivefns = cac_overhead.get_min_codeword_len_adaptivefns_0fault(data_len=temp_data_len)
+    print("\n ####### DATA LEN: {}".format(temp_data_len))
+    print("## {}, {}".format(min_cw_len_dymfns, min_cw_len_adaptivefns))
+    for temp_j in range(1, 6):
+        aa = get_reparabiilty_dymfns_localsr(n_f=temp_j, n_tsv_signal=min_cw_len_dymfns, n_tsv_redundant=n_r, echo_more=False)
+        bb = get_reparabiilty_adaptivefns_localsr(n_f=temp_j, n_tsv_signal=min_cw_len_adaptivefns, n_tsv_redundant=n_r, echo_more=False)
+        print("{}, {}".format(aa[0], bb[0]))
+
+
 
 
 
