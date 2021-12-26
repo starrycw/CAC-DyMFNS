@@ -42,6 +42,7 @@ class Codec_DyMFNS:
                 sum_value = sum_value + self.attr_get_ns2_i(idx=idx_temp)
             else:
                 assert self.attr_get_fault_flag_i(idx=idx_temp) == 1
+
         assert sum_value == 2*self.attr_get_ns2_i(idx=-1) - 1
         return sum_value
 

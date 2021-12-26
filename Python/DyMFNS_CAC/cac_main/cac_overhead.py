@@ -79,7 +79,7 @@ def get_min_codeword_len_adaptivefns_0fault(data_len):
 # for i in range(1, 50):
 #     a = get_min_codeword_len_dymfns_0fault(data_len=i)
 #     b = get_min_codeword_len_adaptivefns_0fault(data_len=i)
-#     print(a,b)
+#     print(i, ' --> ', a,b)
 # a = get_max_data_len_adaptivefns(15, (0,0,0,0,0,0,0,0,0,0,0,0,0,0,0))
 # b = get_max_data_len_dymfns(15, (0,0,0,0,0,0,1,0,0,0,0,1,0,0,0))
 # print(a,b)
