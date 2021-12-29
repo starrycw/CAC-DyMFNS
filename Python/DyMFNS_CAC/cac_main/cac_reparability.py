@@ -6,7 +6,7 @@ import copy
 
 import DyMFNS.dymfns_codec
 import AdaptiveFNS.adaptivefns_codec
-import cac_overhead
+import cac_main.cac_overhead
 
 def _traverse_fault_case_get_next(n_f, current_tuple):
     '''
@@ -430,42 +430,10 @@ def get_reparability_mxn_globalsr(Codec_Class, n_f, n_row_tsv, n_col_tsv, if_ech
 
 
 
-#########################
-# main
-#
-# n_r = 0
-# for temp_data_len in range(3, 19):
-#     min_cw_len_dymfns = cac_overhead.get_min_codeword_len_dymfns_0fault(data_len=temp_data_len)
-#     min_cw_len_adaptivefns = cac_overhead.get_min_codeword_len_adaptivefns_0fault(data_len=temp_data_len)
-#     print("\n ####### DATA LEN: {}".format(temp_data_len))
-#     print("## {}, {}".format(min_cw_len_dymfns, min_cw_len_adaptivefns))
-#     for temp_j in range(1, 2):
-#         aa = get_reparabiilty_dymfns_localsr(n_f=temp_j, n_tsv_signal=min_cw_len_dymfns, n_tsv_redundant=n_r, echo_more=False)
-#         bb = get_reparabiilty_adaptivefns_localsr(n_f=temp_j, n_tsv_signal=min_cw_len_adaptivefns, n_tsv_redundant=n_r, echo_more=False)
-#         print("{}, {}".format(aa[0], bb[0]))
 
-# current_tuple = ( (0, 0, 0, 0), (0, 0, 0, 0), (0, 1, 1, 1) )
-# cnt_i = 0
-# record_list = []
-# while current_tuple is not None:
-#
-#     print(current_tuple, "###", globalsr_get_data_port_flags_of_codec(tsv_flag_tuple=current_tuple, Codec_Class=DyMFNS.dymfns_codec.Codec_DyMFNS))
-#     cnt_i = cnt_i + 1
-#     record_list.append(current_tuple)
-#     current_tuple = _traverse_fault_case_get_next_mxn(n_f=3, current_tuple=current_tuple, n_row=3, n_col=4)
-#     assert current_tuple not in record_list
-#
-# print(cnt_i)
 
-nf = 5
-nrow = 3
-ncol1 = 7
-ncol2 = 7
-r1, sat1, all1 = get_reparability_mxn_globalsr(Codec_Class=DyMFNS.dymfns_codec.Codec_DyMFNS, n_f=nf, n_row_tsv=nrow, n_col_tsv=ncol1, if_echo_details=False)
-r2, sat2, all2 = get_reparability_mxn_globalsr(Codec_Class=AdaptiveFNS.adaptivefns_codec.Codec_AdaptiveFNS, n_f=nf, n_row_tsv=nrow, n_col_tsv=ncol2, if_echo_details=False)
-print("\n ### Finished!")
-print(r1, sat1, all1)
-print(r2, sat2, all2)
+
+
 
 
 
