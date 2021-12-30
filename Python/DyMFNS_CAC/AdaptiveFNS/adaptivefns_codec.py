@@ -46,7 +46,7 @@ class Codec_AdaptiveFNS:
 
     def _get_max_len_of_raw_data(self):
         max_value = self._get_max_value_limitation()
-        max_len = math.floor( math.log2(max_value) )
+        max_len = math.floor( math.log2(max_value + 1) )
         return max_len
 
     def attr_get_max_value(self):
