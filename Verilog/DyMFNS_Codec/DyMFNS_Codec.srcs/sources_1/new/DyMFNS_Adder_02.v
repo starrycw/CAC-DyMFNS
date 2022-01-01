@@ -1,0 +1,51 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 2022/01/01 19:22:03
+// Design Name: 
+// Module Name: DyMFNS_Adder_02
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+`include "Header_DyMFNS.vh"
+module DyMFNS_Adder_02(
+    input wire flag_left,
+    input wire flag,
+    input wire flag_right,
+    input wire flag_notlsb_in, 
+    input wire [`DYMFNS_ADDER_OUTA_BLEN_1 - 1 : 0] in_a,
+    input wire [`DYMFNS_ADDER_OUTB_BLEN_1 - 1 : 0] in_b,
+    output wire flag_notlsb_out,
+    output wire [`DYMFNS_ADDER_OUTA_BLEN_2 - 1 : 0] out_a,
+    output wire [`DYMFNS_ADDER_OUTB_BLEN_2 - 1 : 0] out_b
+    );
+    
+    wire [`DYMFNS_ADDER_OUTA_BLEN_2 - 1 : 0] sum;
+    wire [`DYMFNS_ADDER_OUTA_BLEN_1 : 0] a_shift;
+    wire [`DYMFNS_ADDER_OUTB_BLEN_1 : 0] b_shift;
+    wire flag_left_mid;
+    
+    assign flag_left_mid = (flag_left & flag_notlsb_in) | flag;
+    assign sum[`DYMFNS_ADDER_OUTA_BLEN_2 - 1 : 0] = in_a[`DYMFNS_ADDER_OUTA_BLEN_1 - 1 : 0] + in_b[`DYMFNS_ADDER_OUTB_BLEN_1 - 1 : 0];
+    assign a_shift[`DYMFNS_ADDER_OUTA_BLEN_1 : 0] = (flag == 1'b0) ? (in_a[`DYMFNS_ADDER_OUTA_BLEN_1 - 1 : 0] << 1) : (in_a[`DYMFNS_ADDER_OUTA_BLEN_1 - 1 : 0]);
+    assign b_shift[`DYMFNS_ADDER_OUTB_BLEN_1 : 0] = (flag == 1'b0) ? (in_b[`DYMFNS_ADDER_OUTB_BLEN_1 - 1 : 0] << 1) : (in_b[`DYMFNS_ADDER_OUTB_BLEN_1 - 1 : 0]);
+    
+    
+    assign out_a[`DYMFNS_ADDER_OUTA_BLEN_2 - 1 : 0] = (flag_left_mid == 1'b0) ? (sum[`DYMFNS_ADDER_OUTA_BLEN_2 - 1 : 0]) : (a_shift[`DYMFNS_ADDER_OUTA_BLEN_1 : 0]);
+    assign out_b[`DYMFNS_ADDER_OUTB_BLEN_2 - 1 : 0] = (flag_left_mid == 1'b0) ? ( (flag_right == 1'b0) ? (in_a[`DYMFNS_ADDER_OUTA_BLEN_1 - 1 : 0]) : (sum[`DYMFNS_ADDER_OUTA_BLEN_2 - 1 : 0]) ) : (b_shift[`DYMFNS_ADDER_OUTB_BLEN_1 : 0]);
+    
+    assign flag_notlsb_out = flag_notlsb_in | (~flag);
+    
+endmodule
