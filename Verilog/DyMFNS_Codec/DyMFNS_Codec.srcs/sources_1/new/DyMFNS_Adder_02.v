@@ -41,8 +41,7 @@ module DyMFNS_Adder_02(
     assign sum[`DYMFNS_ADDER_OUTA_BLEN_2 - 1 : 0] = in_a[`DYMFNS_ADDER_OUTA_BLEN_1 - 1 : 0] + in_b[`DYMFNS_ADDER_OUTB_BLEN_1 - 1 : 0];
     assign a_shift[`DYMFNS_ADDER_OUTA_BLEN_1 : 0] = (flag == 1'b0) ? (in_a[`DYMFNS_ADDER_OUTA_BLEN_1 - 1 : 0] << 1) : (in_a[`DYMFNS_ADDER_OUTA_BLEN_1 - 1 : 0]);
     assign b_shift[`DYMFNS_ADDER_OUTB_BLEN_1 : 0] = (flag == 1'b0) ? (in_b[`DYMFNS_ADDER_OUTB_BLEN_1 - 1 : 0] << 1) : (in_b[`DYMFNS_ADDER_OUTB_BLEN_1 - 1 : 0]);
-    
-    
+        
     assign out_a[`DYMFNS_ADDER_OUTA_BLEN_2 - 1 : 0] = (flag_left_mid == 1'b0) ? (sum[`DYMFNS_ADDER_OUTA_BLEN_2 - 1 : 0]) : (a_shift[`DYMFNS_ADDER_OUTA_BLEN_1 : 0]);
     assign out_b[`DYMFNS_ADDER_OUTB_BLEN_2 - 1 : 0] = (flag_left_mid == 1'b0) ? ( (flag_right == 1'b0) ? (in_a[`DYMFNS_ADDER_OUTA_BLEN_1 - 1 : 0]) : (sum[`DYMFNS_ADDER_OUTA_BLEN_2 - 1 : 0]) ) : (b_shift[`DYMFNS_ADDER_OUTB_BLEN_1 : 0]);
     

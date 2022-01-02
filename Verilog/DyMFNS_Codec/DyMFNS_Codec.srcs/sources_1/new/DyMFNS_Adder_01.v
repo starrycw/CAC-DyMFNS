@@ -21,6 +21,14 @@
 
 
 module DyMFNS_Adder_01(
-
+    input wire flag, 
+    output wire flag_notlsb_out,
+    output wire out_a,
+    output wire out_b
     );
+    
+    assign out_a = 1'b1;
+    assign out_b = (flag == 1'b0) ? (1'b1) : (1'b0);
+    assign flag_notlsb_out = (~flag);
+    
 endmodule
