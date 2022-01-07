@@ -7,6 +7,7 @@ import copy
 import DyMFNS.dymfns_codec
 import AdaptiveFNS.adaptivefns_codec
 import cac_main.cac_overhead
+import sys
 
 def _traverse_fault_case_get_next(n_f, current_tuple):
     '''
@@ -408,6 +409,11 @@ def get_reparability_mxn_globalsr(Codec_Class, n_f, n_row_tsv, n_col_tsv, if_ech
                 print("------->UNSAT! Remapping flags: {}".format(current_dp_flag_tuple))
 
         current_f_tuple = _traverse_fault_case_get_next_mxn(n_f=n_f, current_tuple=current_f_tuple, n_row=n_row_tsv, n_col=n_col_tsv)
+
+        if not if_echo_details:
+            print("\r", end="")
+            print("Count: {}; Current tuple: {}; Reparability: {}.".format(cnt_case_all, copy.deepcopy(current_f_tuple), cnt_case_sat/cnt_case_all), end="")
+            sys.stdout.flush()
 
     print("Done! \nData len in 0-fault case: {} groups x {} bits".format(n_group_enabled_0fault_last, data_len_each_group_0fault_last))
     print(cnt_case_sat / cnt_case_all, cnt_case_sat, cnt_case_all, '\n')
