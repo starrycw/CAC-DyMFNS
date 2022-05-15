@@ -10,10 +10,11 @@ import DyMFNS.dymfns_generation
 
 
 class Codec_DyMFNS:
-    def __init__(self, n, tuple_flags):
+    def __init__(self, n, tuple_flags, codeword_mode = 'msb to lsb'):
         '''
         n为码字长度。
         tuple_flags为故障标志位元组。
+        codeword_mode 默认为 'msb to lsb'，即与数系值和flags是同反顺序；若设置为'lsb to msb'，则与数系值和flags是相同顺序。
 
         :param n:
         :param tuple_flags:
@@ -21,6 +22,9 @@ class Codec_DyMFNS:
         assert isinstance(n, int)
         assert n > 0
         self._n = n # 码字长度
+
+        assert codeword_mode in ('msb to lsb', 'lsb to msb')
+        self._cwmode = codeword_mode
 
         assert isinstance(tuple_flags, tuple)
         for temp_i in tuple_flags:
@@ -118,6 +122,9 @@ class Codec_DyMFNS:
         '''
         return copy.deepcopy(self._ns2)
 
+    def attr_get_cwmode(self):
+        return copy.deepcopy(self._cwmode)
+
     def encode(self, value):
         '''
         编码一个值（value），返回码字构成的元组，其中元组内idx=0对应的是码字的MSB。
@@ -150,7 +157,20 @@ class Codec_DyMFNS:
             codeword_msb_to_lsb.append(bit)
         assert len(codeword_msb_to_lsb) == self.attr_get_n()
         assert value == 0 # 应当无余数残留
-        return tuple(codeword_msb_to_lsb)
+        codeword_msb_to_lsb_tuple = tuple(codeword_msb_to_lsb)
+
+        codeword_l_to_m = []
+        for bit_i in range(self.attr_get_n()-1, -1, -1):
+            codeword_l_to_m.append(codeword_msb_to_lsb_tuple[bit_i])
+
+        codeword_l_to_m_tuple = tuple(codeword_l_to_m)
+
+        if self.attr_get_cwmode() == 'msb to lsb':
+            return codeword_msb_to_lsb_tuple
+        elif self.attr_get_cwmode() == 'lsb to msb':
+            return codeword_l_to_m_tuple
+        else:
+            assert False
 
     def decode(self, codeword):
         '''
@@ -163,10 +183,19 @@ class Codec_DyMFNS:
         assert len(codeword) == self.attr_get_n()
         sum_value = 0
 
-        for idx_main in range(0, self.attr_get_n()):
-            c_i = codeword[idx_main]
-            assert c_i in (0, 1)
-            d_i = self.attr_get_ns2_i( idx=(self.attr_get_n() - idx_main - 1) )
-            sum_value = c_i * d_i + sum_value
+        if self.attr_get_cwmode() == "msb to lsb":
+            for idx_main in range(0, self.attr_get_n()):
+                c_i = codeword[idx_main]
+                assert c_i in (0, 1)
+                d_i = self.attr_get_ns2_i( idx=(self.attr_get_n() - idx_main - 1) )
+                sum_value = c_i * d_i + sum_value
+        elif self.attr_get_cwmode() == "lsb to msb":
+            for idx_main in range(0, self.attr_get_n()):
+                c_i = codeword[idx_main]
+                assert c_i in (0, 1)
+                d_i = self.attr_get_ns2_i( idx=idx_main )
+                sum_value = c_i * d_i + sum_value
+        else:
+            assert False
 
         return sum_value
