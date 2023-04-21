@@ -60,6 +60,14 @@ import AdaptiveFNS.adaptivefns_codec
 
 
 
+nf = 8 # 故障TSV数
+nrow = 3 # TSV行数
+ncol = 7 # TSV列数
+r1, sat1, all1 = cac_main.cac_reparability.get_reparability_mxn_routerbasedglobalsr(n_f=nf, n_row_tsv=nrow, n_col_tsv=ncol, if_echo_details=False)
+
+
+print("\n### Finished!")
+print('R-GR: reparability={}, sat={}, all={}'.format(r1, sat1, all1) )
 
 
 

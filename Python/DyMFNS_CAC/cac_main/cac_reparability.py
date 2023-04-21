@@ -420,7 +420,82 @@ def get_reparability_mxn_globalsr(Codec_Class, n_f, n_row_tsv, n_col_tsv, if_ech
     return cnt_case_sat / cnt_case_all, cnt_case_sat, cnt_case_all
 
 
+def get_reparability_mxn_routerbasedglobalsr(n_f, n_row_tsv, n_col_tsv, if_echo_details = False):
+    #传统的Router-based global self-repair修复率
 
+    assert isinstance(n_f, int)
+    assert isinstance(n_row_tsv, int)
+    assert isinstance(n_col_tsv, int)
+    assert 0 < n_f < (n_row_tsv * n_col_tsv)
+    assert n_row_tsv > 1
+    assert n_col_tsv > 1
+
+    # get init fault flag tuple
+    temp_init_tuple_1row = ( (n_row_tsv * n_col_tsv - n_f) * (0, ) ) + ( n_f * (1, ) )
+    temp_init_list = []
+    temp_idx_row = 0
+    temp_idx_col = 0
+    for temp_ii in temp_init_tuple_1row:
+        if temp_idx_col == 0:
+            temp_list_row_i = []
+
+        temp_list_row_i.append(temp_ii)
+
+        if temp_idx_col < n_col_tsv - 1:
+            temp_idx_col = temp_idx_col + 1
+        elif temp_idx_col == n_col_tsv - 1:
+            temp_idx_col = 0
+            temp_idx_row = temp_idx_row + 1
+            temp_init_list.append(tuple(temp_list_row_i))
+        else:
+            assert False
+
+    init_fault_tuple = tuple(temp_init_list)
+    assert len(init_fault_tuple) == n_row_tsv
+    for temp_i in init_fault_tuple:
+        assert len(temp_i) == n_col_tsv
+
+    # start
+    print("Init fault tuple: {}".format(init_fault_tuple))
+    current_f_tuple = copy.deepcopy(init_fault_tuple)
+    cnt_case_all = 0
+    cnt_case_sat = 0
+    data_len_each_group_0fault_last = None
+    n_group_enabled_0fault_last = None
+    while current_f_tuple is not None:
+        cnt_case_all = cnt_case_all + 1
+        # current_dp_flag_tuple, data_len_each_group_0fault, n_group_enabled_0fault = globalsr_get_data_port_flags_of_codec(tsv_flag_tuple=current_f_tuple, Codec_Class=Codec_Class)
+
+        if_sat = globalsr_remapping_if_sat(dataport_flag_tuple=current_f_tuple)
+
+        # if data_len_each_group_0fault_last is not None:
+        #     assert data_len_each_group_0fault == data_len_each_group_0fault_last
+        #     assert n_group_enabled_0fault == n_group_enabled_0fault_last
+        # data_len_each_group_0fault_last = data_len_each_group_0fault
+        # n_group_enabled_0fault_last = n_group_enabled_0fault
+
+        if if_sat is True:
+            cnt_case_sat = cnt_case_sat + 1
+            if if_echo_details:
+                print("FLAGS: {}, NO. {} :".format(current_f_tuple, cnt_case_all))
+                print("------->SAT! Flags: {}".format(current_f_tuple))
+        else:
+            assert if_sat is False
+            if if_echo_details:
+                print("FLAGS: {}, NO. {} :".format(current_f_tuple, cnt_case_all))
+                print("------->UNSAT! Flags: {}".format(current_f_tuple))
+
+        current_f_tuple = _traverse_fault_case_get_next_mxn(n_f=n_f, current_tuple=current_f_tuple, n_row=n_row_tsv, n_col=n_col_tsv)
+
+        if not if_echo_details:
+            print("\r", end="")
+            print("Count: {}; Current tuple: {}; Reparability: {}.".format(cnt_case_all, copy.deepcopy(current_f_tuple), cnt_case_sat/cnt_case_all), end="")
+            sys.stdout.flush()
+
+    # print("Done! \nData len in 0-fault case: {} groups x {} bits".format(n_group_enabled_0fault_last, data_len_each_group_0fault_last))
+    print("Done! \nFault Case: {}".format(current_f_tuple))
+    print(cnt_case_sat / cnt_case_all, cnt_case_sat, cnt_case_all, '\n')
+    return cnt_case_sat / cnt_case_all, cnt_case_sat, cnt_case_all
 
 
 
