@@ -1,0 +1,11 @@
+# File Created by root at Tue Dec 20 11:02:29 2022
+# assisted by CdsLibEditor
+SOFTINCLUDE /eda/cadence/IC617/share/cdssetup/cds.lib
+DEFINE verilog_test verilog_test/verilog_test
+DEFINE BER_ahdlLib BER_ahdlLib/BER_ahdlLib
+DEFINE BER_simu BER_simu/BER_simu
+DEFINE tsv_simu tsv_simu/tsv_simu
+DEFINE smic18ee tsv_simu/smic18ee
+DEFINE tsmcN65 BER_simu/tsmc65/tsmcN65
+#Removed by ddDeleteObj: DEFINE Transition_delay_simu /eda/home/wc/Projects/Virtuoso/DyMFNS/BER_202212_202107_main/Transition_delay_simu/Transition_delay_simu
+DEFINE TSV_transition_simu /eda/home/wc/Projects/Virtuoso/DyMFNS/BER_202212_202107_main/TSV_transition_simu/TSV_transition_simu

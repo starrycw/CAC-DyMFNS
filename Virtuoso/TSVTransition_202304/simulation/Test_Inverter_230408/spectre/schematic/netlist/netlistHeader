@@ -1,0 +1,7 @@
+// Generated for: spectre
+// Generated on: Apr  8 21:04:36 2023
+// Design library name: TransitionSimu_MISModel
+// Design cell name: Test_Inverter_230408
+// Design view name: schematic
+simulator lang=spectre
+global 0

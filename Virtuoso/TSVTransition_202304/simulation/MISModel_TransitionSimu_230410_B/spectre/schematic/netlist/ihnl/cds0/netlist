@@ -1,0 +1,7 @@
+    R1 (net09 tsv_out) resistor r=1u
+    R0 (net07 tsv_coupling) resistor r=1u
+    C0 (tsv_coupling 0) capacitor c=2.1f
+    L1 (tsv_coupling net09) inductor l=5p
+    L0 (tsv_in net07) inductor l=5p
+ends MISModel_Aggressor
+// End of subcircuit definition.

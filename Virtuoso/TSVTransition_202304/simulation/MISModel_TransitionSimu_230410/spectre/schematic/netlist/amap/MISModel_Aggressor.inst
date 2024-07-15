@@ -1,0 +1,8 @@
+HEADER
+"PSFversion" "1.00"
+"R1n R0n" "analogLib_res_spectre"
+"C0n" "analogLib_cap_spectre"
+"L1n L0n" "analogLib_ind_spectre"
+"tsv_couplingv" ":1v"
+"tsv_inv" ":2v"
+"tsv_outv" ":3v"

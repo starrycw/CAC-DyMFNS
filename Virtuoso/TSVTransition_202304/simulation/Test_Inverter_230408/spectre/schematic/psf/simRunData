@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"design" "(\"TransitionSimu_MISModel\" \"Test_Inverter_230408\" \"schematic\" \"\")"
+"simulator" "spectre"
+"temperature" "27"
+"host" ""
+"date" "Apr  8 21:04:36 2023"
+"title" ""
+"analysisList" "()"
+END

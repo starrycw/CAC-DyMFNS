@@ -1,0 +1,4 @@
+    C0 (port_a port_b) capacitor c=12.0f
+    R0 (port_a port_b) resistor r=100
+ends MISModel_AdjacentXtalk
+// End of subcircuit definition.

@@ -1,0 +1,248 @@
+
+Cadence (R) Virtuoso (R) Spectre (R) Circuit Simulator
+Version 15.1.0.284.isr1 64bit -- 12 Nov 2015
+Copyright (C) 1989-2015 Cadence Design Systems, Inc. All rights reserved worldwide. Cadence, Virtuoso and Spectre are registered trademarks of Cadence Design Systems, Inc. All others are the property of their respective holders.
+
+Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
+
+User: root   Host: server315   HostID: 7F0100   PID: 139013
+Memory  available: 73.6060 GB  physical: 269.8711 GB
+Linux   : CentOS Linux release 7.9.2009 (Core)
+CPU Type: Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
+All processors running at 2600.0 MHz
+        Socket: Processors (Hyperthreaded Processor)
+        0:       0 ( 36 ),  2 ( 38 ),  4 ( 40 ),  6 ( 42 ),  8 ( 44 )
+                10 ( 46 ), 12 ( 48 ), 14 ( 50 ), 16 ( 52 ), 18 ( 54 )
+                20 ( 56 ), 22 ( 58 ), 24 ( 60 ), 26 ( 62 ), 28 ( 64 )
+                30 ( 66 ), 32 ( 68 ), 34 ( 70 )
+        1:       1 ( 37 ),  3 ( 39 ),  5 ( 41 ),  7 ( 43 ),  9 ( 45 )
+                11 ( 47 ), 13 ( 49 ), 15 ( 51 ), 17 ( 53 ), 19 ( 55 )
+                21 ( 57 ), 23 ( 59 ), 25 ( 61 ), 27 ( 63 ), 29 ( 65 )
+                31 ( 67 ), 33 ( 69 ), 35 ( 71 )
+        
+System load averages (1min, 5min, 15min) : 10.1 %, 9.2 %, 9.4 %
+Hyperthreading is enabled
+
+
+Simulating `input.scs' on server315 at 5:38:05 PM, Sun Apr 9, 2023 (process id: 139013).
+Current working directory: /eda/home/wc/Projects/Virtuoso/TSV_Transition_Simu/TSV_Transition_202304/simulation/Test_TSVXtalk_230409/spectre/schematic/netlist
+Command line:
+    /eda/cadence/MMSIM151/tools.lnx86/bin/spectre -64 input.scs  \
+        +escchars +log ../psf/spectre.out +inter=mpsc  \
+        +mpssession=spectre2_77514_34 -format psfxl -raw ../psf  \
+        +lqtimeout 900 -maxw 5 -maxn 5
+spectre pid = 139013
+
+Loading /eda/cadence/MMSIM151/tools.lnx86/cmi/lib/64bit/5.0/libinfineon_sh.so ...
+Loading /eda/cadence/MMSIM151/tools.lnx86/cmi/lib/64bit/5.0/libphilips_o_sh.so ...
+Loading /eda/cadence/MMSIM151/tools.lnx86/cmi/lib/64bit/5.0/libphilips_sh.so ...
+Loading /eda/cadence/MMSIM151/tools.lnx86/cmi/lib/64bit/5.0/libsparam_sh.so ...
+Loading /eda/cadence/MMSIM151/tools.lnx86/cmi/lib/64bit/5.0/libstmodels_sh.so ...
+Reading file:  /eda/home/wc/Projects/Virtuoso/TSV_Transition_Simu/TSV_Transition_202304/simulation/Test_TSVXtalk_230409/spectre/schematic/netlist/input.scs
+Reading file:  /eda/cadence/MMSIM151/tools.lnx86/spectre/etc/configs/spectre.cfg
+Reading file:  /eda/home/wc/Projects/Virtuoso/TSV_Transition_Simu/TSV_Transition_202304/TSMC-65nm(OA)/PDK_files/models/spectre/toplevel.scs
+Reading file:  /eda/home/wc/Projects/Virtuoso/TSV_Transition_Simu/TSV_Transition_202304/TSMC-65nm(OA)/PDK_files/models/spectre/crn65lp_2d5_lk_v1d7.scs
+Time for NDB Parsing: CPU = 1.26943 s, elapsed = 1.33937 s.
+Time accumulated: CPU = 1.29406 s, elapsed = 1.33938 s.
+Peak resident memory used = 101 Mbytes.
+
+
+The CPU load for active processors is :
+        Spectre  0 (100.0 %)     1 (3.9 %)       2 (36.1 %)      3 (10.5 %)
+                 4 (38.1 %)      6 (17.0 %)      8 (6.8 %)      10 (100.0 %)
+                11 (1.5 %)      12 (29.3 %)     13 (100.0 %)    14 (23.3 %)
+                15 (1.5 %)      16 (5.3 %)      18 (100.0 %)    20 (15.8 %)
+                22 (7.5 %)      24 (100.0 %)    26 (3.8 %)      28 (1.5 %)
+                30 (25.6 %)     31 (3.0 %)      32 (58.6 %)     33 (2.3 %)
+                34 (3.7 %)      35 (27.3 %)     39 (1.5 %)      40 (3.7 %)
+                42 (3.0 %)      47 (3.0 %)      48 (1.5 %)      54 (3.0 %)
+                56 (1.5 %)      60 (3.0 %)      62 (16.4 %)     63 (3.0 %)
+                64 (25.6 %)     65 (3.0 %)      68 (3.0 %)      70 (3.7 %)
+        Other   
+Reading link:  /eda/cadence/MMSIM151/tools.lnx86/spectre/etc/ahdl/discipline.h
+Reading file:  /eda/cadence/MMSIM151/tools.lnx86/spectre/etc/ahdl/disciplines.vams
+Reading link:  /eda/cadence/MMSIM151/tools.lnx86/spectre/etc/ahdl/constants.h
+Reading file:  /eda/cadence/MMSIM151/tools.lnx86/spectre/etc/ahdl/constants.vams
+Time for Elaboration: CPU = 32.718 ms, elapsed = 32.8109 ms.
+Time accumulated: CPU = 1.32694 s, elapsed = 1.37235 s.
+Peak resident memory used = 109 Mbytes.
+
+Time for EDB Visiting: CPU = 626 us, elapsed = 627.995 us.
+Time accumulated: CPU = 1.32773 s, elapsed = 1.37314 s.
+Peak resident memory used = 109 Mbytes.
+
+
+Notice from spectre during topology check.
+    No DC path from node `net50' to ground, Gmin installed to provide path.
+    No DC path from node `net52' to ground, Gmin installed to provide path.
+    No DC path from node `net43' to ground, Gmin installed to provide path.
+    No DC path from node `net49' to ground, Gmin installed to provide path.
+
+
+Global user options:
+             reltol = 0.001
+            vabstol = 1e-06
+            iabstol = 1e-12
+               temp = 27
+               tnom = 27
+             scalem = 1
+              scale = 1
+               gmin = 1e-12
+             rforce = 1
+           maxnotes = 5
+           maxwarns = 5
+             digits = 5
+               cols = 80
+             pivrel = 0.001
+           sensfile = ../psf/sens.output
+     checklimitdest = psf
+               save = allpub
+
+Scoped user options:
+
+Circuit inventory:
+              nodes 38
+          capacitor 22    
+           inductor 10    
+           resistor 19    
+            vsource 5     
+
+Analysis and control statement inventory:
+               info 7     
+               tran 1     
+
+Output statements:
+             .probe 0     
+           .measure 0     
+               save 0     
+
+Time for parsing: CPU = 1.987 ms, elapsed = 2.4159 ms.
+Time accumulated: CPU = 1.32983 s, elapsed = 1.37567 s.
+Peak resident memory used = 110 Mbytes.
+
+~~~~~~~~~~~~~~~~~~~~~~
+Pre-Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+Entering remote command mode using MPSC service (spectre, ipi, v0.0, spectre2_77514_34, ).
+
+Warning from spectre.
+    WARNING (SPECTRE-16707): Only tran supports psfxl format, result of other analyses will be in psfbin format.
+
+
+************************************************
+Transient Analysis `tran': time = (0 s -> 10 ns)
+************************************************
+DC simulation time: CPU = 948 us, elapsed = 952.005 us.
+
+Opening the PSFXL file ../psf/tran.tran.tran ...
+Important parameter values:
+    start = 0 s
+    outputstart = 0 s
+    stop = 10 ns
+    step = 10 ps
+    maxstep = 200 ps
+    ic = all
+    useprevic = no
+    skipdc = no
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    errpreset = moderate
+    method = traponly
+    lteratio = 3.5
+    relref = sigglobal
+    cmin = 0 F
+    gmin = 1 pS
+
+
+Output and IC/nodeset summary:
+                 save   15      (current)
+                 save   38      (voltage)
+
+
+Warning from spectre at time = 51.3883 fs during transient analysis `tran'.
+    WARNING (SPECTRE-16780): LTE tolerance was temporarily relaxed to step over a discontinuity in the signal: I0.L0:1.
+
+    tran: time = 279.2 ps    (2.79 %), step = 35.43 ps     (354 m%)
+    tran: time = 778.1 ps    (7.78 %), step = 36.48 ps     (365 m%)
+    tran: time = 1.278 ns    (12.8 %), step = 36.41 ps     (364 m%)
+    tran: time = 1.778 ns    (17.8 %), step = 36.41 ps     (364 m%)
+    tran: time = 2.278 ns    (22.8 %), step = 36.41 ps     (364 m%)
+    tran: time = 2.778 ns    (27.8 %), step = 36.41 ps     (364 m%)
+    tran: time = 3.278 ns    (32.8 %), step = 36.41 ps     (364 m%)
+    tran: time = 3.778 ns    (37.8 %), step = 36.41 ps     (364 m%)
+    tran: time = 4.278 ns    (42.8 %), step = 36.41 ps     (364 m%)
+    tran: time = 4.778 ns    (47.8 %), step = 36.41 ps     (364 m%)
+    tran: time = 5.278 ns    (52.8 %), step = 36.41 ps     (364 m%)
+    tran: time = 5.778 ns    (57.8 %), step = 36.41 ps     (364 m%)
+    tran: time = 6.278 ns    (62.8 %), step = 36.41 ps     (364 m%)
+    tran: time = 6.778 ns    (67.8 %), step = 36.41 ps     (364 m%)
+    tran: time = 7.278 ns    (72.8 %), step = 36.41 ps     (364 m%)
+    tran: time = 7.778 ns    (77.8 %), step = 36.41 ps     (364 m%)
+    tran: time = 8.278 ns    (82.8 %), step = 36.41 ps     (364 m%)
+    tran: time = 8.778 ns    (87.8 %), step = 36.41 ps     (364 m%)
+    tran: time = 9.278 ns    (92.8 %), step = 36.41 ps     (364 m%)
+    tran: time = 9.778 ns    (97.8 %), step = 36.41 ps     (364 m%)
+Number of accepted tran steps =             778
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Post-Transient Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   -   Parasitics slow down simulation. To speed up, consider
+          add +postlayout on command line
+   -   To further speed up simulation, consider
+          add ++aps on command line
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+During simulation, the CPU load for active processors is :
+        Spectre  0 (100.0 %)     1 (4.8 %)       2 (37.6 %)      3 (11.3 %)
+                 4 (35.1 %)      6 (15.2 %)      8 (6.7 %)      10 (100.0 %)
+                11 (1.3 %)      12 (27.2 %)     13 (100.0 %)    14 (22.7 %)
+                15 (2.6 %)      16 (7.3 %)      18 (100.0 %)    20 (18.7 %)
+                22 (8.6 %)      24 (100.0 %)    26 (5.3 %)      28 (2.7 %)
+                30 (30.7 %)     31 (2.6 %)      32 (60.9 %)     33 (2.0 %)
+                34 (4.6 %)      35 (24.2 %)     38 (1.3 %)      39 (1.3 %)
+                40 (3.3 %)      42 (4.6 %)      47 (3.3 %)      48 (1.3 %)
+                54 (2.6 %)      56 (1.3 %)      60 (3.3 %)      62 (16.0 %)
+                63 (2.7 %)      64 (24.0 %)     65 (3.3 %)      68 (4.0 %)
+                70 (4.0 %)      
+        Other   
+Initial condition solution time: CPU = 1.058 ms, elapsed = 1.06311 ms.
+Intrinsic tran analysis time:    CPU = 30.598 ms, elapsed = 30.848 ms.
+Total time required for tran analysis `tran': CPU = 35.299 ms, elapsed = 35.5561 ms.
+Time accumulated: CPU = 1.36949 s, elapsed = 1.51167 s.
+Peak resident memory used = 113 Mbytes.
+
+finalTimeOP: writing operating point information to rawfile.
+
+Opening the PSF file ../psf/finalTimeOP.info ...
+modelParameter: writing model parameter values to rawfile.
+
+Opening the PSF file ../psf/modelParameter.info ...
+element: writing instance parameter values to rawfile.
+
+Opening the PSF file ../psf/element.info ...
+outputParameter: writing output parameter values to rawfile.
+
+Opening the PSF file ../psf/outputParameter.info ...
+designParamVals: writing netlist parameters to rawfile.
+
+Opening the PSFASCII file ../psf/designParamVals.info ...
+primitives: writing primitives to rawfile.
+
+Opening the PSFASCII file ../psf/primitives.info.primitives ...
+subckts: writing subcircuits to rawfile.
+
+Opening the PSFASCII file ../psf/subckts.info.subckts ...
+
+Aggregate audit (8:08:55 PM, Sun Apr 9, 2023):
+Time used: CPU = 1.97 s, elapsed = 9.05 ks (2h 30m 50s), util. = 21.8e-03%.
+Time spent in licensing: elapsed = 254 ms.
+Peak memory used = 115 Mbytes.
+Simulation started at: 5:38:05 PM, Sun Apr 9, 2023, ended at: 8:08:55 PM, Sun Apr 9, 2023, with elapsed time (wall clock): 9.05 ks (2h 30m 50s).
+spectre completes with 0 errors, 2 warnings, and 4 notices.

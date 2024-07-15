@@ -1,0 +1,20 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "Test_Inverter_230408"
+  repList "spectre cmos_sch cmos.sch schematic veriloga"
+  stopList "spectre"
+  globalList "gnd!"
+  hierDelim "."
+  netlistDir "/eda/home/wc/Projects/Virtuoso/TSV_Transition_Simu/TSV_Transition_202304/simulation/Test_Inverter_230408/spectre/schematic/netlist"
+ )
+( net
+( "gnd!" "0" )
+ )
+( model
+( "tsmcN65/inv/schematic" "inv" )
+( "TransitionSimu_MISModel/Test_Inverter_230408/schematic" "Test_Inverter_230408" )
+ )
+( "Test_Inverter_230408" "ihnl/cds1/map" )
+( "inv" "ihnl/cds0/map" )
+ )

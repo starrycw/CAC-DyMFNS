@@ -1,0 +1,18 @@
+Reading link: 
+        /eda/cadence/IC617/tools.lnx86/dfII/samples/artist/ahdlLib/xor_gate/veriloga/veriloga.va
+Reading file: 
+        /eda/cadence/IC617/tools.lnx86/dfII/samples/artist/spectreHDL/Verilog-A/logic/xor_gate.va
+Reading link:  /eda/cadence/MMSIM151/tools.lnx86/spectre/etc/ahdl/discipline.h
+Reading file: 
+        /eda/cadence/MMSIM151/tools.lnx86/spectre/etc/ahdl/disciplines.vams
+Reading link:  /eda/cadence/MMSIM151/tools.lnx86/spectre/etc/ahdl/constants.h
+Reading file: 
+        /eda/cadence/MMSIM151/tools.lnx86/spectre/etc/ahdl/constants.vams
+
+Warning from spectre during AHDL compile.
+    WARNING (VACOMP-2265): "$finish;<<--? "
+        "/eda/cadence/IC617/tools.lnx86/dfII/samples/artist/ahdlLib/xor_gate/veriloga/veriloga.va",
+        line 48: In Cadence Verilog-A, the $finish function always behaves as
+        though the message level value is 0, regardless of the value you
+        specify: The simulator does not report simulation time, location, or
+        statistics about memory and CPU time usage.

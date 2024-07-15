@@ -1,0 +1,11 @@
+
+// Library name: TransitionSimu_MISModel
+// Cell name: Test_Inverter_230408
+// View name: schematic
+I0 (0 0 net1 net2 net5 net5) inv m=1 pl=60n pw=400n pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=200n nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+V1 (net5 0) vsource dc=1.2 type=dc
+V0 (net1 0) vsource dc=1 type=pulse val0=0 val1=1.2 period=1n delay=1n \
+        rise=50p fall=50p
+C0 (net2 0) capacitor c=2f

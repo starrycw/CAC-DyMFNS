@@ -1,0 +1,23 @@
+ncvlog(64): 14.10-s014: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
+TOOL:	ncvlog(64)	14.10-s014: Started on Mar 26, 2021 at 17:59:24 CST
+ncvlog
+    -use5x
+    -SPECIFICUNIT v_count_132
+    -zparse /tmp/vamsZparfa5275
+    -NOWARN DLNOHV
+    -work BER_simu
+    -view functional
+    -nostdout
+    -logfile /home/IC/EDA/Virtuoso/.cadence/dfII/TextSupport/Logs/Parser/verilog/BER_simu/functional/compile3.log
+    -messages
+    -cdslib /opt/Cadence/IC617/share/cdssetup/cds.lib
+    /home/IC/EDA/Virtuoso/BER_simu/BER_simu/v_count_132/functional/verilog.v
+
+file: /home/IC/EDA/Virtuoso/BER_simu/BER_simu/v_count_132/functional/verilog.v
+endmodule
+        |
+ncvlog: *E,EXPLPA (/home/IC/EDA/Virtuoso/BER_simu/BER_simu/v_count_132/functional/verilog.v,11|8): expecting a left parenthesis ('(') [12.1.3(IEEE 2001)].
+	module BER_simu.v_count_132:functional
+		errors: 1, warnings: 0
+	 writing out DPL output:
+TOOL:	ncvlog(64)	14.10-s014: Exiting on Mar 26, 2021 at 17:59:24 CST  (total: 00:00:00)

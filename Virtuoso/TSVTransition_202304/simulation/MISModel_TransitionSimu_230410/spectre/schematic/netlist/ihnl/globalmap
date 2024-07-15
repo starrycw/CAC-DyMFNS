@@ -1,0 +1,12 @@
+CADENCE IHNL11140
+$model
+TransitionSimu_MISModel/MISModel_AdjacentXtalk/schematic MISModel_AdjacentXtalk
+TransitionSimu_MISModel/MISModel_TransitionSimu_230410/schematic MISModel_TransitionSimu_230410
+TransitionSimu_MISModel/MISModel_DiagonalXtalk/schematic MISModel_DiagonalXtalk
+TransitionSimu_MISModel/MISModel_Aggressor/schematic MISModel_Aggressor
+$endmodel
+$net
+gnd! 0
+$endnet
+$param
+$endparam

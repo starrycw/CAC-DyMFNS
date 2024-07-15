@@ -1,0 +1,26 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "MISModel_TransitionSimu_230410_C"
+  repList "spectre cmos_sch cmos.sch schematic veriloga"
+  stopList "spectre"
+  globalList "gnd!"
+  hierDelim "."
+  netlistDir "/eda/home/cwei/Workspace/Virtuoso_Workspace/CAC/TSV_Transition/TSV_Transition_202304/simulation/MISModel_TransitionSimu_230410_C/spectre/schematic/netlist"
+ )
+( net
+( "gnd!" "0" )
+ )
+( model
+( "TransitionSimu_MISModel/MISModel_DiagonalXtalk/schematic" "MISModel_DiagonalXtalk" )
+( "TransitionSimu_MISModel/MISModel_Aggressor/schematic" "MISModel_Aggressor" )
+( "tsmcN65/inv/schematic" "inv" )
+( "TransitionSimu_MISModel/MISModel_TransitionSimu_230410_C/schematic" "MISModel_TransitionSimu_230410_C" )
+( "TransitionSimu_MISModel/MISModel_AdjacentXtalk/schematic" "MISModel_AdjacentXtalk" )
+ )
+( "MISModel_TransitionSimu_230410_C" "ihnl/cds4/map" )
+( "MISModel_DiagonalXtalk" "ihnl/cds0/map" )
+( "MISModel_Aggressor" "ihnl/cds1/map" )
+( "MISModel_AdjacentXtalk" "ihnl/cds2/map" )
+( "inv" "ihnl/cds3/map" )
+ )

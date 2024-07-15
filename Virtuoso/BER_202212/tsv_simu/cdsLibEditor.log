@@ -1,0 +1,70 @@
+\o Program:		@(#)$CDS: cdsLibEditor version 6.1.7 - CAT35 10/18/2015 00:07 (sjfnl678) $
+\o Sub version:		sub-version  p009 
+\o Arguments:		-display :2.0 -mpssession virtuoso1918 -mpshost lizhen -namespace CDBA -cdslib /mnt/mydata/Workspace/tsv_simu/cds.lib 
+\o Working Directory:	lizhen:/mnt/mydata/Workspace/tsv_simu
+\o 64-bit offsets
+\a nrSetWindowVisibility(cdsLibEditor "show")
+\o Qt version: 		4.8.5
+\a nrSetCurrentWindow(cdsLibEditor)
+\a nrListItemAction(cdsLibEditor->mainTable 0 0)
+\o Active cell: 0 0 "cdsDefTechLib"
+\a nrResizeWindow(cdsLibEditor list(705 336 500 400))
+\a nrListItemAction(cdsLibEditor->mainTable 8 0)
+\o Active cell: 8 0 ""
+\a cdsLibEditor->editAddLibButton->value = t
+\a newLibraryDialog->filePathComboBox->value = "/mnt/mydata/Workspace/tsv_simu"
+\a newLibraryDialog->useMappedName->value = nil
+\a nrSetWindowVisibility(newLibraryDialog "show")
+\a nrSetCurrentWindow(newLibraryDialog)
+\a nrResizeWindow(newLibraryDialog list(690 280 531 513))
+\a newLibraryDialog->dirListWidget->value = ".."
+\a newLibraryDialog->filePathComboBox->value = "/mnt/mydata/Workspace/tsv_simu/.."
+\a nrListItemAction(newLibraryDialog->dirListWidget 0 0)
+\a newLibraryDialog->filePathComboBox->value = "/mnt/mydata/Workspace"
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->dirListWidget->value = "Library"
+\a newLibraryDialog->filePathComboBox->value = "/mnt/mydata/Workspace/Library"
+\a nrListItemAction(newLibraryDialog->dirListWidget 1 0)
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->dirListWidget->value = "SM08LB003-FB-00000-r0p0-00eac0_svt"
+\a newLibraryDialog->filePathComboBox->value = "/mnt/mydata/Workspace/Library/SM08LB003-FB-00000-r0p0-00eac0_svt"
+\a nrListItemAction(newLibraryDialog->dirListWidget 1 0)
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->dirListWidget->value = "arm"
+\a newLibraryDialog->filePathComboBox->value = "/mnt/mydata/Workspace/Library/SM08LB003-FB-00000-r0p0-00eac0_svt/arm"
+\a nrListItemAction(newLibraryDialog->dirListWidget 1 0)
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->dirListWidget->value = "smic"
+\a newLibraryDialog->filePathComboBox->value = "/mnt/mydata/Workspace/Library/SM08LB003-FB-00000-r0p0-00eac0_svt/arm/smic"
+\a nrListItemAction(newLibraryDialog->dirListWidget 1 0)
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->dirListWidget->value = "logic0065ll"
+\a newLibraryDialog->filePathComboBox->value = "/mnt/mydata/Workspace/Library/SM08LB003-FB-00000-r0p0-00eac0_svt/arm/smic/logic0065ll"
+\a nrListItemAction(newLibraryDialog->dirListWidget 1 0)
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->dirListWidget->value = "sc12_base_svt"
+\a newLibraryDialog->filePathComboBox->value = "/mnt/mydata/Workspace/Library/SM08LB003-FB-00000-r0p0-00eac0_svt/arm/smic/logic0065ll/sc12_base_svt"
+\a nrListItemAction(newLibraryDialog->dirListWidget 1 0)
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->dirListWidget->value = "r0p0-00eac0"
+\a newLibraryDialog->filePathComboBox->value = "/mnt/mydata/Workspace/Library/SM08LB003-FB-00000-r0p0-00eac0_svt/arm/smic/logic0065ll/sc12_base_svt/r0p0-00eac0"
+\a nrListItemAction(newLibraryDialog->dirListWidget 1 0)
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->dirListWidget->value = "oa"
+\a newLibraryDialog->filePathComboBox->value = "/mnt/mydata/Workspace/Library/SM08LB003-FB-00000-r0p0-00eac0_svt/arm/smic/logic0065ll/sc12_base_svt/r0p0-00eac0/oa"
+\a nrListItemAction(newLibraryDialog->dirListWidget 8 0)
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->libraryListBox->value = "sc12_logic0065ll_base_svt"
+\a newLibraryDialog->useMappedName->value = t
+\a newLibraryDialog->libraryName->value = "sc12_logic0065ll_base_svt"
+\a newLibraryDialog->okButton->value = t
+\a newLibraryDialog->libraryListBox->value = nil
+\a newLibraryDialog->useMappedName->value = nil
+\a newLibraryDialog->libraryName->value = ""
+\a nrListItemAction(cdsLibEditor->mainTable 9 0)
+\o Active cell: 9 0 ""
+\a nrSetCurrentWindow(cdsLibEditor)
+\a cdsLibEditor->fileSaveButton->value = t
+\a cdsLibEditor->fileExitButton->value = t
+\a nrSetWindowVisibility(cdsLibEditor "hide")
+\a exit(0)

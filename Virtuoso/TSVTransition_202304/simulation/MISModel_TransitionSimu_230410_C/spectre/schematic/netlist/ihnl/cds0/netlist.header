@@ -1,0 +1,5 @@
+
+// Library name: TransitionSimu_MISModel
+// Cell name: MISModel_DiagonalXtalk
+// View name: schematic
+subckt MISModel_DiagonalXtalk port_a port_b

@@ -1,0 +1,3 @@
+SOFTINCLUDE /eda/cadence/IC617/share/cdssetup/cds.lib
+DEFINE TransitionSimu_MISModel /eda/home/wc/Projects/Virtuoso/TSV_Transition_Simu/TSV_Transition_202304/TransitionSimu_MISModel
+DEFINE TransitionSimu_RCDelayModel2013 /eda/home/wc/Projects/Virtuoso/TSV_Transition_Simu/TSV_Transition_202304/TransitionSimu_RCDelayModel2013/TransitionSimu_RCDelayModel2013

@@ -1,0 +1,1 @@
+include "/root/EDA/BER_simu/tsmc65/tsmcN65/../models/spectre/toplevel.scs" section=tt_lib

@@ -1,0 +1,7 @@
+// Generated for: spectre
+// Generated on: Apr 10 20:39:41 2023
+// Design library name: TransitionSimu_MISModel
+// Design cell name: MISModel_TransitionSimu_230410_B
+// Design view name: schematic
+simulator lang=spectre
+global 0

@@ -1,0 +1,58 @@
+// Generated for: spectre
+// Generated on: Apr  8 21:04:36 2023
+// Design library name: TransitionSimu_MISModel
+// Design cell name: Test_Inverter_230408
+// Design view name: schematic
+simulator lang=spectre
+global 0
+include "/eda/home/wc/Projects/Virtuoso/TSV_Transition_Simu/TSV_Transition_202304/TSMC-65nm(OA)/PDK_files/tsmcN65/../models/spectre/toplevel.scs" section=tt_lib
+
+// Library name: tsmcN65
+// Cell name: inv
+// View name: schematic
+subckt inv G Gb IN OUT P Pb
+parameters pl=60n pw=200n pf=1 psd=200n psa=175n psb=175n nl=60n nw=200n \
+        nf=1 nsd=200n nsa=175n nsb=175n
+    PM1 (OUT IN P Pb) pch l=pl w=pw*pf m=1 nf=pf sd=psd \
+        ad=((pf-int(pf/2)*2)*(1.75e-07+((pf-1)*2e-07)/2+0)+(pf+1-int((pf+1)/2)*2)*((pf/2)*2e-07))*pw \
+        as=((pf-int(pf/2)*2)*(1.75e-07+((pf-1)*2e-07)/2+0)+(pf+1-int((pf+1)/2)*2)*(1.75e-07+1.75e-07+(pf/2-1)*2e-07+0+0))*pw \
+        pd=(pf-int(pf/2)*2)*((1.75e-07+((pf-1)*2e-07)/2+0)*2+(pf+1)*pw)+(pf+1-int((pf+1)/2)*2)*(((pf/2)*2e-07)*2+pf*pw) \
+        ps=(pf-int(pf/2)*2)*((1.75e-07+((pf-1)*2e-07)/2+0)*2+(pf+1)*pw)+(pf+1-int((pf+1)/2)*2)*((1.75e-07+1.75e-07+(pf/2-1)*2e-07+0+0)*2+(pf+2)*pw) \
+        nrd=(pf-int(pf/2)*2)*(1e-07*1e-07/(1e-07+1e-07*(pf-1))/pw)+(pf+1-int((pf+1)/2)*2)*(1e-07/pf/pw) \
+        nrs=(pf-int(pf/2)*2)*(1e-07*1e-07/(1e-07+1e-07*(pf-1))/pw)+(pf+1-int((pf+1)/2)*2)*(1e-07*1e-07*1e-07/(1e-07*1e-07*(pf-2)+1e-07*(1e-07+1e-07))/pw) \
+        sa=psa sb=psb sca=0 scb=0 scc=0
+    NM1 (OUT IN G Gb) nch l=nl w=nw*nf m=1 nf=nf sd=nsd \
+        ad=((nf-int(nf/2)*2)*(1.75e-07+((nf-1)*2e-07)/2+0)+(nf+1-int((nf+1)/2)*2)*((nf/2)*2e-07))*nw \
+        as=((nf-int(nf/2)*2)*(1.75e-07+((nf-1)*2e-07)/2+0)+(nf+1-int((nf+1)/2)*2)*(1.75e-07+1.75e-07+(nf/2-1)*2e-07+0+0))*nw \
+        pd=(nf-int(nf/2)*2)*((1.75e-07+((nf-1)*2e-07)/2+0)*2+(nf+1)*nw)+(nf+1-int((nf+1)/2)*2)*(((nf/2)*2e-07)*2+nf*nw) \
+        ps=(nf-int(nf/2)*2)*((1.75e-07+((nf-1)*2e-07)/2+0)*2+(nf+1)*nw)+(nf+1-int((nf+1)/2)*2)*((1.75e-07+1.75e-07+(nf/2-1)*2e-07+0+0)*2+(nf+2)*nw) \
+        nrd=(nf-int(nf/2)*2)*(1e-07*1e-07/(1e-07+1e-07*(nf-1))/nw)+(nf+1-int((nf+1)/2)*2)*(1e-07/nf/nw) \
+        nrs=(nf-int(nf/2)*2)*(1e-07*1e-07/(1e-07+1e-07*(nf-1))/nw)+(nf+1-int((nf+1)/2)*2)*(1e-07*1e-07*1e-07/(1e-07*1e-07*(nf-2)+1e-07*(1e-07+1e-07))/nw) \
+        sa=nsa sb=nsb sca=0 scb=0 scc=0
+ends inv
+// End of subcircuit definition.
+
+// Library name: TransitionSimu_MISModel
+// Cell name: Test_Inverter_230408
+// View name: schematic
+I0 (0 0 net1 net2 net5 net5) inv m=1 pl=60n pw=400n pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=200n nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+V1 (net5 0) vsource dc=1.2 type=dc
+V0 (net1 0) vsource dc=1 type=pulse val0=0 val1=1.2 period=1n delay=1n \
+        rise=50p fall=50p
+C0 (net2 0) capacitor c=2f
+simulatorOptions options reltol=1e-3 vabstol=1e-6 iabstol=1e-12 temp=27 \
+    tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 maxnotes=5 maxwarns=5 \
+    digits=5 cols=80 pivrel=1e-3 sensfile="../psf/sens.output" \
+    checklimitdest=psf 
+tran tran stop=6n errpreset=moderate write="spectre.ic" \
+    writefinal="spectre.fc" annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts where=rawfile
+saveOptions options save=allpub

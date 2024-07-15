@@ -1,0 +1,32 @@
+    I13 (gnd gnd cn c vdd vdd) inv m=1 pl=60n pw=200n pf=1 psd=200n \
+        psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n nsa=175n \
+        nsb=175n
+    I9 (gnd gnd Q nQ vdd vdd) inv m=1 pl=60n pw=200n pf=1 psd=200n \
+        psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n nsa=175n \
+        nsb=175n
+    I8 (gnd gnd net21 Q vdd vdd) inv m=1 pl=60n pw=200n pf=1 psd=200n \
+        psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n nsa=175n \
+        nsb=175n
+    I5 (gnd gnd net20 net38 vdd vdd) inv m=1 pl=60n pw=200n pf=1 \
+        psd=200n psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n \
+        nsa=175n nsb=175n
+    I3 (gnd gnd net11 net20 vdd vdd) inv m=1 pl=60n pw=200n pf=1 \
+        psd=200n psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n \
+        nsa=175n nsb=175n
+    I0 (gnd gnd clk cn vdd vdd) inv m=1 pl=60n pw=200n pf=1 psd=200n \
+        psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n nsa=175n \
+        nsb=175n
+    I10 (nQ cn c gnd vdd net21) pass m=1 pl=60n pw=200n pf=1 psd=200n \
+        psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n nsa=175n \
+        nsb=175n
+    I7 (net20 c cn gnd vdd net21) pass m=1 pl=60n pw=200n pf=1 psd=200n \
+        psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n nsa=175n \
+        nsb=175n
+    I6 (net38 c cn gnd vdd net11) pass m=1 pl=60n pw=200n pf=1 psd=200n \
+        psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n nsa=175n \
+        nsb=175n
+    I2 (D cn c gnd vdd net11) pass m=1 pl=60n pw=200n pf=1 psd=200n \
+        psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n nsa=175n \
+        nsb=175n
+ends dff
+// End of subcircuit definition.

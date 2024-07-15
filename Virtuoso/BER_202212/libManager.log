@@ -1,0 +1,201 @@
+\o Program:		@(#)$CDS: libManager version 6.1.7 - CAT35 10/18/2015 00:06 (sjfnl678) $
+\o Sub version:		sub-version  p009 
+\o Arguments:		-unmapped -mpssession virtuoso193621 -mpshost server315 
+\o Working Directory:	server315:/eda/home/wc/Projects/Virtuoso/DyMFNS/BER_202212_202107_main
+\o 64-bit offsets
+\o Qt version: 		4.8.5
+\o changeWorkingDir("/eda/home/wc/Projects/Virtuoso/DyMFNS/BER_202212_202107_main") unnecessary.
+\o ddSetForcedLib("") unnecessary.
+\o Log file is "/eda/home/wc/Projects/Virtuoso/DyMFNS/BER_202212_202107_main/libManager.log".
+\o Opening libManager window.
+\a nrSetWindowVisibility(cdsLibManager "show")
+\o MPS service: map window
+\o Library Manager customization server connected.
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrResizeWindow(cdsLibManager list(-1 27 1920 977))
+\a cdsLibManager->libListBox->value = "BER_simu"
+\a cdsLibManager->libListBox->value = "BER_ahdlLib"
+\a cdsLibManager->libLineEdit->value = "BER_ahdlLib"
+\a cdsLibManager->FileNewLibButton->value = t
+\a nrSetWindowVisibility(NewLibShell "show")
+\a NewLibShell->QLineEdit2->value = "/eda/home/wc/Projects/Virtuoso/DyMFNS/BER_202212_202107_main/"
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(NewLibShell)
+\a nrSetCurrentWindow(NewLibShell->subDialog)
+\a nrResizeWindow(NewLibShell list(697 159 507 559))
+\a NewLibShell->newLibCancelButton->value = t
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->FileNewLibButton->value = t
+\a NewLibShell->QLineEdit2->value = ""
+\a nrSetWindowVisibility(NewLibShell->subDialog "show")
+\a nrSetWindowVisibility(NewLibShell "show")
+\a NewLibShell->QLineEdit2->value = "/eda/home/wc/Projects/Virtuoso/DyMFNS/BER_202212_202107_main/"
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(NewLibShell)
+\a nrSetCurrentWindow(NewLibShell->subDialog)
+\a nrResizeWindow(NewLibShell list(697 159 507 559))
+\a NewLibShell->QLineEdit1->value = "New_Folder"
+\a NewLibShell->QLineEdit1->value = "Transition_delay_simu"
+\a NewLibShell->QLineEdit1->value = ""
+\a NewLibShell->QLineEdit2->value = "/eda/home/wc/Projects/Virtuoso/DyMFNS/BER_202212_202107_main/Transition_delay_simu/"
+\a NewLibShell->newLibNameText->value = "Transition_delay_simu"
+\a NewLibShell->newLibOKButton->value = t
+\a NewLibShell->subDialog->value = '("/eda/home/wc/Projects/Virtuoso/DyMFNS/BER_202212_202107_main/Transition_delay_simu" "/eda/home/wc/Projects/Virtuoso/DyMFNS/BER_202212_202107_main/Transition_delay_simu/")
+\a nrSetWindowVisibility(workingDialogForm "show")
+\o Created new library "Transition_delay_simu" at /eda/home/wc/Projects/Virtuoso/DyMFNS/BER_202212_202107_main/Transition_delay_simu/Transition_delay_simu.
+\a cdsLibManager->libListBox->value = nil
+\a cdsLibManager->libLineEdit->value = ""
+\a cdsLibManager->libListBox->value = "BER_ahdlLib"
+\a cdsLibManager->libLineEdit->value = "BER_ahdlLib"
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrResizeWindow(workingDialogForm list(771 447 359 133))
+\a cdsLibManager->libListBox->value = nil
+\a cdsLibManager->libListBox->value = "BER_ahdlLib"
+\a cdsLibManager->libLineEdit->value = "BER_ahdlLib"
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->libListBox->value = "Transition_delay_simu"
+\a cdsLibManager->libLineEdit->value = "Transition_delay_simu"
+\a cdsLibManager->FileNewCVButton->value = t
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->libListBox->value = "BER_ahdlLib"
+\a cdsLibManager->libListBox->value = "BER_simu"
+\a cdsLibManager->libListBox->value = "Transition_delay_simu"
+\a cdsLibManager->cellListBox->value = "TSV_MISModel_6aggressors"
+\a cdsLibManager->cellLineEdit->value = "TSV_MISModel_6aggressors"
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->libLineEdit->value = "Transition_delay_simu"
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->libListBox->value = "BER_simu"
+\a cdsLibManager->cellListBox->value = nil
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->cellLineEdit->value = ""
+\a cdsLibManager->libListBox->value = "tsv_simu"
+\a cdsLibManager->libLineEdit->value = "tsv_simu"
+\a cdsLibManager->cellListBox->value = "mis-tsv_as"
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a nrListItemAction(cdsLibManager->cellListBox 19 0)
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\o MPS request: edit design
+\a cdsLibManager->cellLineEdit->value = "mis-tsv_as"
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->libListBox->value = "Transition_delay_simu"
+\a cdsLibManager->cellListBox->value = nil
+\a cdsLibManager->cellLineEdit->value = ""
+\a cdsLibManager->cellListBox->value = "TSV_MISModel_6aggressors"
+\a cdsLibManager->cellLineEdit->value = "TSV_MISModel_6aggressors"
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->libLineEdit->value = "Transition_delay_simu"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a lmgrLogShowPopup("mainListPopup1" 90 6 2 "TSV_MISModel_6aggressors")
+\a cdsLibManager->editDeleteButton->value = t
+\a deleteForm->deleteBothRadioButton->value = t
+\a deleteForm->deleteFilterEdit->value = "*"
+\a deleteForm->notDeleteFilterEdit->value = "*"
+\a nrSetWindowVisibility(deleteForm "show")
+\a nrSetCurrentWindow(deleteForm)
+\a nrResizeWindow(deleteForm list(636 295 627 425))
+\a deleteForm->OK->value = t
+\o QUESTION (CLM-199): The following 1 items are marked for deletion.  Are you sure?
+\a nrSetWindowVisibility(mcMBXDLG "show")
+\a nrSetCurrentWindow(mcMBXDLG)
+\a nrResizeWindow(mcMBXDLG list(782 348 334 334))
+\a mcMBXDLG->pushButton1->value = t
+\o Deleting cell "TSV_MISModel_6aggressors" from library "Transition_delay_simu".
+\a nrSetWindowVisibility(workingDialogForm "show")
+\a nrSetCurrentWindow(cdsLibManager)
+\o Deleted cell 'Transition_delay_simu/TSV_MISModel_6aggressors'.
+\o Deletion of 1 cell done.
+\a nrSetCurrentWindow(workingDialogForm)
+\a cdsLibManager->cellLineEdit->value = ""
+\a nrResizeWindow(workingDialogForm list(781 346 359 133))
+\a cdsLibManager->libListBox->value = nil
+\a cdsLibManager->libLineEdit->value = ""
+\a cdsLibManager->libListBox->value = "Transition_delay_simu"
+\a cdsLibManager->libLineEdit->value = "Transition_delay_simu"
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->FileNewCVButton->value = t
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->libListBox->value = "BER_simu"
+\a cdsLibManager->libListBox->value = "Transition_delay_simu"
+\a cdsLibManager->libListBox->value = nil
+\a cdsLibManager->libLineEdit->value = ""
+\a cdsLibManager->libListBox->value = "BER_simu"
+\a cdsLibManager->libListBox->value = nil
+\a cdsLibManager->libListBox->value = "Transition_delay_simu"
+\a lmgrLogShowPopup("mainListPopup0" 52 43 2 "Transition_delay_simu")
+\a cdsLibManager->libLineEdit->value = "Transition_delay_simu"
+\a cdsLibManager->editDeleteButton->value = t
+\a nrSetWindowVisibility(deleteForm "show")
+\a nrSetCurrentWindow(deleteForm)
+\a nrResizeWindow(deleteForm list(626 287 627 425))
+\a deleteForm->OK->value = t
+\o QUESTION (CLM-199): The following 1 items are marked for deletion.  Are you sure?
+\a nrSetWindowVisibility(mcMBXDLG "show")
+\a nrSetCurrentWindow(mcMBXDLG)
+\a nrResizeWindow(mcMBXDLG list(527 321 825 371))
+\a mcMBXDLG->pushButton1->value = t
+\o Deleting 1 library.
+\o Deleting library "Transition_delay_simu".
+\a nrSetWindowVisibility(workingDialogForm "show")
+\o Deleted library 'Transition_delay_simu'.
+\o Delete of library "Transition_delay_simu" succeeded.
+\o Deletion of library done.
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(workingDialogForm)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrResizeWindow(workingDialogForm list(826 346 268 133))
+\a cdsLibManager->libListBox->value = nil
+\a cdsLibManager->libLineEdit->value = ""
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->FileNewLibButton->value = t
+\a NewLibShell->newLibNameText->value = ""
+\a nrSetWindowVisibility(NewLibShell "show")
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(NewLibShell)
+\a nrSetCurrentWindow(NewLibShell->subDialog)
+\a nrResizeWindow(NewLibShell list(697 159 507 559))
+\a NewLibShell->QLineEdit2->value = "/eda/home/wc/Projects/Virtuoso/DyMFNS/BER_202212_202107_main/"
+\a NewLibShell->QLineEdit1->value = "TSV_transition_simu"
+\a NewLibShell->QLineEdit1->value = ""
+\a NewLibShell->QLineEdit2->value = "/eda/home/wc/Projects/Virtuoso/DyMFNS/BER_202212_202107_main/TSV_transition_simu/"
+\a NewLibShell->newLibNameText->value = "TSV_transition_simu"
+\a NewLibShell->newLibOKButton->value = t
+\a NewLibShell->subDialog->value = '("/eda/home/wc/Projects/Virtuoso/DyMFNS/BER_202212_202107_main/TSV_transition_simu" "/eda/home/wc/Projects/Virtuoso/DyMFNS/BER_202212_202107_main/TSV_transition_simu/")
+\a nrSetWindowVisibility(workingDialogForm "show")
+\o Created new library "TSV_transition_simu" at /eda/home/wc/Projects/Virtuoso/DyMFNS/BER_202212_202107_main/TSV_transition_simu/TSV_transition_simu.
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrResizeWindow(workingDialogForm list(816 447 349 133))
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->libListBox->value = "TSV_transition_simu"
+\a cdsLibManager->libLineEdit->value = "TSV_transition_simu"
+\a cdsLibManager->FileNewCVButton->value = t
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a _lmgrCloseIconify("cdsLibManager" 1)
+\a nrSetCurrentWindow(cdsLibManager)
+\a _lmgrCloseIconify("cdsLibManager" 1)
+\o MPS service: shutdown
+\o libManager is exiting.
+\a nrSetWindowVisibility(cdsLibManager "hide")
+\a exit(0)

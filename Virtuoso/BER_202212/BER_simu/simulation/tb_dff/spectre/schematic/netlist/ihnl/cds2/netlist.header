@@ -1,0 +1,5 @@
+
+// Library name: BER_simu
+// Cell name: dff
+// View name: schematic
+subckt dff D gnd Q vdd clk nQ

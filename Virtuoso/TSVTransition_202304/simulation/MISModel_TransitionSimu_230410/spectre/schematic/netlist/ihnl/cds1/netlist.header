@@ -1,0 +1,5 @@
+
+// Library name: TransitionSimu_MISModel
+// Cell name: MISModel_Aggressor
+// View name: schematic
+subckt MISModel_Aggressor tsv_coupling tsv_in tsv_out

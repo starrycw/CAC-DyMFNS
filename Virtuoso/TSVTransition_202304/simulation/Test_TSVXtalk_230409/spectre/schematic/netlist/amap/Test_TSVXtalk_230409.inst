@@ -1,0 +1,7 @@
+HEADER
+"PSFversion" "1.00"
+"R4n R3n R2n R1n R0n" "analogLib_res_spectre"
+"C16n C17n C15n C14n C0n C10n C11n C18n C8n C9n C7n C12n C13n" "analogLib_cap_spectre"
+"V20n V19n V2n V18n V17n" "analogLib_vpulse_spectre"
+"I107n I72n I93n I96n" "MISModel_AdjacentXtalk"
+"I106n I97n I0n I92n I71n" "MISModel_Aggressor"

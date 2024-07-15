@@ -1,0 +1,692 @@
+HEADER
+"PSFversion" "1.00"
+"simulator" "spectre"
+"version" "15.1.0.284.isr1"
+"date" "2:09:39 PM, Thur Mar 25, 2021"
+"design" "// Generated for: spectre"
+"analysis type" "info.subckts"
+"analysis name" "subckts"
+"analysis description" "Circuit Information"
+"xVecSorted" "unknown"
+"tolerance.relative" 0.00100000
+TYPE
+"subckt" STRUCT(
+"subckt_params" STRING *
+"subckt_terminals" STRING *
+) PROP(
+"key" "sub"
+)
+VALUE
+"pmos_rf" "subckt" (
+""
+""
+)
+"rm10" "subckt" (
+""
+""
+)
+"rmxw" "subckt" (
+""
+""
+)
+"npn5_mis" "subckt" (
+""
+""
+)
+"rm5w" "subckt" (
+""
+""
+)
+"rmys" "subckt" (
+""
+""
+)
+"nmos_rf_hvt_6t" "subckt" (
+""
+""
+)
+"pmos_rf_mlvt_5t" "subckt" (
+""
+""
+)
+"rm1l" "subckt" (
+""
+""
+)
+"rppolywo_m" "subckt" (
+""
+""
+)
+"crtmom_mx" "subckt" (
+""
+""
+)
+"nmos_rf_33_6t" "subckt" (
+""
+""
+)
+"pmos_rf_mlvt_nw" "subckt" (
+""
+""
+)
+"moscap_rf33_nw" "subckt" (
+""
+""
+)
+"rmzw" "subckt" (
+""
+""
+)
+"rm8l" "subckt" (
+""
+""
+)
+"rm6l" "subckt" (
+""
+""
+)
+"nmos_rf" "subckt" (
+""
+""
+)
+"npn2_s_mis" "subckt" (
+""
+""
+)
+"rnods" "subckt" (
+""
+""
+)
+"spiral_sym_ct_mu_a" "subckt" (
+""
+""
+)
+"rmxl" "subckt" (
+""
+""
+)
+"rppolyl" "subckt" (
+""
+""
+)
+"nmoscap_33" "subckt" (
+""
+""
+)
+"rm1w" "subckt" (
+""
+""
+)
+"rm4w" "subckt" (
+""
+""
+)
+"rnodwo" "subckt" (
+""
+""
+)
+"rm6s" "subckt" (
+""
+""
+)
+"rm8w" "subckt" (
+""
+""
+)
+"rm2w" "subckt" (
+""
+""
+)
+"pnp5_s_mis" "subckt" (
+""
+""
+)
+"rnpolyl_m" "subckt" (
+""
+""
+)
+"mimcap_woum_sin_udc_rf" "subckt" (
+""
+""
+)
+"pch_33_mac" "subckt" (
+""
+""
+)
+"pmos_rf_hvt_nw" "subckt" (
+""
+""
+)
+"pmos_rf_lvt_nw_5t" "subckt" (
+""
+""
+)
+"rnwod_m" "subckt" (
+""
+""
+)
+"inv" "subckt" (
+"nw nsa psd nsd nf pf psa nl nsb pl psb pw"
+"G Gb IN OUT P Pb"
+)
+"mimcap_sin_3t" "subckt" (
+""
+""
+)
+"spiral_sym_mza_a" "subckt" (
+""
+""
+)
+"nmos_rf_lvt" "subckt" (
+""
+""
+)
+"rm5l" "subckt" (
+""
+""
+)
+"rnodl" "subckt" (
+""
+""
+)
+"rppolys_m" "subckt" (
+""
+""
+)
+"pmos_rf_lvt_5t" "subckt" (
+""
+""
+)
+"npn2_mis" "subckt" (
+""
+""
+)
+"spiral_sym_mu_z" "subckt" (
+""
+""
+)
+"npn10_s_mis" "subckt" (
+""
+""
+)
+"rmrs" "subckt" (
+""
+""
+)
+"nch_hvt_mac" "subckt" (
+""
+""
+)
+"rppolyl_rf" "subckt" (
+""
+""
+)
+"pch_mlvt_mac" "subckt" (
+""
+""
+)
+"npn5_s_mis" "subckt" (
+""
+""
+)
+"rm1s" "subckt" (
+""
+""
+)
+"nmos_rf_mlvt" "subckt" (
+""
+""
+)
+"rpodl_m" "subckt" (
+""
+""
+)
+"rppolys" "subckt" (
+""
+""
+)
+"rppolyl_m" "subckt" (
+""
+""
+)
+"rm3l" "subckt" (
+""
+""
+)
+"nmos_rf_hvt" "subckt" (
+""
+""
+)
+"rm8s" "subckt" (
+""
+""
+)
+"rpods" "subckt" (
+""
+""
+)
+"rnods_m" "subckt" (
+""
+""
+)
+"pch_hvt_mac" "subckt" (
+""
+""
+)
+"spiral_std_mza_a" "subckt" (
+""
+""
+)
+"nmos_rf_mlvt_6t" "subckt" (
+""
+""
+)
+"pass" "subckt" (
+"nw nsa psd nsd nf pf psa nl nsb pl psb pw"
+"A C CB Gb Pb Y"
+)
+"moscap_rf_hvt_nw" "subckt" (
+""
+""
+)
+"rm5s" "subckt" (
+""
+""
+)
+"pmos_rf_lvt_nw" "subckt" (
+""
+""
+)
+"pmos_rf_33" "subckt" (
+""
+""
+)
+"rmrl" "subckt" (
+""
+""
+)
+"rnpolywo" "subckt" (
+""
+""
+)
+"rpodl" "subckt" (
+""
+""
+)
+"mimcap_sin" "subckt" (
+""
+""
+)
+"nch_lvt_mac" "subckt" (
+""
+""
+)
+"pmos_rf_hvt" "subckt" (
+""
+""
+)
+"mimcap_um_sin_rf" "subckt" (
+""
+""
+)
+"rnwsti" "subckt" (
+""
+""
+)
+"rm4s" "subckt" (
+""
+""
+)
+"rm9s" "subckt" (
+""
+""
+)
+"nch_mac" "subckt" (
+""
+""
+)
+"lowcpad_d23" "subckt" (
+""
+""
+)
+"nch_33_mac" "subckt" (
+""
+""
+)
+"rnpolys" "subckt" (
+""
+""
+)
+"mimcap_um_sin_udc_rf" "subckt" (
+""
+""
+)
+"pmoscap_rf" "subckt" (
+""
+""
+)
+"rm6w" "subckt" (
+""
+""
+)
+"rnwod" "subckt" (
+""
+""
+)
+"rppolys_rf" "subckt" (
+""
+""
+)
+"spiral_std_mu_z" "subckt" (
+""
+""
+)
+"dff" "subckt" (
+""
+"D gnd Q vdd clk nQ"
+)
+"nch_mlvt_mac" "subckt" (
+""
+""
+)
+"rm7l" "subckt" (
+""
+""
+)
+"rm2l" "subckt" (
+""
+""
+)
+"rm3s" "subckt" (
+""
+""
+)
+"rm9w" "subckt" (
+""
+""
+)
+"pmos_rf_33_nw" "subckt" (
+""
+""
+)
+"rm2s" "subckt" (
+""
+""
+)
+"pmos_rf_33_nw_5t" "subckt" (
+""
+""
+)
+"moscap_rf_hvt" "subckt" (
+""
+""
+)
+"pmos_rf_hvt_5t" "subckt" (
+""
+""
+)
+"rmxs" "subckt" (
+""
+""
+)
+"crtmom" "subckt" (
+""
+""
+)
+"moscap_rf_nw" "subckt" (
+""
+""
+)
+"rppolywo_rf" "subckt" (
+""
+""
+)
+"pdio_hia_rf" "subckt" (
+""
+""
+)
+"pmos_rf_hvt_nw_5t" "subckt" (
+""
+""
+)
+"nch_na33_mac" "subckt" (
+""
+""
+)
+"pmos_rf_5t" "subckt" (
+""
+""
+)
+"pmos_rf_nw_5t" "subckt" (
+""
+""
+)
+"crtmom_rf" "subckt" (
+""
+""
+)
+"xjvar_nw" "subckt" (
+""
+""
+)
+"pnp2_mis" "subckt" (
+""
+""
+)
+"rm7w" "subckt" (
+""
+""
+)
+"nmos_rf_33" "subckt" (
+""
+""
+)
+"nmos_rf_lvt_6t" "subckt" (
+""
+""
+)
+"spiral_sym_ct_mu_z" "subckt" (
+""
+""
+)
+"rnpolywo_m" "subckt" (
+""
+""
+)
+"rmyw" "subckt" (
+""
+""
+)
+"pmos_rf_lvt" "subckt" (
+""
+""
+)
+"pmos_rf_nw" "subckt" (
+""
+""
+)
+"npn10_mis" "subckt" (
+""
+""
+)
+"nch_na_mac" "subckt" (
+""
+""
+)
+"pmos_rf_mlvt" "subckt" (
+""
+""
+)
+"lowcpad_d15" "subckt" (
+""
+""
+)
+"mimcap_sin_udc" "subckt" (
+""
+""
+)
+"nmos_rf_6t" "subckt" (
+""
+""
+)
+"rm9l" "subckt" (
+""
+""
+)
+"rmap_ut" "subckt" (
+""
+""
+)
+"pnp10_mis" "subckt" (
+""
+""
+)
+"rnodwo_m" "subckt" (
+""
+""
+)
+"rpods_m" "subckt" (
+""
+""
+)
+"rmt" "subckt" (
+""
+""
+)
+"mimcap_sin_udc_3t" "subckt" (
+""
+""
+)
+"rpodwo_m" "subckt" (
+""
+""
+)
+"spiral_sym_mu_a" "subckt" (
+""
+""
+)
+"mimcap_woum_sin_rf" "subckt" (
+""
+""
+)
+"pnp5_mis" "subckt" (
+""
+""
+)
+"rmap" "subckt" (
+""
+""
+)
+"rnodl_m" "subckt" (
+""
+""
+)
+"rnpolyl" "subckt" (
+""
+""
+)
+"ndio_hia_rf" "subckt" (
+""
+""
+)
+"xjvar" "subckt" (
+""
+""
+)
+"nmoscap" "subckt" (
+""
+""
+)
+"rnwsti_m" "subckt" (
+""
+""
+)
+"rmzl" "subckt" (
+""
+""
+)
+"rm7s" "subckt" (
+""
+""
+)
+"pch_mac" "subckt" (
+""
+""
+)
+"sbd_rf_nw" "subckt" (
+""
+""
+)
+"rmrw" "subckt" (
+""
+""
+)
+"pmos_rf_33_5t" "subckt" (
+""
+""
+)
+"rppolywo" "subckt" (
+""
+""
+)
+"moscap_rf33" "subckt" (
+""
+""
+)
+"rmzs" "subckt" (
+""
+""
+)
+"rnpolys_m" "subckt" (
+""
+""
+)
+"spiral_std_mu_a" "subckt" (
+""
+""
+)
+"sbd_rf" "subckt" (
+""
+""
+)
+"pmos_rf_mlvt_nw_5t" "subckt" (
+""
+""
+)
+"rmyl" "subckt" (
+""
+""
+)
+"pch_lvt_mac" "subckt" (
+""
+""
+)
+"rm3w" "subckt" (
+""
+""
+)
+"rm4l" "subckt" (
+""
+""
+)
+"pnp2_s_mis" "subckt" (
+""
+""
+)
+"pnp10_s_mis" "subckt" (
+""
+""
+)
+"rpodwo" "subckt" (
+""
+""
+)
+"spiral_sym_ct_mza_a" "subckt" (
+""
+""
+)
+"moscap_rf" "subckt" (
+""
+""
+)
+END

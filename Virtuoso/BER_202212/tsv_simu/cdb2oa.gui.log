@@ -1,0 +1,27 @@
+********************************************************************************
+Program:	@(#)$CDS: cdb2oa version 6.1.7-64b 11/09/2015 12:39 (sjfbm191) $
+		sub-version  IC6.1.7-64b.78 
+Started at:	Dec 27 07:49:33 2020
+Hierarchy:	/opt/cadence/IC617
+User Name:	root
+Host Name:	lizhen
+Options:	-cdslibpath 
+          /mnt/mydata/Workspace/tsv_simu/smic18ee_2P6M_20100810/smic18ee_2P6M_20100810/ 
+          -lib smic18ee -log cdb2oa.gui.log -appendlog 
+          -mapundefinedpingroups strong 
+Directory:	/mnt/mydata/Workspace/tsv_simu
+Log File:	/mnt/mydata/Workspace/tsv_simu/cdb2oa.gui.log
+
+	Copyright (C) 2001-2005 Cadence Design Systems, Inc. All rights reserved  worldwide
+********************************************************************************
+
+
+
+********************************************************************************
+Finished at:   Dec 27 08:00:54 2020
+
+86 cells and 611 cellviews were translated from library 'smic18ee' in 668.8s.
+
+********************************************************************************
+
+

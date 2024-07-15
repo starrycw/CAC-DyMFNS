@@ -1,0 +1,1232 @@
+// Generated for: spectre
+// Generated on: Apr 10 20:32:55 2023
+// Design library name: TransitionSimu_MISModel
+// Design cell name: MISModel_TransitionSimu_230410_B
+// Design view name: schematic
+simulator lang=spectre
+global 0
+include "/eda/home/wc/Projects/Virtuoso/TSV_Transition_Simu/TSV_Transition_202304/TSMC-65nm(OA)/PDK_files/tsmcN65/../models/spectre/toplevel.scs" section=tt_lib
+
+// Library name: TransitionSimu_MISModel
+// Cell name: MISModel_Aggressor
+// View name: schematic
+subckt MISModel_Aggressor tsv_coupling tsv_in tsv_out
+    R1 (net09 tsv_out) resistor r=1u
+    R0 (net07 tsv_coupling) resistor r=1u
+    C0 (tsv_coupling 0) capacitor c=2.1f
+    L1 (tsv_coupling net09) inductor l=5p
+    L0 (tsv_in net07) inductor l=5p
+ends MISModel_Aggressor
+// End of subcircuit definition.
+
+// Library name: TransitionSimu_MISModel
+// Cell name: MISModel_DiagonalXtalk
+// View name: schematic
+subckt MISModel_DiagonalXtalk port_a port_b
+    R0 (port_a port_b) resistor r=400
+    C0 (port_a port_b) capacitor c=3f
+ends MISModel_DiagonalXtalk
+// End of subcircuit definition.
+
+// Library name: TransitionSimu_MISModel
+// Cell name: MISModel_AdjacentXtalk
+// View name: schematic
+subckt MISModel_AdjacentXtalk port_a port_b
+    C0 (port_a port_b) capacitor c=12.0f
+    R0 (port_a port_b) resistor r=100
+ends MISModel_AdjacentXtalk
+// End of subcircuit definition.
+
+// Library name: TransitionSimu_MISModel
+// Cell name: MISModel_TransitionSimu_230410_B
+// View name: schematic
+V233 (net01426 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V232 (net066 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V231 (net01250 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V230 (net085 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V229 (net091 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V228 (net098 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V227 (net01281 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V226 (net01414 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V225 (net01408 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V224 (net01364 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V223 (net01278 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V222 (net01353 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V221 (net01211 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V220 (net01242 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V219 (net0161 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V218 (net01367 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V217 (net01269 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V216 (net0189 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V215 (net01232 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V214 (net0200 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V213 (net01255 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V212 (net01248 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V211 (net01356 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V210 (net01275 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V209 (net0231 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V208 (net01284 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V207 (net0245 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V206 (net01400 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V205 (net0389 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V204 (net01399 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V203 (net01427 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V202 (net01421 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V201 (net01343 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V200 (net01286 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V199 (net0414 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V198 (net01373 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V197 (net01229 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V196 (net01249 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V195 (net01254 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V194 (net01393 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V193 (net01439 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V192 (net01208 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V191 (net01302 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V190 (net01309 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V189 (net01351 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V188 (net0319 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V187 (net0326 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V186 (net01257 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V185 (net0343 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V184 (net01230 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V183 (net01329 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V182 (net01322 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V181 (net0371 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V180 (net0378 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V179 (net041 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V178 (net048 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V177 (net055 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V176 (net064 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V175 (net070 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V174 (net076 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V173 (net083 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V172 (net090 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V171 (net097 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V170 (net0104 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V169 (net0111 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V168 (net0118 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V167 (net0127 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V166 (net0133 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V165 (net0139 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V164 (net0146 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V163 (net0153 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V162 (net0160 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V161 (net0167 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V160 (net0174 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V159 (net0181 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V158 (net0190 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V157 (net0196 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V156 (net0202 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V155 (net0209 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V154 (net0216 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V153 (net0223 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V152 (net0230 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V151 (net0237 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V150 (net0244 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V149 (net0253 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V148 (net0259 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V147 (net0265 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V146 (net0272 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V145 (net0279 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V144 (net0286 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V143 (net0293 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V142 (net0300 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V141 (net0307 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V140 (net0316 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V139 (net0322 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V138 (net0328 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V137 (net0335 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V136 (net0342 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V135 (net0349 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V134 (net0356 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V133 (net0363 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V132 (net0370 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V131 (net0379 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V130 (net0385 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V129 (net0391 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V128 (net0398 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V127 (net0405 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V126 (net0412 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V125 (net0423 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V124 (net0430 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V123 (net0437 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V122 (net0445 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V121 (net0451 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V120 (net0456 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V119 (net0463 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V118 (net0470 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V117 (net0477 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V116 (net0484 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V115 (net0491 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V114 (net0498 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V113 (net0506 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V112 (net0512 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V111 (net0517 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V110 (net0524 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V109 (net0531 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V108 (net0538 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V17 (net668 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V16 (net672 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V15 (net735 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V14 (net739 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V13 (net683 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V12 (net746 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n \
+        rise=50p fall=50p
+V11 (net751 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V10 (net692 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V9 (net759 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n rise=50p \
+        fall=50p
+V8 (net699 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n rise=50p \
+        fall=50p
+V7 (net766 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n rise=50p \
+        fall=50p
+V6 (net705 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n rise=50p \
+        fall=50p
+V5 (net775 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n rise=50p \
+        fall=50p
+V4 (net779 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n rise=50p \
+        fall=50p
+V3 (net715 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=2n rise=50p \
+        fall=50p
+V2 (net785 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n rise=50p \
+        fall=50p
+V1 (net724 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n rise=50p \
+        fall=50p
+V0 (net727 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n rise=50p \
+        fall=50p
+V38 (net420 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V37 (net427 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V50 (net434 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V51 (net443 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V53 (net451 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V49 (net457 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V52 (net464 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V36 (net471 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V39 (net478 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V42 (net485 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V41 (net493 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V45 (net500 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V46 (net509 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V48 (net515 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V44 (net521 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V47 (net528 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V40 (net535 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+V43 (net542 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=2n \
+        rise=50p fall=50p
+R233 (net01426 net01316) resistor r=50
+R232 (net066 net01313) resistor r=50
+R231 (net01250 net074) resistor r=50
+R230 (net085 net01398) resistor r=50
+R229 (net091 net01381) resistor r=50
+R228 (net098 net01374) resistor r=50
+R227 (net01281 net0106) resistor r=50
+R226 (net01414 net0113) resistor r=50
+R225 (net01408 net0120) resistor r=50
+R224 (net01364 net0129) resistor r=50
+R223 (net01278 net0130) resistor r=50
+R222 (net01353 net01273) resistor r=50
+R221 (net01211 net01397) resistor r=50
+R220 (net01242 net01323) resistor r=50
+R219 (net0161 net01416) resistor r=50
+R218 (net01367 net01233) resistor r=50
+R217 (net01269 net01279) resistor r=50
+R216 (net0189 net01301) resistor r=50
+R215 (net01232 net01253) resistor r=50
+R214 (net0200 net01265) resistor r=50
+R213 (net01255 net01433) resistor r=50
+R212 (net01248 net01259) resistor r=50
+R211 (net01356 net01298) resistor r=50
+R210 (net01275 net01219) resistor r=50
+R209 (net0231 net01226) resistor r=50
+R208 (net01284 net01288) resistor r=50
+R207 (net0245 net01315) resistor r=50
+R206 (net01400 net01310) resistor r=50
+R205 (net0389 net0439) resistor r=50
+R204 (net01399 net01308) resistor r=50
+R203 (net01427 net01369) resistor r=50
+R202 (net01421 net01241) resistor r=50
+R201 (net01343 net01395) resistor r=50
+R200 (net01286 net0424) resistor r=50
+R199 (net0414 net01246) resistor r=50
+R198 (net01373 net01210) resistor r=50
+R197 (net01229 net0252) resistor r=50
+R196 (net01249 net01304) resistor r=50
+R195 (net01254 net0267) resistor r=50
+R194 (net01393 net01318) resistor r=50
+R193 (net01439 net01357) resistor r=50
+R192 (net01208 net0288) resistor r=50
+R191 (net01302 net01402) resistor r=50
+R190 (net01309 net01422) resistor r=50
+R189 (net01351 net01434) resistor r=50
+R188 (net0319 net0318) resistor r=50
+R187 (net0326 net01205) resistor r=50
+R186 (net01257 net01342) resistor r=50
+R185 (net0343 net01307) resistor r=50
+R184 (net01230 net01424) resistor r=50
+R183 (net01329 net01430) resistor r=50
+R182 (net01322 net01243) resistor r=50
+R181 (net0371 net01266) resistor r=50
+R180 (net0378 net01332) resistor r=50
+R179 (net041 net040) resistor r=50
+R178 (net048 net047) resistor r=50
+R177 (net055 net054) resistor r=50
+R176 (net064 net062) resistor r=50
+R175 (net070 net069) resistor r=50
+R174 (net076 net075) resistor r=50
+R173 (net083 net082) resistor r=50
+R172 (net090 net089) resistor r=50
+R171 (net097 net096) resistor r=50
+R170 (net0104 net0103) resistor r=50
+R169 (net0111 net0110) resistor r=50
+R168 (net0118 net0117) resistor r=50
+R167 (net0127 net0125) resistor r=50
+R166 (net0133 net0132) resistor r=50
+R165 (net0139 net0138) resistor r=50
+R164 (net0146 net0145) resistor r=50
+R163 (net0153 net0152) resistor r=50
+R162 (net0160 net0159) resistor r=50
+R161 (net0167 net0166) resistor r=50
+R160 (net0174 net0173) resistor r=50
+R159 (net0181 net0180) resistor r=50
+R158 (net0190 net0188) resistor r=50
+R157 (net0196 net0195) resistor r=50
+R156 (net0202 net0201) resistor r=50
+R155 (net0209 net0208) resistor r=50
+R154 (net0216 net0215) resistor r=50
+R153 (net0223 net0222) resistor r=50
+R152 (net0230 net0229) resistor r=50
+R151 (net0237 net0236) resistor r=50
+R150 (net0244 net0243) resistor r=50
+R149 (net0253 net0251) resistor r=50
+R148 (net0259 net0258) resistor r=50
+R147 (net0265 net0264) resistor r=50
+R146 (net0272 net0271) resistor r=50
+R145 (net0279 net0278) resistor r=50
+R144 (net0286 net0285) resistor r=50
+R143 (net0293 net0292) resistor r=50
+R142 (net0300 net0299) resistor r=50
+R141 (net0307 net0306) resistor r=50
+R140 (net0316 net0314) resistor r=50
+R139 (net0322 net0321) resistor r=50
+R138 (net0328 net0327) resistor r=50
+R137 (net0335 net0334) resistor r=50
+R136 (net0342 net0341) resistor r=50
+R135 (net0349 net0348) resistor r=50
+R134 (net0356 net0355) resistor r=50
+R133 (net0363 net0362) resistor r=50
+R132 (net0370 net0369) resistor r=50
+R131 (net0379 net0377) resistor r=50
+R130 (net0385 net0384) resistor r=50
+R129 (net0391 net0390) resistor r=50
+R128 (net0398 net0397) resistor r=50
+R127 (net0405 net0404) resistor r=50
+R126 (net0412 net0411) resistor r=50
+R125 (net0423 net0422) resistor r=50
+R124 (net0430 net0429) resistor r=50
+R123 (net0437 net0436) resistor r=50
+R122 (net0445 net0443) resistor r=50
+R121 (net0451 net0450) resistor r=50
+R120 (net0456 net0455) resistor r=50
+R119 (net0463 net0462) resistor r=50
+R118 (net0470 net0469) resistor r=50
+R117 (net0477 net0476) resistor r=50
+R116 (net0484 net0483) resistor r=50
+R115 (net0491 net0490) resistor r=50
+R114 (net0498 net0497) resistor r=50
+R113 (net0506 net0504) resistor r=50
+R112 (net0512 net0511) resistor r=50
+R111 (net0517 net0516) resistor r=50
+R110 (net0524 net0523) resistor r=50
+R109 (net0531 net0530) resistor r=50
+R108 (net0538 net0537) resistor r=50
+R17 (net668 net728) resistor r=50
+R16 (net672 net731) resistor r=50
+R15 (net735 net675) resistor r=50
+R14 (net739 net737) resistor r=50
+R13 (net683 net742) resistor r=50
+R12 (net746 net745) resistor r=50
+R11 (net751 net750) resistor r=50
+R10 (net692 net754) resistor r=50
+R9 (net759 net695) resistor r=50
+R8 (net699 net762) resistor r=50
+R7 (net766 net702) resistor r=50
+R6 (net705 net771) resistor r=50
+R5 (net775 net709) resistor r=50
+R4 (net779 net712) resistor r=50
+R3 (net715 net782) resistor r=50
+R2 (net785 net719) resistor r=50
+R1 (net724 net723) resistor r=50
+R0 (net727 net791) resistor r=50
+R38 (net420 net419) resistor r=50
+R37 (net427 net426) resistor r=50
+R49 (net434 net433) resistor r=50
+R50 (net443 net441) resistor r=50
+R53 (net451 net450) resistor r=50
+R51 (net457 net456) resistor r=50
+R52 (net464 net463) resistor r=50
+R36 (net471 net470) resistor r=50
+R39 (net478 net477) resistor r=50
+R42 (net485 net484) resistor r=50
+R41 (net493 net492) resistor r=50
+R44 (net500 net499) resistor r=50
+R45 (net509 net507) resistor r=50
+R48 (net515 net514) resistor r=50
+R46 (net521 net520) resistor r=50
+R47 (net528 net527) resistor r=50
+R40 (net535 net534) resistor r=50
+R43 (net542 net541) resistor r=50
+I908 (net056 net01316 net01244) MISModel_Aggressor
+I904 (net063 net01313 net01297) MISModel_Aggressor
+I900 (net01347 net074 net01407) MISModel_Aggressor
+I896 (net01403 net01398 net078) MISModel_Aggressor
+I892 (net01432 net01381 net01419) MISModel_Aggressor
+I890 (net01261 net01374 net01425) MISModel_Aggressor
+I885 (net01401 net0106 net01385) MISModel_Aggressor
+I881 (net01372 net0113 net01392) MISModel_Aggressor
+I877 (net01251 net0120 net01335) MISModel_Aggressor
+I874 (net01358 net0129 net01270) MISModel_Aggressor
+I873 (net01263 net0130 net01209) MISModel_Aggressor
+I866 (net01348 net01273 net0137) MISModel_Aggressor
+I865 (net0141 net01397 net01429) MISModel_Aggressor
+I858 (net0154 net01323 net01386) MISModel_Aggressor
+I857 (net01344 net01416 net01258) MISModel_Aggressor
+I850 (net0168 net01233 net01441) MISModel_Aggressor
+I849 (net01377 net01279 net01207) MISModel_Aggressor
+I842 (net01380 net01301 net01221) MISModel_Aggressor
+I841 (net01333 net01253 net01384) MISModel_Aggressor
+I838 (net0192 net01265 net01303) MISModel_Aggressor
+I837 (net01327 net01433 net01375) MISModel_Aggressor
+I828 (net01237 net01259 net01300) MISModel_Aggressor
+I827 (net01415 net01298 net01417) MISModel_Aggressor
+I820 (net01365 net01219 net01412) MISModel_Aggressor
+I819 (net01264 net01226 net01330) MISModel_Aggressor
+I812 (net0238 net01288 net01437) MISModel_Aggressor
+I811 (net01336 net01315 net01341) MISModel_Aggressor
+I806 (net0382 net01310 net01370) MISModel_Aggressor
+I802 (net01379 net0439 net01331) MISModel_Aggressor
+I798 (net0393 net01308 net0438) MISModel_Aggressor
+I794 (net01346 net01369 net01406) MISModel_Aggressor
+I790 (net042 net01241 net0400) MISModel_Aggressor
+I788 (net01396 net01395 net01256) MISModel_Aggressor
+I783 (net01225 net0424 net0407) MISModel_Aggressor
+I779 (net01292 net01246 net01272) MISModel_Aggressor
+I775 (net0381 net01210 net0444) MISModel_Aggressor
+I771 (net01217 net0252 net01354) MISModel_Aggressor
+I767 (net01276 net01304 net0256) MISModel_Aggressor
+I763 (net01216 net0267 net0263) MISModel_Aggressor
+I759 (net01277 net01318 net01423) MISModel_Aggressor
+I755 (net01368 net01357 net01204) MISModel_Aggressor
+I753 (net01317 net0288 net0281) MISModel_Aggressor
+I748 (net01319 net01402 net01438) MISModel_Aggressor
+I744 (net0301 net01422 net01409) MISModel_Aggressor
+I740 (net0309 net01434 net0308) MISModel_Aggressor
+I736 (net01435 net0318 net0315) MISModel_Aggressor
+I732 (net01390 net01205 net01305) MISModel_Aggressor
+I728 (net01306 net01342 net0329) MISModel_Aggressor
+I724 (net01378 net01307 net0337) MISModel_Aggressor
+I720 (net01359 net01424 net0344) MISModel_Aggressor
+I718 (net0351 net01430 net01352) MISModel_Aggressor
+I713 (net01349 net01243 net0358) MISModel_Aggressor
+I709 (net01334 net01266 net01410) MISModel_Aggressor
+I705 (net01338 net01332 net01350) MISModel_Aggressor
+I699 (net038 net040 net037) MISModel_Aggressor
+I695 (net045 net047 net044) MISModel_Aggressor
+I691 (net053 net054 net051) MISModel_Aggressor
+I687 (net059 net062 net058) MISModel_Aggressor
+I683 (net030 net069 net065) MISModel_Aggressor
+I681 (net072 net075 net068) MISModel_Aggressor
+I676 (net080 net082 net079) MISModel_Aggressor
+I672 (net087 net089 net086) MISModel_Aggressor
+I668 (net094 net096 net093) MISModel_Aggressor
+I664 (net0101 net0103 net0100) MISModel_Aggressor
+I660 (net0108 net0110 net0107) MISModel_Aggressor
+I655 (net0115 net0117 net0114) MISModel_Aggressor
+I652 (net0122 net0125 net0121) MISModel_Aggressor
+I648 (net012 net0132 net0128) MISModel_Aggressor
+I646 (net0135 net0138 net0131) MISModel_Aggressor
+I641 (net0143 net0145 net0142) MISModel_Aggressor
+I637 (net0150 net0152 net0149) MISModel_Aggressor
+I633 (net0157 net0159 net0156) MISModel_Aggressor
+I629 (net0164 net0166 net0163) MISModel_Aggressor
+I625 (net0171 net0173 net0170) MISModel_Aggressor
+I621 (net0179 net0180 net0177) MISModel_Aggressor
+I617 (net0185 net0188 net0184) MISModel_Aggressor
+I613 (net029 net0195 net0191) MISModel_Aggressor
+I611 (net0198 net0201 net0194) MISModel_Aggressor
+I606 (net0206 net0208 net0205) MISModel_Aggressor
+I602 (net0213 net0215 net0212) MISModel_Aggressor
+I598 (net0220 net0222 net0219) MISModel_Aggressor
+I594 (net0227 net0229 net0226) MISModel_Aggressor
+I590 (net0234 net0236 net0233) MISModel_Aggressor
+I585 (net0241 net0243 net0240) MISModel_Aggressor
+I582 (net0248 net0251 net0247) MISModel_Aggressor
+I578 (net011 net0258 net0254) MISModel_Aggressor
+I576 (net0261 net0264 net0257) MISModel_Aggressor
+I571 (net0269 net0271 net0268) MISModel_Aggressor
+I567 (net0276 net0278 net0275) MISModel_Aggressor
+I563 (net0283 net0285 net0282) MISModel_Aggressor
+I559 (net0290 net0292 net0289) MISModel_Aggressor
+I555 (net0297 net0299 net0296) MISModel_Aggressor
+I551 (net0305 net0306 net0303) MISModel_Aggressor
+I547 (net0311 net0314 net0310) MISModel_Aggressor
+I543 (net028 net0321 net0317) MISModel_Aggressor
+I541 (net0324 net0327 net0320) MISModel_Aggressor
+I536 (net0332 net0334 net0331) MISModel_Aggressor
+I532 (net0339 net0341 net0338) MISModel_Aggressor
+I528 (net0346 net0348 net0345) MISModel_Aggressor
+I524 (net0353 net0355 net0352) MISModel_Aggressor
+I520 (net0360 net0362 net0359) MISModel_Aggressor
+I515 (net0367 net0369 net0366) MISModel_Aggressor
+I512 (net0374 net0377 net0373) MISModel_Aggressor
+I508 (net010 net0384 net0380) MISModel_Aggressor
+I506 (net0387 net0390 net0383) MISModel_Aggressor
+I501 (net0395 net0397 net0394) MISModel_Aggressor
+I497 (net0402 net0404 net0401) MISModel_Aggressor
+I493 (net0409 net0411 net0408) MISModel_Aggressor
+I489 (net0420 net0422 net0419) MISModel_Aggressor
+I485 (net0427 net0429 net0426) MISModel_Aggressor
+I481 (net0434 net0436 net0433) MISModel_Aggressor
+I477 (net0442 net0443 net0440) MISModel_Aggressor
+I473 (net027 net0450 net0446) MISModel_Aggressor
+I471 (net0452 net0455 net0449) MISModel_Aggressor
+I466 (net0461 net0462 net0459) MISModel_Aggressor
+I462 (net0467 net0469 net0466) MISModel_Aggressor
+I458 (net0474 net0476 net0473) MISModel_Aggressor
+I454 (net0481 net0483 net0480) MISModel_Aggressor
+I450 (net0488 net0490 net0487) MISModel_Aggressor
+I445 (net0495 net0497 net0494) MISModel_Aggressor
+I442 (net0503 net0504 net0501) MISModel_Aggressor
+I438 (net09 net0511 net0507) MISModel_Aggressor
+I436 (net0513 net0516 net0510) MISModel_Aggressor
+I431 (net0522 net0523 net0520) MISModel_Aggressor
+I427 (net0528 net0530 net0527) MISModel_Aggressor
+I423 (net0535 net0537 net0534) MISModel_Aggressor
+I68 (net545 net728 net546) MISModel_Aggressor
+I64 (net671 net731 net670) MISModel_Aggressor
+I60 (net674 net675 net733) MISModel_Aggressor
+I56 (net680 net737 net678) MISModel_Aggressor
+I52 (net27 net742 net681) MISModel_Aggressor
+I50 (net743 net745 net682) MISModel_Aggressor
+I45 (net749 net750 net748) MISModel_Aggressor
+I41 (net691 net754 net690) MISModel_Aggressor
+I37 (net694 net695 net757) MISModel_Aggressor
+I33 (net698 net762 net359) MISModel_Aggressor
+I29 (net765 net702 net764) MISModel_Aggressor
+I25 (net770 net771 net703) MISModel_Aggressor
+I21 (net774 net709 net773) MISModel_Aggressor
+I17 (net9 net712 net776) MISModel_Aggressor
+I15 (net713 net782 net778) MISModel_Aggressor
+I10 (net784 net719 net717) MISModel_Aggressor
+I6 (net787 net723 net721) MISModel_Aggressor
+I2 (net790 net791 net725) MISModel_Aggressor
+I151 (net417 net419 net416) MISModel_Aggressor
+I147 (net424 net426 net423) MISModel_Aggressor
+I193 (net431 net433 net430) MISModel_Aggressor
+I198 (net439 net441 net437) MISModel_Aggressor
+I209 (net25 net450 net445) MISModel_Aggressor
+I201 (net452 net456 net449) MISModel_Aggressor
+I206 (net462 net463 net460) MISModel_Aggressor
+I143 (net468 net470 net467) MISModel_Aggressor
+I155 (net475 net477 net474) MISModel_Aggressor
+I167 (net482 net484 net481) MISModel_Aggressor
+I163 (net490 net492 net488) MISModel_Aggressor
+I174 (net497 net499 net496) MISModel_Aggressor
+I179 (net505 net507 net503) MISModel_Aggressor
+I190 (net7 net514 net510) MISModel_Aggressor
+I182 (net516 net520 net513) MISModel_Aggressor
+I187 (net526 net527 net524) MISModel_Aggressor
+I159 (net532 net534 net531) MISModel_Aggressor
+I171 (net539 net541 net538) MISModel_Aggressor
+C551 (net042 net0413) capacitor c=1p
+C550 (net01368 net01247) capacitor c=1p
+C549 (net01359 net01260) capacitor c=1p
+C548 (net01380 net0225) capacitor c=1p
+C547 (net01333 net01339) capacitor c=1p
+C546 (net01432 net01282) capacitor c=1p
+C545 (net01244 0) capacitor c=2p
+C544 (net056 net057) capacitor c=1p
+C543 (net01297 0) capacitor c=2p
+C542 (net063 net01299) capacitor c=1p
+C541 (net01407 0) capacitor c=2p
+C540 (net01347 net01361) capacitor c=1p
+C539 (net01333 net01262) capacitor c=1p
+C538 (net01432 net01239) capacitor c=1p
+C537 (net078 0) capacitor c=2p
+C536 (net01403 net01252) capacitor c=1p
+C535 (net01333 net01405) capacitor c=1p
+C534 (net01432 net01391) capacitor c=1p
+C533 (net01419 0) capacitor c=2p
+C532 (net01425 0) capacitor c=2p
+C531 (net01261 net01291) capacitor c=1p
+C530 (net01333 net092) capacitor c=1p
+C529 (net01432 net01383) capacitor c=1p
+C528 (net01385 0) capacitor c=2p
+C527 (net01401 net01314) capacitor c=1p
+C526 (net01333 net01283) capacitor c=1p
+C525 (net01432 net0105) capacitor c=1p
+C524 (net01392 0) capacitor c=2p
+C523 (net01372 net0112) capacitor c=1p
+C522 (net01335 0) capacitor c=2p
+C521 (net01251 net0119) capacitor c=1p
+C520 (net01270 0) capacitor c=2p
+C519 (net01209 0) capacitor c=2p
+C518 (net01358 net0126) capacitor c=1p
+C517 (net01263 net01290) capacitor c=1p
+C516 (net0137 0) capacitor c=2p
+C515 (net01429 0) capacitor c=2p
+C514 (net01348 net0140) capacitor c=1p
+C513 (net0141 net01436) capacitor c=1p
+C512 (net01386 0) capacitor c=2p
+C511 (net01258 0) capacitor c=2p
+C510 (net0154 net01440) capacitor c=1p
+C509 (net01344 net01234) capacitor c=1p
+C508 (net01380 net0155) capacitor c=1p
+C507 (net01441 0) capacitor c=2p
+C506 (net01207 0) capacitor c=2p
+C505 (net0168 net0169) capacitor c=1p
+C504 (net01377 net01418) capacitor c=1p
+C503 (net01380 net01324) capacitor c=1p
+C502 (net01221 0) capacitor c=2p
+C501 (net01384 0) capacitor c=2p
+C500 (net01303 0) capacitor c=2p
+C499 (net01375 0) capacitor c=2p
+C498 (net0192 net01340) capacitor c=1p
+C497 (net01327 net01271) capacitor c=1p
+C496 (net01380 net0193) capacitor c=1p
+C495 (net01300 0) capacitor c=2p
+C494 (net01417 0) capacitor c=2p
+C493 (net01237 net01428) capacitor c=1p
+C492 (net01415 net0211) capacitor c=1p
+C491 (net01380 net0210) capacitor c=1p
+C490 (net01412 0) capacitor c=2p
+C489 (net01330 0) capacitor c=2p
+C488 (net01365 net0224) capacitor c=1p
+C487 (net01264 net01362) capacitor c=1p
+C486 (net01437 0) capacitor c=2p
+C485 (net01341 0) capacitor c=2p
+C484 (net0238 net0239) capacitor c=1p
+C483 (net01336 net01224) capacitor c=1p
+C482 (net01370 0) capacitor c=2p
+C481 (net0382 net01363) capacitor c=1p
+C480 (net01331 0) capacitor c=2p
+C479 (net01379 net01404) capacitor c=1p
+C478 (net0438 0) capacitor c=2p
+C477 (net0393 net0392) capacitor c=1p
+C476 (net042 net01268) capacitor c=1p
+C475 (net01406 0) capacitor c=2p
+C474 (net01346 net01245) capacitor c=1p
+C473 (net042 net01267) capacitor c=1p
+C472 (net0400 0) capacitor c=2p
+C471 (net01256 0) capacitor c=2p
+C470 (net01396 net01337) capacitor c=1p
+C469 (net042 net01240) capacitor c=1p
+C468 (net0407 0) capacitor c=2p
+C467 (net01225 net01376) capacitor c=1p
+C466 (net042 net0425) capacitor c=1p
+C465 (net01272 0) capacitor c=2p
+C464 (net01292 net01206) capacitor c=1p
+C463 (net0444 0) capacitor c=2p
+C462 (net0381 net01220) capacitor c=1p
+C461 (net01354 0) capacitor c=2p
+C460 (net01217 net01382) capacitor c=1p
+C459 (net0256 0) capacitor c=2p
+C458 (net01276 net01394) capacitor c=1p
+C457 (net0263 0) capacitor c=2p
+C456 (net01216 net01366) capacitor c=1p
+C455 (net01368 net0266) capacitor c=1p
+C454 (net01423 0) capacitor c=2p
+C453 (net01277 net0273) capacitor c=1p
+C452 (net01368 net0274) capacitor c=1p
+C451 (net01204 0) capacitor c=2p
+C450 (net0281 0) capacitor c=2p
+C449 (net01317 net01215) capacitor c=1p
+C448 (net01368 net01371) capacitor c=1p
+C447 (net01438 0) capacitor c=2p
+C446 (net01319 net0294) capacitor c=1p
+C445 (net01368 net0295) capacitor c=1p
+C444 (net01409 0) capacitor c=2p
+C443 (net0301 net0302) capacitor c=1p
+C442 (net0308 0) capacitor c=2p
+C441 (net0309 net01326) capacitor c=1p
+C440 (net0315 0) capacitor c=2p
+C439 (net01435 net01321) capacitor c=1p
+C438 (net01305 0) capacitor c=2p
+C437 (net01390 net01387) capacitor c=1p
+C436 (net0329 0) capacitor c=2p
+C435 (net01306 net0330) capacitor c=1p
+C434 (net01359 net01388) capacitor c=1p
+C433 (net0337 0) capacitor c=2p
+C432 (net01378 net01213) capacitor c=1p
+C431 (net01359 net01214) capacitor c=1p
+C430 (net0344 0) capacitor c=2p
+C429 (net01352 0) capacitor c=2p
+C428 (net0351 net0350) capacitor c=1p
+C427 (net01359 net01320) capacitor c=1p
+C426 (net0358 0) capacitor c=2p
+C425 (net01349 net01295) capacitor c=1p
+C424 (net01359 net01413) capacitor c=1p
+C423 (net01410 0) capacitor c=2p
+C422 (net01334 net01212) capacitor c=1p
+C421 (net01350 0) capacitor c=2p
+C420 (net01338 net01287) capacitor c=1p
+C419 (net037 0) capacitor c=2p
+C418 (net038 net039) capacitor c=1p
+C417 (net044 0) capacitor c=2p
+C416 (net045 net046) capacitor c=1p
+C415 (net051 0) capacitor c=2p
+C414 (net053 net052) capacitor c=1p
+C413 (net030 net036) capacitor c=1p
+C412 (net058 0) capacitor c=2p
+C411 (net059 net060) capacitor c=1p
+C410 (net030 net061) capacitor c=1p
+C409 (net065 0) capacitor c=2p
+C408 (net068 0) capacitor c=2p
+C407 (net072 net071) capacitor c=1p
+C406 (net030 net073) capacitor c=1p
+C405 (net079 0) capacitor c=2p
+C404 (net080 net081) capacitor c=1p
+C403 (net030 net024) capacitor c=1p
+C402 (net086 0) capacitor c=2p
+C401 (net087 net088) capacitor c=1p
+C400 (net093 0) capacitor c=2p
+C399 (net094 net095) capacitor c=1p
+C398 (net0100 0) capacitor c=1p
+C397 (net0101 net0102) capacitor c=1p
+C396 (net0107 0) capacitor c=1p
+C395 (net0108 net0109) capacitor c=1p
+C394 (net0114 0) capacitor c=1p
+C393 (net0115 net0116) capacitor c=1p
+C392 (net012 net018) capacitor c=1p
+C391 (net0121 0) capacitor c=1p
+C390 (net0122 net0123) capacitor c=1p
+C389 (net012 net0124) capacitor c=1p
+C388 (net0128 0) capacitor c=1p
+C387 (net0131 0) capacitor c=1p
+C386 (net0135 net0134) capacitor c=1p
+C385 (net012 net0136) capacitor c=1p
+C384 (net0142 0) capacitor c=1p
+C383 (net0143 net0144) capacitor c=1p
+C382 (net012 net06) capacitor c=1p
+C381 (net0149 0) capacitor c=1p
+C380 (net0150 net0151) capacitor c=1p
+C379 (net0156 0) capacitor c=1p
+C378 (net0157 net0158) capacitor c=1p
+C377 (net0163 0) capacitor c=2p
+C376 (net0164 net0165) capacitor c=1p
+C375 (net0170 0) capacitor c=2p
+C374 (net0171 net0172) capacitor c=1p
+C373 (net0177 0) capacitor c=2p
+C372 (net0179 net0178) capacitor c=1p
+C371 (net029 net035) capacitor c=1p
+C370 (net0184 0) capacitor c=2p
+C369 (net0185 net0186) capacitor c=1p
+C368 (net029 net0187) capacitor c=1p
+C367 (net0191 0) capacitor c=2p
+C366 (net0194 0) capacitor c=2p
+C365 (net0198 net0197) capacitor c=1p
+C364 (net029 net0199) capacitor c=1p
+C363 (net0205 0) capacitor c=2p
+C362 (net0206 net0207) capacitor c=1p
+C361 (net029 net023) capacitor c=1p
+C360 (net0212 0) capacitor c=2p
+C359 (net0213 net0214) capacitor c=1p
+C358 (net0219 0) capacitor c=2p
+C357 (net0220 net0221) capacitor c=1p
+C356 (net0226 0) capacitor c=1p
+C355 (net0227 net0228) capacitor c=1p
+C354 (net0233 0) capacitor c=1p
+C353 (net0234 net0235) capacitor c=1p
+C352 (net0240 0) capacitor c=1p
+C351 (net0241 net0242) capacitor c=1p
+C350 (net011 net017) capacitor c=1p
+C349 (net0247 0) capacitor c=1p
+C348 (net0248 net0249) capacitor c=1p
+C347 (net011 net0250) capacitor c=1p
+C346 (net0254 0) capacitor c=1p
+C345 (net0257 0) capacitor c=1p
+C344 (net0261 net0260) capacitor c=1p
+C343 (net011 net0262) capacitor c=1p
+C342 (net0268 0) capacitor c=1p
+C341 (net0269 net0270) capacitor c=1p
+C340 (net011 net05) capacitor c=1p
+C339 (net0275 0) capacitor c=1p
+C338 (net0276 net0277) capacitor c=1p
+C337 (net0282 0) capacitor c=1p
+C336 (net0283 net0284) capacitor c=1p
+C335 (net0289 0) capacitor c=2p
+C334 (net0290 net0291) capacitor c=1p
+C333 (net0296 0) capacitor c=2p
+C332 (net0297 net0298) capacitor c=1p
+C331 (net0303 0) capacitor c=2p
+C330 (net0305 net0304) capacitor c=1p
+C329 (net028 net034) capacitor c=1p
+C328 (net0310 0) capacitor c=2p
+C327 (net0311 net0312) capacitor c=1p
+C326 (net028 net0313) capacitor c=1p
+C325 (net0317 0) capacitor c=2p
+C324 (net0320 0) capacitor c=2p
+C323 (net0324 net0323) capacitor c=1p
+C322 (net028 net0325) capacitor c=1p
+C321 (net0331 0) capacitor c=2p
+C320 (net0332 net0333) capacitor c=1p
+C319 (net028 net022) capacitor c=1p
+C318 (net0338 0) capacitor c=2p
+C317 (net0339 net0340) capacitor c=1p
+C316 (net0345 0) capacitor c=2p
+C315 (net0346 net0347) capacitor c=1p
+C314 (net0352 0) capacitor c=1p
+C313 (net0353 net0354) capacitor c=1p
+C312 (net0359 0) capacitor c=1p
+C311 (net0360 net0361) capacitor c=1p
+C310 (net0366 0) capacitor c=1p
+C309 (net0367 net0368) capacitor c=1p
+C308 (net010 net016) capacitor c=1p
+C307 (net0373 0) capacitor c=1p
+C306 (net0374 net0375) capacitor c=1p
+C305 (net010 net0376) capacitor c=1p
+C304 (net0380 0) capacitor c=1p
+C303 (net0383 0) capacitor c=1p
+C302 (net0387 net0386) capacitor c=1p
+C301 (net010 net0388) capacitor c=1p
+C300 (net0394 0) capacitor c=1p
+C299 (net0395 net0396) capacitor c=1p
+C298 (net010 net04) capacitor c=1p
+C297 (net0401 0) capacitor c=1p
+C296 (net0402 net0403) capacitor c=1p
+C295 (net0408 0) capacitor c=1p
+C294 (net0409 net0410) capacitor c=1p
+C293 (net027 net033) capacitor c=1p
+C292 (net027 net0415) capacitor c=1p
+C291 (net027 net0416) capacitor c=1p
+C290 (net027 net021) capacitor c=1p
+C289 (net09 net015) capacitor c=1p
+C288 (net09 net0417) capacitor c=1p
+C287 (net09 net0418) capacitor c=1p
+C286 (net09 net03) capacitor c=1p
+C285 (net0419 0) capacitor c=2p
+C284 (net0420 net0421) capacitor c=1p
+C283 (net0426 0) capacitor c=2p
+C282 (net0427 net0428) capacitor c=1p
+C281 (net0433 0) capacitor c=2p
+C280 (net0434 net0435) capacitor c=1p
+C279 (net0440 0) capacitor c=2p
+C278 (net0442 net0441) capacitor c=1p
+C277 (net0446 0) capacitor c=2p
+C276 (net0449 0) capacitor c=2p
+C275 (net0452 net0453) capacitor c=1p
+C274 (net0459 0) capacitor c=2p
+C273 (net0461 net0460) capacitor c=1p
+C272 (net0466 0) capacitor c=2p
+C271 (net0467 net0468) capacitor c=1p
+C270 (net0473 0) capacitor c=2p
+C269 (net0474 net0475) capacitor c=1p
+C268 (net0480 0) capacitor c=1p
+C267 (net0481 net0482) capacitor c=1p
+C266 (net0487 0) capacitor c=1p
+C265 (net0488 net0489) capacitor c=1p
+C264 (net0494 0) capacitor c=1p
+C263 (net0495 net0496) capacitor c=1p
+C262 (net0501 0) capacitor c=1p
+C261 (net0503 net0502) capacitor c=1p
+C260 (net0507 0) capacitor c=1p
+C259 (net0510 0) capacitor c=1p
+C258 (net0513 net0514) capacitor c=1p
+C257 (net0520 0) capacitor c=1p
+C256 (net0522 net0521) capacitor c=1p
+C255 (net0527 0) capacitor c=1p
+C254 (net0528 net0529) capacitor c=1p
+C253 (net0534 0) capacitor c=1p
+C252 (net0535 net0536) capacitor c=1p
+C41 (net546 0) capacitor c=2p
+C40 (net545 net665) capacitor c=1p
+C39 (net670 0) capacitor c=2p
+C38 (net671 net730) capacitor c=1p
+C37 (net733 0) capacitor c=2p
+C36 (net674 net734) capacitor c=1p
+C35 (net27 net33) capacitor c=1p
+C34 (net678 0) capacitor c=2p
+C33 (net680 net679) capacitor c=1p
+C32 (net27 net379) capacitor c=1p
+C31 (net681 0) capacitor c=2p
+C30 (net682 0) capacitor c=2p
+C29 (net743 net684) capacitor c=1p
+C28 (net27 net685) capacitor c=1p
+C27 (net748 0) capacitor c=2p
+C26 (net749 net688) capacitor c=1p
+C25 (net27 net21) capacitor c=1p
+C24 (net690 0) capacitor c=2p
+C23 (net691 net753) capacitor c=1p
+C22 (net757 0) capacitor c=2p
+C21 (net694 net758) capacitor c=1p
+C20 (net359 0) capacitor c=1p
+C19 (net698 net761) capacitor c=1p
+C18 (net764 0) capacitor c=1p
+C17 (net765 net701) capacitor c=1p
+C16 (net703 0) capacitor c=1p
+C15 (net770 net704) capacitor c=1p
+C14 (net9 net15) capacitor c=1p
+C13 (net773 0) capacitor c=1p
+C12 (net774 net707) capacitor c=1p
+C11 (net9 net708) capacitor c=1p
+C10 (net776 0) capacitor c=1p
+C9 (net778 0) capacitor c=1p
+C8 (net713 net780) capacitor c=1p
+C7 (net9 net714) capacitor c=1p
+C6 (net717 0) capacitor c=1p
+C5 (net784 net718) capacitor c=1p
+C4 (net9 net3) capacitor c=1p
+C3 (net721 0) capacitor c=1p
+C2 (net787 net722) capacitor c=1p
+C1 (net725 0) capacitor c=1p
+C0 (net790 net726) capacitor c=1p
+C89 (net417 net418) capacitor c=1p
+C87 (net424 net425) capacitor c=1p
+C116 (net431 net432) capacitor c=1p
+C114 (net25 net31) capacitor c=1p
+C118 (net439 net438) capacitor c=1p
+C117 (net25 net440) capacitor c=1p
+C121 (net452 net453) capacitor c=1p
+C122 (net25 net454) capacitor c=1p
+C124 (net462 net461) capacitor c=1p
+C123 (net25 net19) capacitor c=1p
+C85 (net468 net469) capacitor c=1p
+C91 (net475 net476) capacitor c=1p
+C97 (net482 net483) capacitor c=1p
+C95 (net490 net491) capacitor c=1p
+C103 (net497 net498) capacitor c=1p
+C101 (net7 net13) capacitor c=1p
+C105 (net505 net504) capacitor c=1p
+C104 (net7 net506) capacitor c=1p
+C108 (net516 net517) capacitor c=1p
+C109 (net7 net518) capacitor c=1p
+C111 (net526 net525) capacitor c=1p
+C110 (net7 net1) capacitor c=1p
+C93 (net532 net533) capacitor c=1p
+C99 (net539 net540) capacitor c=1p
+C90 (net416 0) capacitor c=2p
+C88 (net423 0) capacitor c=2p
+C115 (net430 0) capacitor c=2p
+C119 (net437 0) capacitor c=2p
+C126 (net445 0) capacitor c=2p
+C120 (net449 0) capacitor c=2p
+C125 (net460 0) capacitor c=2p
+C86 (net467 0) capacitor c=2p
+C92 (net474 0) capacitor c=2p
+C98 (net481 0) capacitor c=1p
+C96 (net488 0) capacitor c=1p
+C102 (net496 0) capacitor c=1p
+C106 (net503 0) capacitor c=1p
+C113 (net510 0) capacitor c=1p
+C107 (net513 0) capacitor c=1p
+C112 (net524 0) capacitor c=1p
+C94 (net531 0) capacitor c=1p
+C100 (net538 0) capacitor c=1p
+I907 (net01282 net057) MISModel_DiagonalXtalk
+I903 (net01282 net01299) MISModel_DiagonalXtalk
+I880 (net01282 net0112) MISModel_DiagonalXtalk
+I876 (net01282 net0119) MISModel_DiagonalXtalk
+I872 (net0225 net0126) MISModel_DiagonalXtalk
+I871 (net01339 net01290) MISModel_DiagonalXtalk
+I864 (net0225 net0140) MISModel_DiagonalXtalk
+I863 (net01339 net01436) MISModel_DiagonalXtalk
+I818 (net0225 net0224) MISModel_DiagonalXtalk
+I817 (net01339 net01362) MISModel_DiagonalXtalk
+I810 (net0225 net0239) MISModel_DiagonalXtalk
+I809 (net01339 net01224) MISModel_DiagonalXtalk
+I805 (net0413 net01363) MISModel_DiagonalXtalk
+I801 (net0413 net01404) MISModel_DiagonalXtalk
+I778 (net0413 net01206) MISModel_DiagonalXtalk
+I774 (net0413 net01220) MISModel_DiagonalXtalk
+I770 (net01247 net01382) MISModel_DiagonalXtalk
+I766 (net01247 net01394) MISModel_DiagonalXtalk
+I743 (net01247 net0302) MISModel_DiagonalXtalk
+I739 (net01247 net01326) MISModel_DiagonalXtalk
+I735 (net01260 net01321) MISModel_DiagonalXtalk
+I731 (net01260 net01387) MISModel_DiagonalXtalk
+I708 (net01260 net01212) MISModel_DiagonalXtalk
+I704 (net01260 net01287) MISModel_DiagonalXtalk
+I698 (net036 net039) MISModel_DiagonalXtalk
+I694 (net036 net046) MISModel_DiagonalXtalk
+I671 (net024 net088) MISModel_DiagonalXtalk
+I667 (net024 net095) MISModel_DiagonalXtalk
+I663 (net018 net0102) MISModel_DiagonalXtalk
+I659 (net018 net0109) MISModel_DiagonalXtalk
+I636 (net06 net0151) MISModel_DiagonalXtalk
+I632 (net06 net0158) MISModel_DiagonalXtalk
+I628 (net035 net0165) MISModel_DiagonalXtalk
+I624 (net035 net0172) MISModel_DiagonalXtalk
+I601 (net023 net0214) MISModel_DiagonalXtalk
+I597 (net023 net0221) MISModel_DiagonalXtalk
+I593 (net017 net0228) MISModel_DiagonalXtalk
+I589 (net017 net0235) MISModel_DiagonalXtalk
+I566 (net05 net0277) MISModel_DiagonalXtalk
+I562 (net05 net0284) MISModel_DiagonalXtalk
+I558 (net034 net0291) MISModel_DiagonalXtalk
+I554 (net034 net0298) MISModel_DiagonalXtalk
+I531 (net022 net0340) MISModel_DiagonalXtalk
+I527 (net022 net0347) MISModel_DiagonalXtalk
+I523 (net016 net0354) MISModel_DiagonalXtalk
+I519 (net016 net0361) MISModel_DiagonalXtalk
+I496 (net04 net0403) MISModel_DiagonalXtalk
+I492 (net04 net0410) MISModel_DiagonalXtalk
+I488 (net033 net0421) MISModel_DiagonalXtalk
+I484 (net033 net0428) MISModel_DiagonalXtalk
+I461 (net021 net0468) MISModel_DiagonalXtalk
+I457 (net021 net0475) MISModel_DiagonalXtalk
+I453 (net015 net0482) MISModel_DiagonalXtalk
+I449 (net015 net0489) MISModel_DiagonalXtalk
+I426 (net03 net0529) MISModel_DiagonalXtalk
+I422 (net03 net0536) MISModel_DiagonalXtalk
+I67 (net33 net665) MISModel_DiagonalXtalk
+I63 (net33 net730) MISModel_DiagonalXtalk
+I40 (net21 net753) MISModel_DiagonalXtalk
+I36 (net21 net758) MISModel_DiagonalXtalk
+I32 (net15 net761) MISModel_DiagonalXtalk
+I28 (net15 net701) MISModel_DiagonalXtalk
+I5 (net3 net722) MISModel_DiagonalXtalk
+I1 (net3 net726) MISModel_DiagonalXtalk
+I150 (net31 net418) MISModel_DiagonalXtalk
+I146 (net31 net425) MISModel_DiagonalXtalk
+I142 (net19 net469) MISModel_DiagonalXtalk
+I154 (net19 net476) MISModel_DiagonalXtalk
+I166 (net13 net483) MISModel_DiagonalXtalk
+I162 (net13 net491) MISModel_DiagonalXtalk
+I158 (net1 net533) MISModel_DiagonalXtalk
+I170 (net1 net540) MISModel_DiagonalXtalk
+I899 (net01239 net01361) MISModel_AdjacentXtalk
+I895 (net01391 net01252) MISModel_AdjacentXtalk
+I889 (net01383 net01291) MISModel_AdjacentXtalk
+I884 (net0105 net01314) MISModel_AdjacentXtalk
+I856 (net0155 net01440) MISModel_AdjacentXtalk
+I855 (net01262 net01234) MISModel_AdjacentXtalk
+I848 (net01324 net0169) MISModel_AdjacentXtalk
+I847 (net01405 net01418) MISModel_AdjacentXtalk
+I836 (net0193 net01340) MISModel_AdjacentXtalk
+I834 (net092 net01271) MISModel_AdjacentXtalk
+I826 (net0210 net01428) MISModel_AdjacentXtalk
+I825 (net01283 net0211) MISModel_AdjacentXtalk
+I797 (net01268 net0392) MISModel_AdjacentXtalk
+I793 (net01267 net01245) MISModel_AdjacentXtalk
+I787 (net01240 net01337) MISModel_AdjacentXtalk
+I782 (net0425 net01376) MISModel_AdjacentXtalk
+I762 (net0266 net01366) MISModel_AdjacentXtalk
+I758 (net0274 net0273) MISModel_AdjacentXtalk
+I752 (net01371 net01215) MISModel_AdjacentXtalk
+I747 (net0295 net0294) MISModel_AdjacentXtalk
+I727 (net01388 net0330) MISModel_AdjacentXtalk
+I723 (net01214 net01213) MISModel_AdjacentXtalk
+I717 (net01320 net0350) MISModel_AdjacentXtalk
+I712 (net01413 net01295) MISModel_AdjacentXtalk
+I690 (net036 net052) MISModel_AdjacentXtalk
+I686 (net061 net060) MISModel_AdjacentXtalk
+I680 (net073 net071) MISModel_AdjacentXtalk
+I675 (net024 net081) MISModel_AdjacentXtalk
+I656 (net018 net0116) MISModel_AdjacentXtalk
+I651 (net0124 net0123) MISModel_AdjacentXtalk
+I645 (net0136 net0134) MISModel_AdjacentXtalk
+I640 (net06 net0144) MISModel_AdjacentXtalk
+I620 (net035 net0178) MISModel_AdjacentXtalk
+I616 (net0187 net0186) MISModel_AdjacentXtalk
+I610 (net0199 net0197) MISModel_AdjacentXtalk
+I605 (net023 net0207) MISModel_AdjacentXtalk
+I586 (net017 net0242) MISModel_AdjacentXtalk
+I581 (net0250 net0249) MISModel_AdjacentXtalk
+I575 (net0262 net0260) MISModel_AdjacentXtalk
+I570 (net05 net0270) MISModel_AdjacentXtalk
+I550 (net034 net0304) MISModel_AdjacentXtalk
+I546 (net0313 net0312) MISModel_AdjacentXtalk
+I540 (net0325 net0323) MISModel_AdjacentXtalk
+I535 (net022 net0333) MISModel_AdjacentXtalk
+I516 (net016 net0368) MISModel_AdjacentXtalk
+I511 (net0376 net0375) MISModel_AdjacentXtalk
+I505 (net0388 net0386) MISModel_AdjacentXtalk
+I500 (net04 net0396) MISModel_AdjacentXtalk
+I480 (net033 net0435) MISModel_AdjacentXtalk
+I476 (net0415 net0441) MISModel_AdjacentXtalk
+I470 (net0416 net0453) MISModel_AdjacentXtalk
+I465 (net021 net0460) MISModel_AdjacentXtalk
+I446 (net015 net0496) MISModel_AdjacentXtalk
+I441 (net0417 net0502) MISModel_AdjacentXtalk
+I435 (net0418 net0514) MISModel_AdjacentXtalk
+I430 (net03 net0521) MISModel_AdjacentXtalk
+I59 (net33 net734) MISModel_AdjacentXtalk
+I55 (net379 net679) MISModel_AdjacentXtalk
+I49 (net685 net684) MISModel_AdjacentXtalk
+I44 (net21 net688) MISModel_AdjacentXtalk
+I24 (net15 net704) MISModel_AdjacentXtalk
+I20 (net708 net707) MISModel_AdjacentXtalk
+I14 (net714 net780) MISModel_AdjacentXtalk
+I9 (net3 net718) MISModel_AdjacentXtalk
+I194 (net31 net432) MISModel_AdjacentXtalk
+I197 (net440 net438) MISModel_AdjacentXtalk
+I202 (net454 net453) MISModel_AdjacentXtalk
+I205 (net19 net461) MISModel_AdjacentXtalk
+I175 (net13 net498) MISModel_AdjacentXtalk
+I178 (net506 net504) MISModel_AdjacentXtalk
+I183 (net518 net517) MISModel_AdjacentXtalk
+I186 (net1 net525) MISModel_AdjacentXtalk
+simulatorOptions options reltol=1e-3 vabstol=1e-6 iabstol=1e-12 temp=27 \
+    tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 maxnotes=5 maxwarns=5 \
+    digits=5 cols=80 pivrel=1e-3 sensfile="../psf/sens.output" \
+    checklimitdest=psf 
+tran tran stop=10n errpreset=conservative write="spectre.ic" \
+    writefinal="spectre.fc" annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts where=rawfile
+saveOptions options save=allpub

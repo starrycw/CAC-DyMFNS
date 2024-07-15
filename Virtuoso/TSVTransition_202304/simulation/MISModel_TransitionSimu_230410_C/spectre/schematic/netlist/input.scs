@@ -1,0 +1,1197 @@
+// Generated for: spectre
+// Generated on: Apr 15 20:36:38 2023
+// Design library name: TransitionSimu_MISModel
+// Design cell name: MISModel_TransitionSimu_230410_C
+// Design view name: schematic
+simulator lang=spectre
+global 0
+include "/eda/home/wc/Projects/Virtuoso/TSV_Transition_Simu/TSV_Transition_202304/TSMC-65nm(OA)/PDK_files/tsmcN65/../models/spectre/toplevel.scs" section=tt_lib
+
+// Library name: TransitionSimu_MISModel
+// Cell name: MISModel_DiagonalXtalk
+// View name: schematic
+subckt MISModel_DiagonalXtalk port_a port_b
+    R0 (port_a port_b) resistor r=141
+    C0 (port_a port_b) capacitor c=3f
+ends MISModel_DiagonalXtalk
+// End of subcircuit definition.
+
+// Library name: TransitionSimu_MISModel
+// Cell name: MISModel_Aggressor
+// View name: schematic
+subckt MISModel_Aggressor tsv_coupling tsv_in tsv_out
+    R1 (net09 tsv_out) resistor r=1u
+    R0 (net07 tsv_coupling) resistor r=1u
+    C0 (tsv_coupling 0) capacitor c=2.1f
+    L1 (tsv_coupling net09) inductor l=5p
+    L0 (tsv_in net07) inductor l=5p
+ends MISModel_Aggressor
+// End of subcircuit definition.
+
+// Library name: TransitionSimu_MISModel
+// Cell name: MISModel_AdjacentXtalk
+// View name: schematic
+subckt MISModel_AdjacentXtalk port_a port_b
+    C0 (port_a port_b) capacitor c=12.0f
+    R0 (port_a port_b) resistor r=100
+ends MISModel_AdjacentXtalk
+// End of subcircuit definition.
+
+// Library name: tsmcN65
+// Cell name: inv
+// View name: schematic
+subckt inv G Gb IN OUT P Pb
+parameters pl=60n pw=200n pf=1 psd=200n psa=175n psb=175n nl=60n nw=200n \
+        nf=1 nsd=200n nsa=175n nsb=175n
+    PM1 (OUT IN P Pb) pch l=pl w=pw*pf m=1 nf=pf sd=psd \
+        ad=((pf-int(pf/2)*2)*(1.75e-07+((pf-1)*2e-07)/2+0)+(pf+1-int((pf+1)/2)*2)*((pf/2)*2e-07))*pw \
+        as=((pf-int(pf/2)*2)*(1.75e-07+((pf-1)*2e-07)/2+0)+(pf+1-int((pf+1)/2)*2)*(1.75e-07+1.75e-07+(pf/2-1)*2e-07+0+0))*pw \
+        pd=(pf-int(pf/2)*2)*((1.75e-07+((pf-1)*2e-07)/2+0)*2+(pf+1)*pw)+(pf+1-int((pf+1)/2)*2)*(((pf/2)*2e-07)*2+pf*pw) \
+        ps=(pf-int(pf/2)*2)*((1.75e-07+((pf-1)*2e-07)/2+0)*2+(pf+1)*pw)+(pf+1-int((pf+1)/2)*2)*((1.75e-07+1.75e-07+(pf/2-1)*2e-07+0+0)*2+(pf+2)*pw) \
+        nrd=(pf-int(pf/2)*2)*(1e-07*1e-07/(1e-07+1e-07*(pf-1))/pw)+(pf+1-int((pf+1)/2)*2)*(1e-07/pf/pw) \
+        nrs=(pf-int(pf/2)*2)*(1e-07*1e-07/(1e-07+1e-07*(pf-1))/pw)+(pf+1-int((pf+1)/2)*2)*(1e-07*1e-07*1e-07/(1e-07*1e-07*(pf-2)+1e-07*(1e-07+1e-07))/pw) \
+        sa=psa sb=psb sca=0 scb=0 scc=0
+    NM1 (OUT IN G Gb) nch l=nl w=nw*nf m=1 nf=nf sd=nsd \
+        ad=((nf-int(nf/2)*2)*(1.75e-07+((nf-1)*2e-07)/2+0)+(nf+1-int((nf+1)/2)*2)*((nf/2)*2e-07))*nw \
+        as=((nf-int(nf/2)*2)*(1.75e-07+((nf-1)*2e-07)/2+0)+(nf+1-int((nf+1)/2)*2)*(1.75e-07+1.75e-07+(nf/2-1)*2e-07+0+0))*nw \
+        pd=(nf-int(nf/2)*2)*((1.75e-07+((nf-1)*2e-07)/2+0)*2+(nf+1)*nw)+(nf+1-int((nf+1)/2)*2)*(((nf/2)*2e-07)*2+nf*nw) \
+        ps=(nf-int(nf/2)*2)*((1.75e-07+((nf-1)*2e-07)/2+0)*2+(nf+1)*nw)+(nf+1-int((nf+1)/2)*2)*((1.75e-07+1.75e-07+(nf/2-1)*2e-07+0+0)*2+(nf+2)*nw) \
+        nrd=(nf-int(nf/2)*2)*(1e-07*1e-07/(1e-07+1e-07*(nf-1))/nw)+(nf+1-int((nf+1)/2)*2)*(1e-07/nf/nw) \
+        nrs=(nf-int(nf/2)*2)*(1e-07*1e-07/(1e-07+1e-07*(nf-1))/nw)+(nf+1-int((nf+1)/2)*2)*(1e-07*1e-07*1e-07/(1e-07*1e-07*(nf-2)+1e-07*(1e-07+1e-07))/nw) \
+        sa=nsa sb=nsb sca=0 scb=0 scc=0
+ends inv
+// End of subcircuit definition.
+
+// Library name: TransitionSimu_MISModel
+// Cell name: MISModel_TransitionSimu_230410_C
+// View name: schematic
+V222 (net01261 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V221 (net0275 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V218 (net01284 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V217 (net01234 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V214 (net01221 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V213 (net01198 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V210 (net01181 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V209 (net01159 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V206 (net0411 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V205 (net0340 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V202 (net0352 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V201 (net0353 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V198 (net0370 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V197 (net0371 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V194 (net0386 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V193 (net0387 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V190 (net0402 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V189 (net0403 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V187 (net0429 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V185 (net0443 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V183 (net0469 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V181 (net0468 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V179 (net0474 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V177 (net0425 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V175 (net0485 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V173 (net0472 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V171 (net0464 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V169 (net01231 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V167 (net0517 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V165 (net0543 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V163 (net0542 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V161 (net0548 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V159 (net01272 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V157 (net0559 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V155 (net0546 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V153 (net0538 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V151 (net0577 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V149 (net0591 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V147 (net01288 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V145 (net0616 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V143 (net01241 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V141 (net0573 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V139 (net01263 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V137 (net0620 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V135 (net0612 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V133 (net01275 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V131 (net0664 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V129 (net0699 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V127 (net0696 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V125 (net0705 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V123 (net01243 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V121 (net0708 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V119 (net0703 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V117 (net0690 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V115 (net0607 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V113 (net0163 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V111 (net0618 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V109 (net0610 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V107 (net0633 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V105 (net0646 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V103 (net0637 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V101 (net0647 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V99 (net0184 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V97 (net0127 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V95 (net0141 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V233 (net37 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V232 (net51 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V231 (net67 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V230 (net85 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V229 (net97 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V228 (net109 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V227 (net125 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V226 (net139 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V225 (net151 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V79 (net0201 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V77 (net0215 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V91 (net0166 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V75 (net0250 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V89 (net0172 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V87 (net0123 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V73 (net0247 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V85 (net0183 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V71 (net0256 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V83 (net0170 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V69 (net0484 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V81 (net0162 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V67 (net0258 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V53 (net0298 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V51 (net0305 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V47 (net0322 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V45 (net0330 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V27 (net063 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V22 (net090 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V20 (net083 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V14 (net0108 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V49 (net0314 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V26 (net065 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V23 (net088 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V21 (net092 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V15 (net0100 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V13 (net0116 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=10n \
+        rise=50p fall=50p
+V65 (net0254 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V63 (net0241 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V61 (net0264 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V59 (net0272 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V57 (net0281 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V55 (net0292 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+V93 (net0167 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=10n \
+        rise=50p fall=50p
+I770 (net01283 net01277) MISModel_DiagonalXtalk
+I769 (net01257 net01195) MISModel_DiagonalXtalk
+I756 (net01283 net01176) MISModel_DiagonalXtalk
+I755 (net01257 net01210) MISModel_DiagonalXtalk
+I674 (net01283 net0382) MISModel_DiagonalXtalk
+I673 (net01257 net0383) MISModel_DiagonalXtalk
+I660 (net01283 net0398) MISModel_DiagonalXtalk
+I659 (net01257 net0399) MISModel_DiagonalXtalk
+I648 (net01197 net01220) MISModel_DiagonalXtalk
+I641 (net01197 net0437) MISModel_DiagonalXtalk
+I600 (net01197 net0450) MISModel_DiagonalXtalk
+I593 (net01197 net0479) MISModel_DiagonalXtalk
+I586 (net01212 net0558) MISModel_DiagonalXtalk
+I579 (net01212 net0511) MISModel_DiagonalXtalk
+I538 (net01212 net0524) MISModel_DiagonalXtalk
+I531 (net01212 net0553) MISModel_DiagonalXtalk
+I524 (net01274 net01232) MISModel_DiagonalXtalk
+I517 (net01274 net0585) MISModel_DiagonalXtalk
+I476 (net01274 net0598) MISModel_DiagonalXtalk
+I469 (net01274 net0627) MISModel_DiagonalXtalk
+I462 (net01173 net0706) MISModel_DiagonalXtalk
+I455 (net01173 net0658) MISModel_DiagonalXtalk
+I414 (net01173 net0671) MISModel_DiagonalXtalk
+I407 (net01173 net0680) MISModel_DiagonalXtalk
+I400 (net0644 net0204) MISModel_DiagonalXtalk
+I393 (net0644 net0596) MISModel_DiagonalXtalk
+I352 (net0644 net0631) MISModel_DiagonalXtalk
+I345 (net0644 net0199) MISModel_DiagonalXtalk
+I338 (net061 net0182) MISModel_DiagonalXtalk
+I331 (net061 net0135) MISModel_DiagonalXtalk
+I290 (net061 net0148) MISModel_DiagonalXtalk
+I907 (net14 net33) MISModel_DiagonalXtalk
+I903 (net14 net47) MISModel_DiagonalXtalk
+I880 (net14 net135) MISModel_DiagonalXtalk
+I876 (net14 net149) MISModel_DiagonalXtalk
+I269 (net0491 net0209) MISModel_DiagonalXtalk
+I283 (net061 net0177) MISModel_DiagonalXtalk
+I276 (net0491 net0257) MISModel_DiagonalXtalk
+I90 (net025 net048) MISModel_DiagonalXtalk
+I45 (net025 net0106) MISModel_DiagonalXtalk
+I166 (net0500 net0320) MISModel_DiagonalXtalk
+I159 (net0500 net0328) MISModel_DiagonalXtalk
+I86 (net025 net053) MISModel_DiagonalXtalk
+I41 (net025 net0114) MISModel_DiagonalXtalk
+I228 (net0491 net0222) MISModel_DiagonalXtalk
+I221 (net0491 net0231) MISModel_DiagonalXtalk
+I214 (net0500 net0262) MISModel_DiagonalXtalk
+I207 (net0500 net0270) MISModel_DiagonalXtalk
+C263 (net0267 0) capacitor c=1p
+C262 (net01185 0) capacitor c=1p
+C261 (net01178 net01277) capacitor c=1p
+C260 (net01282 net01195) capacitor c=1p
+C259 (net0283 0) capacitor c=1p
+C258 (net0284 0) capacitor c=1p
+C257 (net01219 net01176) capacitor c=1p
+C256 (net01244 net01210) capacitor c=1p
+C255 (net0299 0) capacitor c=1p
+C254 (net01270 0) capacitor c=1p
+C253 (net01242 net01279) capacitor c=1p
+C252 (net0303 net01276) capacitor c=1p
+C251 (net084 net01217) capacitor c=1p
+C250 (net085 net0306) capacitor c=1p
+C249 (net0317 0) capacitor c=1p
+C248 (net01246 0) capacitor c=1p
+C247 (net01289 net01155) capacitor c=1p
+C246 (net01214 net01179) capacitor c=1p
+C245 (net084 net0323) capacitor c=1p
+C244 (net085 net0324) capacitor c=1p
+C243 (net0409 0) capacitor c=1p
+C242 (net01265 0) capacitor c=1p
+C241 (net0337 0) capacitor c=1p
+C240 (net0338 0) capacitor c=1p
+C239 (net0344 net0343) capacitor c=1p
+C238 (net0345 net0346) capacitor c=1p
+C237 (net084 net0347) capacitor c=1p
+C236 (net085 net0348) capacitor c=1p
+C235 (net0360 0) capacitor c=1p
+C234 (net0361 0) capacitor c=1p
+C233 (net084 net01283) capacitor c=1p
+C232 (net085 net01257) capacitor c=1p
+C231 (net0362 net0363) capacitor c=1p
+C230 (net0365 net0364) capacitor c=1p
+C229 (net084 net0366) capacitor c=1p
+C228 (net085 net0367) capacitor c=1p
+C227 (net0378 0) capacitor c=1p
+C226 (net0379 0) capacitor c=1p
+C225 (net0380 net0382) capacitor c=1p
+C224 (net0381 net0383) capacitor c=1p
+C223 (net0394 0) capacitor c=1p
+C222 (net0395 0) capacitor c=1p
+C221 (net0396 net0398) capacitor c=1p
+C220 (net0397 net0399) capacitor c=1p
+C219 (net0420 0) capacitor c=1p
+C218 (net0423 net01220) capacitor c=1p
+C217 (net0433 0) capacitor c=1p
+C216 (net0434 net0437) capacitor c=1p
+C215 (net0451 0) capacitor c=1p
+C214 (net0452 net0481) capacitor c=1p
+C213 (net01266 net0480) capacitor c=1p
+C212 (net0459 0) capacitor c=1p
+C211 (net0460 net0461) capacitor c=1p
+C210 (net01266 net0462) capacitor c=1p
+C209 (net0467 0) capacitor c=1p
+C208 (net0413 0) capacitor c=1p
+C207 (net0416 net0415) capacitor c=1p
+C206 (net01266 net0417) capacitor c=1p
+C205 (net0428 0) capacitor c=1p
+C204 (net01266 net01197) capacitor c=1p
+C203 (net0436 net0435) capacitor c=1p
+C202 (net01266 net0438) capacitor c=1p
+C201 (net01205 0) capacitor c=1p
+C200 (net0447 net0450) capacitor c=1p
+C199 (net0454 0) capacitor c=1p
+C198 (net0455 net0479) capacitor c=1p
+C197 (net01162 0) capacitor c=1p
+C196 (net01253 net0558) capacitor c=1p
+C195 (net0507 0) capacitor c=1p
+C194 (net0508 net0511) capacitor c=1p
+C193 (net0525 0) capacitor c=1p
+C192 (net0526 net0555) capacitor c=1p
+C191 (net01184 net0554) capacitor c=1p
+C190 (net0533 0) capacitor c=1p
+C189 (net0534 net0535) capacitor c=1p
+C188 (net01184 net0536) capacitor c=1p
+C187 (net0541 0) capacitor c=1p
+C186 (net0487 0) capacitor c=1p
+C185 (net01172 net01165) capacitor c=1p
+C184 (net01184 net01166) capacitor c=1p
+C183 (net01255 0) capacitor c=1p
+C182 (net01184 net01212) capacitor c=1p
+C181 (net0510 net0509) capacitor c=1p
+C180 (net01184 net0512) capacitor c=1p
+C179 (net0520 0) capacitor c=1p
+C178 (net0521 net0524) capacitor c=1p
+C177 (net0528 0) capacitor c=1p
+C176 (net0529 net0553) capacitor c=1p
+C175 (net0568 0) capacitor c=1p
+C174 (net0571 net01232) capacitor c=1p
+C173 (net0581 0) capacitor c=1p
+C172 (net0582 net0585) capacitor c=1p
+C171 (net0599 0) capacitor c=1p
+C170 (net01206 net01267) capacitor c=1p
+C169 (net081 net0628) capacitor c=1p
+C168 (net01167 0) capacitor c=1p
+C167 (net0608 net01160) capacitor c=1p
+C166 (net081 net01200) capacitor c=1p
+C165 (net0615 0) capacitor c=1p
+C164 (net0561 0) capacitor c=1p
+C163 (net0564 net0563) capacitor c=1p
+C162 (net081 net0565) capacitor c=1p
+C161 (net0576 0) capacitor c=1p
+C160 (net081 net01274) capacitor c=1p
+C159 (net0584 net0583) capacitor c=1p
+C158 (net081 net01268) capacitor c=1p
+C157 (net0594 0) capacitor c=1p
+C156 (net0595 net0598) capacitor c=1p
+C155 (net01164 0) capacitor c=1p
+C154 (net0603 net0627) capacitor c=1p
+C153 (net0641 0) capacitor c=1p
+C152 (net01192 net0706) capacitor c=1p
+C151 (net0654 0) capacitor c=1p
+C150 (net01215 net0658) capacitor c=1p
+C149 (net0672 0) capacitor c=1p
+C148 (net0674 net0675) capacitor c=1p
+C147 (net01254 net0676) capacitor c=1p
+C146 (net0685 0) capacitor c=1p
+C145 (net0686 net0687) capacitor c=1p
+C144 (net01254 net0688) capacitor c=1p
+C143 (net0694 0) capacitor c=1p
+C142 (net01216 0) capacitor c=1p
+C141 (net01238 net0635) capacitor c=1p
+C140 (net01254 net0638) capacitor c=1p
+C139 (net0649 0) capacitor c=1p
+C138 (net01254 net01173) capacitor c=1p
+C137 (net01236 net01286) capacitor c=1p
+C136 (net01254 net01193) capacitor c=1p
+C135 (net0667 0) capacitor c=1p
+C134 (net0668 net0671) capacitor c=1p
+C133 (net0678 0) capacitor c=1p
+C132 (net0679 net0680) capacitor c=1p
+C131 (net0140 0) capacitor c=2p
+C130 (net0143 net0204) capacitor c=1p
+C129 (net0666 0) capacitor c=2p
+C128 (net0154 net0596) capacitor c=1p
+C127 (net0171 0) capacitor c=2p
+C126 (net0653 net0613) capacitor c=1p
+C125 (net0634 net0648) capacitor c=1p
+C124 (net0586 0) capacitor c=2p
+C123 (net0655 net0622) capacitor c=1p
+C122 (net0634 net0656) capacitor c=1p
+C121 (net0652 0) capacitor c=2p
+C120 (net0609 0) capacitor c=2p
+C119 (net0629 net0662) capacitor c=1p
+C118 (net0634 net0663) capacitor c=1p
+C117 (net0657 0) capacitor c=2p
+C116 (net0634 net0644) capacitor c=1p
+C115 (net0643 net0155) capacitor c=1p
+C114 (net0634 net0630) capacitor c=1p
+C113 (net0665 0) capacitor c=2p
+C112 (net0578 net0631) capacitor c=1p
+C111 (net0174 0) capacitor c=2p
+C110 (net0175 net0199) capacitor c=1p
+C109 (net0118 0) capacitor c=2p
+C108 (net0121 net0182) capacitor c=1p
+C107 (net0131 0) capacitor c=2p
+C106 (net0132 net0135) capacitor c=1p
+C105 (net0149 0) capacitor c=2p
+C104 (net0150 net0179) capacitor c=1p
+C103 (net016 net0178) capacitor c=1p
+C546 (net5 net14) capacitor c=1p
+C545 (net29 0) capacitor c=2p
+C544 (net32 net33) capacitor c=1p
+C543 (net43 0) capacitor c=2p
+C542 (net46 net47) capacitor c=1p
+C541 (net57 0) capacitor c=2p
+C540 (net61 net62) capacitor c=1p
+C97 (net0490 net0489) capacitor c=1p
+C538 (net5 net63) capacitor c=1p
+C537 (net73 0) capacitor c=2p
+C536 (net78 net77) capacitor c=1p
+C534 (net5 net79) capacitor c=1p
+C533 (net87 0) capacitor c=2p
+C532 (net94 0) capacitor c=2p
+C531 (net101 net102) capacitor c=1p
+C529 (net5 net103) capacitor c=1p
+C528 (net115 0) capacitor c=2p
+C527 (net120 net119) capacitor c=1p
+C525 (net5 net121) capacitor c=1p
+C524 (net131 0) capacitor c=2p
+C523 (net134 net135) capacitor c=1p
+C522 (net145 0) capacitor c=2p
+C521 (net148 net149) capacitor c=1p
+C102 (net0157 0) capacitor c=2p
+C101 (net0158 net0159) capacitor c=1p
+C100 (net016 net0160) capacitor c=1p
+C85 (net0205 0) capacitor c=2p
+C84 (net0206 net0209) capacitor c=1p
+C99 (net0165 0) capacitor c=2p
+C83 (net0223 0) capacitor c=2p
+C98 (net0111 0) capacitor c=2p
+C82 (net0225 net0226) capacitor c=1p
+C81 (net0503 net0227) capacitor c=1p
+C96 (net016 net0486) capacitor c=1p
+C80 (net0236 0) capacitor c=2p
+C79 (net0237 net0238) capacitor c=1p
+C78 (net0503 net0239) capacitor c=1p
+C95 (net0126 0) capacitor c=2p
+C94 (net016 net061) capacitor c=1p
+C77 (net0245 0) capacitor c=2p
+C93 (net0134 net0133) capacitor c=1p
+C92 (net016 net0136) capacitor c=1p
+C76 (net0185 0) capacitor c=2p
+C75 (net0188 net0187) capacitor c=1p
+C91 (net0144 0) capacitor c=2p
+C74 (net0503 net0189) capacitor c=1p
+C90 (net0145 net0148) capacitor c=1p
+C89 (net0152 0) capacitor c=2p
+C88 (net0153 net0177) capacitor c=1p
+C73 (net0200 0) capacitor c=2p
+C72 (net0503 net0491) capacitor c=1p
+C71 (net0208 net0207) capacitor c=1p
+C70 (net0503 net0210) capacitor c=1p
+C87 (net0192 0) capacitor c=2p
+C86 (net0482 net0257) capacitor c=1p
+C52 (net018 net0302) capacitor c=1p
+C48 (net018 net0312) capacitor c=1p
+C46 (net0319 net0320) capacitor c=1p
+C45 (net0326 0) capacitor c=2p
+C44 (net0327 net0328) capacitor c=1p
+C19 (net051 0) capacitor c=2p
+C18 (net052 net053) capacitor c=1p
+C15 (net07 net059) capacitor c=1p
+C14 (net068 0) capacitor c=2p
+C12 (net07 net071) capacitor c=1p
+C9 (net078 net079) capacitor c=1p
+C7 (net095 0) capacitor c=2p
+C4 (net07 net098) capacitor c=1p
+C0 (net0113 net0114) capacitor c=1p
+C53 (net0300 net0301) capacitor c=1p
+C50 (net018 net0500) capacitor c=1p
+C51 (net0309 0) capacitor c=2p
+C49 (net0311 net0310) capacitor c=1p
+C47 (net0318 0) capacitor c=2p
+C21 (net046 0) capacitor c=2p
+C20 (net047 net048) capacitor c=1p
+C17 (net056 0) capacitor c=2p
+C16 (net057 net058) capacitor c=1p
+C13 (net070 net069) capacitor c=1p
+C11 (net073 0) capacitor c=2p
+C10 (net077 0) capacitor c=2p
+C8 (net07 net080) capacitor c=1p
+C6 (net07 net025) capacitor c=1p
+C5 (net097 net096) capacitor c=1p
+C3 (net0104 0) capacitor c=2p
+C2 (net0105 net0106) capacitor c=1p
+C1 (net0112 0) capacitor c=2p
+C68 (net0219 net0222) capacitor c=1p
+C67 (net0229 0) capacitor c=2p
+C66 (net0230 net0231) capacitor c=1p
+C65 (net0260 0) capacitor c=2p
+C64 (net0261 net0262) capacitor c=1p
+C63 (net0268 0) capacitor c=2p
+C62 (net0269 net0270) capacitor c=1p
+C61 (net0276 0) capacitor c=2p
+C60 (net0277 net0278) capacitor c=1p
+C59 (net018 net0279) capacitor c=1p
+C58 (net0285 0) capacitor c=2p
+C57 (net0287 net0286) capacitor c=1p
+C56 (net018 net0288) capacitor c=1p
+C55 (net0291 0) capacitor c=2p
+C54 (net0296 0) capacitor c=2p
+C69 (net0218 0) capacitor c=2p
+I772 (net01178 net0274 net0267) MISModel_Aggressor
+I771 (net01282 net0273 net01185) MISModel_Aggressor
+I758 (net01219 net0290 net0283) MISModel_Aggressor
+I757 (net01244 net01153 net0284) MISModel_Aggressor
+I744 (net01242 net0308 net0299) MISModel_Aggressor
+I743 (net0303 net0307 net01270) MISModel_Aggressor
+I730 (net01289 net01259 net0317) MISModel_Aggressor
+I729 (net01214 net0325 net01246) MISModel_Aggressor
+I716 (net084 net0410 net0409) MISModel_Aggressor
+I715 (net085 net0339 net01265) MISModel_Aggressor
+I708 (net0344 net0350 net0337) MISModel_Aggressor
+I707 (net0345 net0351 net0338) MISModel_Aggressor
+I690 (net0362 net0368 net0360) MISModel_Aggressor
+I689 (net0365 net0369 net0361) MISModel_Aggressor
+I676 (net0380 net0384 net0378) MISModel_Aggressor
+I675 (net0381 net0385 net0379) MISModel_Aggressor
+I662 (net0396 net0400 net0394) MISModel_Aggressor
+I661 (net0397 net0401 net0395) MISModel_Aggressor
+I649 (net0423 net0424 net0420) MISModel_Aggressor
+I642 (net0434 net0440 net0433) MISModel_Aggressor
+I635 (net0452 net0453 net0451) MISModel_Aggressor
+I628 (net0460 net0463 net0459) MISModel_Aggressor
+I621 (net01266 net0483 net0467) MISModel_Aggressor
+I617 (net0416 net0422 net0413) MISModel_Aggressor
+I608 (net0436 net0439 net0428) MISModel_Aggressor
+I601 (net0447 net01209 net01205) MISModel_Aggressor
+I594 (net0455 net0458 net0454) MISModel_Aggressor
+I587 (net01253 net01287 net01162) MISModel_Aggressor
+I580 (net0508 net0514 net0507) MISModel_Aggressor
+I573 (net0526 net0527 net0525) MISModel_Aggressor
+I566 (net0534 net0537 net0533) MISModel_Aggressor
+I559 (net01184 net0557 net0541) MISModel_Aggressor
+I555 (net01172 net01187 net0487) MISModel_Aggressor
+I546 (net0510 net0513 net01255) MISModel_Aggressor
+I539 (net0521 net0556 net0520) MISModel_Aggressor
+I532 (net0529 net0532 net0528) MISModel_Aggressor
+I525 (net0571 net0572 net0568) MISModel_Aggressor
+I518 (net0582 net0588 net0581) MISModel_Aggressor
+I511 (net01206 net01230 net0599) MISModel_Aggressor
+I504 (net0608 net0611 net01167) MISModel_Aggressor
+I497 (net081 net01247 net0615) MISModel_Aggressor
+I493 (net0564 net0570 net0561) MISModel_Aggressor
+I484 (net0584 net0587 net0576) MISModel_Aggressor
+I477 (net0595 net01158 net0594) MISModel_Aggressor
+I470 (net0603 net0606 net01164) MISModel_Aggressor
+I463 (net01192 net0645 net0641) MISModel_Aggressor
+I456 (net01215 net01256 net0654) MISModel_Aggressor
+I449 (net0674 net0677 net0672) MISModel_Aggressor
+I442 (net0686 net0689 net0685) MISModel_Aggressor
+I435 (net01254 net0695 net0694) MISModel_Aggressor
+I431 (net01238 net01204 net01216) MISModel_Aggressor
+I422 (net01236 net0660 net0649) MISModel_Aggressor
+I415 (net0668 net0673 net0667) MISModel_Aggressor
+I408 (net0679 net0684 net0678) MISModel_Aggressor
+I401 (net0143 net0659 net0140) MISModel_Aggressor
+I394 (net0154 net0602 net0666) MISModel_Aggressor
+I387 (net0653 net0173 net0171) MISModel_Aggressor
+I380 (net0655 net0604 net0586) MISModel_Aggressor
+I373 (net0634 net0203 net0652) MISModel_Aggressor
+I369 (net0629 net0142 net0609) MISModel_Aggressor
+I360 (net0643 net0661 net0657) MISModel_Aggressor
+I353 (net0578 net0202 net0665) MISModel_Aggressor
+I346 (net0175 net0617 net0174) MISModel_Aggressor
+I339 (net0121 net0122 net0118) MISModel_Aggressor
+I332 (net0132 net0138 net0131) MISModel_Aggressor
+I325 (net0150 net0151 net0149) MISModel_Aggressor
+I908 (net32 net35 net29) MISModel_Aggressor
+I904 (net46 net49 net43) MISModel_Aggressor
+I900 (net61 net65 net57) MISModel_Aggressor
+I896 (net78 net81 net73) MISModel_Aggressor
+I892 (net5 net95 net87) MISModel_Aggressor
+I890 (net101 net107 net94) MISModel_Aggressor
+I885 (net120 net123 net115) MISModel_Aggressor
+I881 (net134 net137 net131) MISModel_Aggressor
+I877 (net148 net153 net145) MISModel_Aggressor
+I318 (net0158 net0161 net0157) MISModel_Aggressor
+I270 (net0206 net0212 net0205) MISModel_Aggressor
+I311 (net016 net0181 net0165) MISModel_Aggressor
+I307 (net0490 net0120 net0111) MISModel_Aggressor
+I263 (net0225 net0228 net0223) MISModel_Aggressor
+I256 (net0237 net0240 net0236) MISModel_Aggressor
+I298 (net0134 net0137 net0126) MISModel_Aggressor
+I249 (net0503 net0246 net0245) MISModel_Aggressor
+I245 (net0188 net0194 net0185) MISModel_Aggressor
+I291 (net0145 net0180 net0144) MISModel_Aggressor
+I284 (net0153 net0156 net0152) MISModel_Aggressor
+I236 (net0208 net0211 net0200) MISModel_Aggressor
+I277 (net0482 net0502 net0192) MISModel_Aggressor
+I174 (net0311 net0313 net0309) MISModel_Aggressor
+I167 (net0319 net0321 net0318) MISModel_Aggressor
+I91 (net047 net062 net046) MISModel_Aggressor
+I50 (net097 net099 net095) MISModel_Aggressor
+I46 (net0105 net0107 net0104) MISModel_Aggressor
+I160 (net0327 net0329 net0326) MISModel_Aggressor
+I87 (net052 net064 net051) MISModel_Aggressor
+I77 (net057 net087 net056) MISModel_Aggressor
+I73 (net070 net089 net068) MISModel_Aggressor
+I69 (net07 net093 net073) MISModel_Aggressor
+I67 (net078 net082 net077) MISModel_Aggressor
+I42 (net0113 net0115 net0112) MISModel_Aggressor
+I229 (net0219 net0224 net0218) MISModel_Aggressor
+I222 (net0230 net0235 net0229) MISModel_Aggressor
+I215 (net0261 net0263 net0260) MISModel_Aggressor
+I208 (net0269 net0271 net0268) MISModel_Aggressor
+I201 (net0277 net0280 net0276) MISModel_Aggressor
+I194 (net0287 net0289 net0285) MISModel_Aggressor
+I187 (net018 net0297 net0291) MISModel_Aggressor
+I183 (net0300 net0304 net0296) MISModel_Aggressor
+I742 (net01217 net01279) MISModel_AdjacentXtalk
+I741 (net0306 net01276) MISModel_AdjacentXtalk
+I728 (net0323 net01155) MISModel_AdjacentXtalk
+I727 (net0324 net01179) MISModel_AdjacentXtalk
+I706 (net0347 net0343) MISModel_AdjacentXtalk
+I705 (net0348 net0346) MISModel_AdjacentXtalk
+I688 (net0366 net0363) MISModel_AdjacentXtalk
+I687 (net0367 net0364) MISModel_AdjacentXtalk
+I634 (net0480 net0481) MISModel_AdjacentXtalk
+I627 (net0462 net0461) MISModel_AdjacentXtalk
+I616 (net0417 net0415) MISModel_AdjacentXtalk
+I607 (net0438 net0435) MISModel_AdjacentXtalk
+I572 (net0554 net0555) MISModel_AdjacentXtalk
+I565 (net0536 net0535) MISModel_AdjacentXtalk
+I554 (net01166 net01165) MISModel_AdjacentXtalk
+I545 (net0512 net0509) MISModel_AdjacentXtalk
+I510 (net0628 net01267) MISModel_AdjacentXtalk
+I503 (net01200 net01160) MISModel_AdjacentXtalk
+I492 (net0565 net0563) MISModel_AdjacentXtalk
+I483 (net01268 net0583) MISModel_AdjacentXtalk
+I448 (net0676 net0675) MISModel_AdjacentXtalk
+I441 (net0688 net0687) MISModel_AdjacentXtalk
+I430 (net0638 net0635) MISModel_AdjacentXtalk
+I421 (net01193 net01286) MISModel_AdjacentXtalk
+I386 (net0648 net0613) MISModel_AdjacentXtalk
+I379 (net0656 net0622) MISModel_AdjacentXtalk
+I368 (net0663 net0662) MISModel_AdjacentXtalk
+I359 (net0630 net0155) MISModel_AdjacentXtalk
+I324 (net0178 net0179) MISModel_AdjacentXtalk
+I244 (net0189 net0187) MISModel_AdjacentXtalk
+I899 (net63 net62) MISModel_AdjacentXtalk
+I895 (net79 net77) MISModel_AdjacentXtalk
+I889 (net103 net102) MISModel_AdjacentXtalk
+I884 (net121 net119) MISModel_AdjacentXtalk
+I317 (net0160 net0159) MISModel_AdjacentXtalk
+I262 (net0227 net0226) MISModel_AdjacentXtalk
+I306 (net0486 net0489) MISModel_AdjacentXtalk
+I255 (net0239 net0238) MISModel_AdjacentXtalk
+I297 (net0136 net0133) MISModel_AdjacentXtalk
+I235 (net0210 net0207) MISModel_AdjacentXtalk
+I66 (net080 net079) MISModel_AdjacentXtalk
+I182 (net0302 net0301) MISModel_AdjacentXtalk
+I173 (net0312 net0310) MISModel_AdjacentXtalk
+I76 (net059 net058) MISModel_AdjacentXtalk
+I72 (net071 net069) MISModel_AdjacentXtalk
+I49 (net098 net096) MISModel_AdjacentXtalk
+I200 (net0279 net0278) MISModel_AdjacentXtalk
+I193 (net0288 net0286) MISModel_AdjacentXtalk
+I768 (0 0 net0275 net0273 net01258 net01258) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I767 (0 0 net01261 net0274 net0119 net0119) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I754 (0 0 net01284 net0290 net01208 net01208) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I753 (0 0 net01234 net01153 net01273 net01273) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I740 (0 0 net01198 net0307 net01226 net01226) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I739 (0 0 net01221 net0308 net01199 net01199) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I724 (0 0 net01159 net0325 net0102 net0102) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I723 (0 0 net01181 net01259 net0101 net0101) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I712 (0 0 net0340 net0339 net01161 net01161) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I711 (0 0 net0411 net0410 net01251 net01251) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I700 (0 0 net0352 net0350 net01278 net01278) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I699 (0 0 net0353 net0351 net01250 net01250) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I686 (0 0 net0371 net0369 net01252 net01252) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I685 (0 0 net0370 net0368 net01240 net01240) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I672 (0 0 net0387 net0385 net072 net072) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I671 (0 0 net0386 net0384 net01233 net01233) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I658 (0 0 net0402 net0400 net01218 net01218) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I657 (0 0 net0403 net0401 net066 net066) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I647 (0 0 net0429 net0424 net01203 net01203) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I640 (0 0 net0443 net0440 net0109 net0109) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I633 (0 0 net0469 net0453 net0103 net0103) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I625 (0 0 net0468 net0463 net01248 net01248) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I619 (0 0 net0474 net0483 net091 net091) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I613 (0 0 net0425 net0422 net01262 net01262) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I606 (0 0 net0485 net0439 net01175 net01175) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I599 (0 0 net0472 net01209 net067 net067) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I592 (0 0 net0464 net0458 net01207 net01207) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I585 (0 0 net01231 net01287 net01222 net01222) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I578 (0 0 net0517 net0514 net0110 net0110) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I571 (0 0 net0543 net0527 net01264 net01264) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I563 (0 0 net0542 net0537 net01239 net01239) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I557 (0 0 net0548 net0557 net01281 net01281) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I551 (0 0 net01272 net01187 net086 net086) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I544 (0 0 net0559 net0513 net074 net074) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I537 (0 0 net0546 net0556 net01189 net01189) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I530 (0 0 net0538 net0532 net01211 net01211) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I523 (0 0 net0577 net0572 net0117 net0117) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I516 (0 0 net0591 net0588 net01245 net01245) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I509 (0 0 net01288 net01230 net01227 net01227) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I501 (0 0 net0616 net0611 net01168 net01168) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I495 (0 0 net01241 net01247 net01190 net01190) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I489 (0 0 net0573 net0570 net01260 net01260) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I482 (0 0 net01263 net0587 net075 net075) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I475 (0 0 net0620 net01158 net01269 net01269) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I468 (0 0 net0612 net0606 net01249 net01249) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I461 (0 0 net01275 net0645 net01183 net01183) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I454 (0 0 net0664 net01256 net01285 net01285) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I447 (0 0 net0699 net0677 net01229 net01229) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I439 (0 0 net0696 net0689 net01196 net01196) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I433 (0 0 net0705 net0695 net094 net094) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I427 (0 0 net01243 net01204 net01154 net01154) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I420 (0 0 net0708 net0660 net076 net076) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I413 (0 0 net0703 net0673 net01191 net01191) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I406 (0 0 net0690 net0684 net01213 net01213) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I399 (0 0 net0607 net0659 net055 net055) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I392 (0 0 net0163 net0602 net049 net049) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I385 (0 0 net0618 net0173 net0579 net0579) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I377 (0 0 net0610 net0604 net0636 net0636) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I371 (0 0 net0633 net0203 net0640 net0640) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I365 (0 0 net0646 net0142 net0650 net0650) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I358 (0 0 net0637 net0661 net0601 net0601) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I351 (0 0 net0647 net0202 net0600 net0600) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I344 (0 0 net0184 net0617 net0632 net0632) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I337 (0 0 net0127 net0122 net0497 net0497) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I330 (0 0 net0141 net0138 net041 net041) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I323 (0 0 net0167 net0151 net036 net036) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I27 (0 0 net37 net35 net020 net020) inv m=1 pl=60n pw=40u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I22 (0 0 net51 net49 net014 net014) inv m=1 pl=60n pw=40u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I21 (0 0 net67 net65 net013 net013) inv m=1 pl=60n pw=40u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I0 (0 0 net151 net153 net1 net1) inv m=1 pl=60n pw=40u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I16 (0 0 net85 net81 net012 net012) inv m=1 pl=60n pw=40u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I28 (0 0 net97 net95 net0446 net0446) inv m=1 pl=60n pw=40u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I13 (0 0 net109 net107 net011 net011) inv m=1 pl=60n pw=40u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I10 (0 0 net125 net123 net04 net04) inv m=1 pl=60n pw=40u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I7 (0 0 net139 net137 net03 net03) inv m=1 pl=60n pw=40u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I315 (0 0 net0166 net0161 net031 net031) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I268 (0 0 net0215 net0212 net042 net042) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I309 (0 0 net0172 net0181 net026 net026) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I261 (0 0 net0250 net0228 net037 net037) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I303 (0 0 net0123 net0120 net021 net021) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I253 (0 0 net0247 net0240 net032 net032) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I296 (0 0 net0183 net0137 net0501 net0501) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I247 (0 0 net0256 net0246 net027 net027) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I289 (0 0 net0170 net0180 net06 net06) inv m=1 pl=60n pw=40u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I241 (0 0 net0484 net0194 net022 net022) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I282 (0 0 net0162 net0156 net0499 net0499) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I234 (0 0 net0258 net0211 net0498 net0498) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I275 (0 0 net0201 net0502 net0493 net0493) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I172 (0 0 net0314 net0313 net0496 net0496) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I158 (0 0 net0330 net0329 net0492 net0492) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I78 (0 0 net065 net064 net017 net017) inv m=1 pl=60n pw=40u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I54 (0 0 net092 net093 net0197 net0197) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I179 (0 0 net0305 net0304 net023 net023) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I165 (0 0 net0322 net0321 net08 net08) inv m=1 pl=60n pw=40u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I79 (0 0 net063 net062 net019 net019) inv m=1 pl=60n pw=40u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I60 (0 0 net090 net089 net0196 net0196) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I55 (0 0 net088 net087 net015 net015) inv m=1 pl=60n pw=40u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I51 (0 0 net083 net082 net09 net09) inv m=1 pl=60n pw=40u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I37 (0 0 net0108 net0107 net0195 net0195) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I34 (0 0 net0100 net099 net05 net05) inv m=1 pl=60n pw=40u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I31 (0 0 net0116 net0115 net01 net01) inv m=1 pl=60n pw=40u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I227 (0 0 net0254 net0224 net0495 net0495) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I220 (0 0 net0241 net0235 net02 net02) inv m=1 pl=60n pw=40u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I213 (0 0 net0264 net0263 net0494 net0494) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I206 (0 0 net0272 net0271 net043 net043) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I199 (0 0 net0281 net0280 net038 net038) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I191 (0 0 net0292 net0289 net033 net033) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+I185 (0 0 net0298 net0297 net028 net028) inv m=1 pl=60n pw=40u pf=1 \
+        psd=200n psa=175.00n psb=175.00n nl=60n nw=20u nf=1 nsd=200n \
+        nsa=175.00n nsb=175.00n
+V224 (net01258 0) vsource dc=1.2 type=dc
+V223 (net0119 0) vsource dc=1.2 type=dc
+V220 (net01273 0) vsource dc=1.2 type=dc
+V219 (net01208 0) vsource dc=1.2 type=dc
+V216 (net01226 0) vsource dc=1.2 type=dc
+V215 (net01199 0) vsource dc=1.2 type=dc
+V212 (net0102 0) vsource dc=1.2 type=dc
+V211 (net0101 0) vsource dc=1.2 type=dc
+V208 (net01161 0) vsource dc=1.2 type=dc
+V207 (net01251 0) vsource dc=1.2 type=dc
+V204 (net01250 0) vsource dc=1.2 type=dc
+V203 (net01278 0) vsource dc=1.2 type=dc
+V200 (net01252 0) vsource dc=1.2 type=dc
+V199 (net01240 0) vsource dc=1.2 type=dc
+V196 (net072 0) vsource dc=1.2 type=dc
+V195 (net01233 0) vsource dc=1.2 type=dc
+V192 (net066 0) vsource dc=1.2 type=dc
+V191 (net01218 0) vsource dc=1.2 type=dc
+V188 (net01203 0) vsource dc=1.2 type=dc
+V186 (net0109 0) vsource dc=1.2 type=dc
+V184 (net0103 0) vsource dc=1.2 type=dc
+V182 (net01248 0) vsource dc=1.2 type=dc
+V180 (net091 0) vsource dc=1.2 type=dc
+V178 (net01262 0) vsource dc=1.2 type=dc
+V176 (net01175 0) vsource dc=1.2 type=dc
+V174 (net067 0) vsource dc=1.2 type=dc
+V172 (net01207 0) vsource dc=1.2 type=dc
+V170 (net01222 0) vsource dc=1.2 type=dc
+V168 (net0110 0) vsource dc=1.2 type=dc
+V166 (net01264 0) vsource dc=1.2 type=dc
+V164 (net01239 0) vsource dc=1.2 type=dc
+V162 (net01281 0) vsource dc=1.2 type=dc
+V160 (net086 0) vsource dc=1.2 type=dc
+V158 (net074 0) vsource dc=1.2 type=dc
+V156 (net01189 0) vsource dc=1.2 type=dc
+V154 (net01211 0) vsource dc=1.2 type=dc
+V152 (net0117 0) vsource dc=1.2 type=dc
+V150 (net01245 0) vsource dc=1.2 type=dc
+V148 (net01227 0) vsource dc=1.2 type=dc
+V146 (net01168 0) vsource dc=1.2 type=dc
+V144 (net01190 0) vsource dc=1.2 type=dc
+V142 (net01260 0) vsource dc=1.2 type=dc
+V140 (net075 0) vsource dc=1.2 type=dc
+V138 (net01269 0) vsource dc=1.2 type=dc
+V136 (net01249 0) vsource dc=1.2 type=dc
+V134 (net01183 0) vsource dc=1.2 type=dc
+V132 (net01285 0) vsource dc=1.2 type=dc
+V130 (net01229 0) vsource dc=1.2 type=dc
+V128 (net01196 0) vsource dc=1.2 type=dc
+V126 (net094 0) vsource dc=1.2 type=dc
+V124 (net01154 0) vsource dc=1.2 type=dc
+V122 (net076 0) vsource dc=1.2 type=dc
+V120 (net01191 0) vsource dc=1.2 type=dc
+V118 (net01213 0) vsource dc=1.2 type=dc
+V116 (net055 0) vsource dc=1.2 type=dc
+V114 (net049 0) vsource dc=1.2 type=dc
+V112 (net0579 0) vsource dc=1.2 type=dc
+V110 (net0636 0) vsource dc=1.2 type=dc
+V108 (net0640 0) vsource dc=1.2 type=dc
+V106 (net0650 0) vsource dc=1.2 type=dc
+V104 (net0601 0) vsource dc=1.2 type=dc
+V102 (net0600 0) vsource dc=1.2 type=dc
+V100 (net0632 0) vsource dc=1.2 type=dc
+V98 (net0497 0) vsource dc=1.2 type=dc
+V96 (net041 0) vsource dc=1.2 type=dc
+V9 (net0446 0) vsource dc=1.2 type=dc
+V8 (net020 0) vsource dc=1.2 type=dc
+V7 (net014 0) vsource dc=1.2 type=dc
+V6 (net013 0) vsource dc=1.2 type=dc
+V4 (net011 0) vsource dc=1.2 type=dc
+V3 (net04 0) vsource dc=1.2 type=dc
+V2 (net03 0) vsource dc=1.2 type=dc
+V94 (net036 0) vsource dc=1.2 type=dc
+V18 (net0196 0) vsource dc=1.2 type=dc
+V58 (net038 0) vsource dc=1.2 type=dc
+V5 (net012 0) vsource dc=1.2 type=dc
+V84 (net06 0) vsource dc=1.2 type=dc
+V0 (net1 0) vsource dc=1.2 type=dc
+V80 (net0493 0) vsource dc=1.2 type=dc
+V92 (net031 0) vsource dc=1.2 type=dc
+V78 (net042 0) vsource dc=1.2 type=dc
+V90 (net026 0) vsource dc=1.2 type=dc
+V76 (net037 0) vsource dc=1.2 type=dc
+V88 (net021 0) vsource dc=1.2 type=dc
+V74 (net032 0) vsource dc=1.2 type=dc
+V86 (net0501 0) vsource dc=1.2 type=dc
+V72 (net027 0) vsource dc=1.2 type=dc
+V70 (net022 0) vsource dc=1.2 type=dc
+V82 (net0499 0) vsource dc=1.2 type=dc
+V68 (net0498 0) vsource dc=1.2 type=dc
+V50 (net0496 0) vsource dc=1.2 type=dc
+V46 (net0492 0) vsource dc=1.2 type=dc
+V25 (net017 0) vsource dc=1.2 type=dc
+V24 (net019 0) vsource dc=1.2 type=dc
+V17 (net015 0) vsource dc=1.2 type=dc
+V12 (net01 0) vsource dc=1.2 type=dc
+V11 (net0195 0) vsource dc=1.2 type=dc
+V10 (net05 0) vsource dc=1.2 type=dc
+V52 (net023 0) vsource dc=1.2 type=dc
+V48 (net08 0) vsource dc=1.2 type=dc
+V19 (net09 0) vsource dc=1.2 type=dc
+V16 (net0197 0) vsource dc=1.2 type=dc
+V54 (net028 0) vsource dc=1.2 type=dc
+V66 (net0495 0) vsource dc=1.2 type=dc
+V64 (net02 0) vsource dc=1.2 type=dc
+V62 (net0494 0) vsource dc=1.2 type=dc
+V60 (net043 0) vsource dc=1.2 type=dc
+V56 (net033 0) vsource dc=1.2 type=dc
+simulatorOptions options reltol=1e-3 vabstol=1e-6 iabstol=1e-12 temp=27 \
+    tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 maxnotes=5 maxwarns=5 \
+    digits=5 cols=80 pivrel=1e-3 sensfile="../psf/sens.output" \
+    checklimitdest=psf 
+tran tran stop=20n errpreset=conservative write="spectre.ic" \
+    writefinal="spectre.fc" annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts where=rawfile
+saveOptions options save=allpub

@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      root
+HostName                       IC10
+ProcessIdentifier              3561
+ProcessCreationTime_UTC        1618040391
+ProcessCreationTime_Readable   Sat Apr 10 15:39:51 2021 CST
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /home/socrate/EDA/Virtuoso/BER_simu/BER_simu/BERtb#2d11x12/schematic/sch.oa.cdslck.dirlck
+TimeEditLocked                 Sat Apr 10 16:16:07 2021 CST

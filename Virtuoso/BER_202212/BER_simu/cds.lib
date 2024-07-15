@@ -1,0 +1,5 @@
+# File Created by root at Thu Mar 25 07:20:15 2021
+# assisted by CdsLibEditor
+SOFTINCLUDE /opt/cadence/IC617/share/cdssetup/cds.lib
+DEFINE BER_simu /root/EDA/BER_simu/BER_simu
+DEFINE tsv_simu /mnt/mydata/Workspace/tsv_simu/tsv_simu

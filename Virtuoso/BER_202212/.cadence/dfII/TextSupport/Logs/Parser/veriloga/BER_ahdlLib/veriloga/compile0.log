@@ -1,0 +1,14 @@
+Reading file: 
+        /home/socrate/EDA/Virtuoso/BER_ahdlLib/BER_ahdlLib/BER_xor/veriloga/veriloga.va
+Reading file: 
+        /eda/cadence/MMSIM151/tools.lnx86/spectre/etc/ahdl/constants.vams
+Reading file: 
+        /eda/cadence/MMSIM151/tools.lnx86/spectre/etc/ahdl/disciplines.vams
+
+Warning from spectre during AHDL compile.
+    WARNING (VACOMP-2265): "$finish;<<--? "
+        "/home/socrate/EDA/Virtuoso/BER_ahdlLib/BER_ahdlLib/BER_xor/veriloga/veriloga.va",
+        line 42: In Cadence Verilog-A, the $finish function always behaves as
+        though the message level value is 0, regardless of the value you
+        specify: The simulator does not report simulation time, location, or
+        statistics about memory and CPU time usage.

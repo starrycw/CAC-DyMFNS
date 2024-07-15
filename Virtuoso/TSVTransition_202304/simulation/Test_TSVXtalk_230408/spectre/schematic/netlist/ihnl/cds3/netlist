@@ -1,0 +1,56 @@
+
+// Library name: TransitionSimu_MISModel
+// Cell name: Test_TSVXtalk_230408
+// View name: schematic
+I106 (net017 net016 net023) MISModel_Aggressor
+I97 (net054 net014 net026) MISModel_Aggressor
+I92 (net033 net056 net039) MISModel_Aggressor
+I71 (net02 net07 net04) MISModel_Aggressor
+I0 (net021 net8 net5) MISModel_Aggressor
+I108 (0 0 net018 net016 net058 net058) inv m=1 pl=60n pw=80u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=40u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I95 (0 0 net031 net014 net05 net05) inv m=1 pl=60n pw=80u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=40u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I94 (0 0 net034 net056 net057 net057) inv m=1 pl=60n pw=80u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=40u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I77 (0 0 net010 net8 net048 net048) inv m=1 pl=60n pw=80u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=40u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+I73 (0 0 net06 net07 net032 net032) inv m=1 pl=60n pw=80u pf=1 psd=200n \
+        psa=175.00n psb=175.00n nl=60n nw=40u nf=1 nsd=200n nsa=175.00n \
+        nsb=175.00n
+V9 (net058 0) vsource dc=1.2 type=dc
+V8 (net05 0) vsource dc=1.2 type=dc
+V7 (net057 0) vsource dc=1.2 type=dc
+V6 (net048 0) vsource dc=1.2 type=dc
+V0 (net032 0) vsource dc=1.2 type=dc
+C18 (net021 net019) capacitor c=1p
+C17 (net017 net024) capacitor c=1p
+C16 (net023 0) capacitor c=1p
+C15 (net026 0) capacitor c=1p
+C14 (net054 net025) capacitor c=1p
+C13 (net021 net030) capacitor c=1p
+C12 (net021 net035) capacitor c=1p
+C11 (net033 net040) capacitor c=1p
+C10 (net039 0) capacitor c=1p
+C9 (net02 net09) capacitor c=1p
+C8 (net021 net0109) capacitor c=1p
+C7 (net04 0) capacitor c=1p
+C0 (net5 0) capacitor c=1p
+V20 (net018 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=3n \
+        rise=50p fall=50p
+V19 (net031 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=3n \
+        rise=50p fall=50p
+V18 (net034 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=3n \
+        rise=50p fall=50p
+V17 (net06 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=3n rise=50p \
+        fall=50p
+V2 (net010 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=3n rise=50p \
+        fall=50p
+I107 (net019 net024) MISModel_AdjacentXtalk
+I96 (net030 net025) MISModel_AdjacentXtalk
+I93 (net035 net040) MISModel_AdjacentXtalk
+I72 (net0109 net09) MISModel_AdjacentXtalk

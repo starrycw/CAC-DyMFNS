@@ -1,0 +1,12 @@
+CADENCE IHNL11140
+$model
+TransitionSimu_MISModel/Test_TSVXtalk_230408/schematic Test_TSVXtalk_230408
+TransitionSimu_MISModel/MISModel_AdjacentXtalk/schematic MISModel_AdjacentXtalk
+tsmcN65/inv/schematic inv
+TransitionSimu_MISModel/MISModel_Aggressor/schematic MISModel_Aggressor
+$endmodel
+$net
+gnd! 0
+$endnet
+$param
+$endparam

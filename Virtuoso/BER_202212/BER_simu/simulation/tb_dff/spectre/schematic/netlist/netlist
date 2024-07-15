@@ -1,0 +1,95 @@
+
+// Library name: tsmcN65
+// Cell name: inv
+// View name: schematic
+subckt inv G Gb IN OUT P Pb
+parameters pl=60n pw=200n pf=1 psd=200n psa=175n psb=175n nl=60n \
+        nw=200n nf=1 nsd=200n nsa=175n nsb=175n
+    PM1 (OUT IN P Pb) pch l=pl w=pw*pf m=1 nf=pf sd=psd \
+        ad=((pf-int(pf/2)*2)*(1.75e-07+((pf-1)*2e-07)/2+0)+(pf+1-int((pf+1)/2)*2)*((pf/2)*2e-07))*pw \
+        as=((pf-int(pf/2)*2)*(1.75e-07+((pf-1)*2e-07)/2+0)+(pf+1-int((pf+1)/2)*2)*(1.75e-07+1.75e-07+(pf/2-1)*2e-07+0+0))*pw \
+        pd=(pf-int(pf/2)*2)*((1.75e-07+((pf-1)*2e-07)/2+0)*2+(pf+1)*pw)+(pf+1-int((pf+1)/2)*2)*(((pf/2)*2e-07)*2+pf*pw) \
+        ps=(pf-int(pf/2)*2)*((1.75e-07+((pf-1)*2e-07)/2+0)*2+(pf+1)*pw)+(pf+1-int((pf+1)/2)*2)*((1.75e-07+1.75e-07+(pf/2-1)*2e-07+0+0)*2+(pf+2)*pw) \
+        nrd=(pf-int(pf/2)*2)*(1e-07*1e-07/(1e-07+1e-07*(pf-1))/pw)+(pf+1-int((pf+1)/2)*2)*(1e-07/pf/pw) \
+        nrs=(pf-int(pf/2)*2)*(1e-07*1e-07/(1e-07+1e-07*(pf-1))/pw)+(pf+1-int((pf+1)/2)*2)*(1e-07*1e-07*1e-07/(1e-07*1e-07*(pf-2)+1e-07*(1e-07+1e-07))/pw) \
+        sa=psa sb=psb sca=0 scb=0 scc=0
+    NM1 (OUT IN G Gb) nch l=nl w=nw*nf m=1 nf=nf sd=nsd \
+        ad=((nf-int(nf/2)*2)*(1.75e-07+((nf-1)*2e-07)/2+0)+(nf+1-int((nf+1)/2)*2)*((nf/2)*2e-07))*nw \
+        as=((nf-int(nf/2)*2)*(1.75e-07+((nf-1)*2e-07)/2+0)+(nf+1-int((nf+1)/2)*2)*(1.75e-07+1.75e-07+(nf/2-1)*2e-07+0+0))*nw \
+        pd=(nf-int(nf/2)*2)*((1.75e-07+((nf-1)*2e-07)/2+0)*2+(nf+1)*nw)+(nf+1-int((nf+1)/2)*2)*(((nf/2)*2e-07)*2+nf*nw) \
+        ps=(nf-int(nf/2)*2)*((1.75e-07+((nf-1)*2e-07)/2+0)*2+(nf+1)*nw)+(nf+1-int((nf+1)/2)*2)*((1.75e-07+1.75e-07+(nf/2-1)*2e-07+0+0)*2+(nf+2)*nw) \
+        nrd=(nf-int(nf/2)*2)*(1e-07*1e-07/(1e-07+1e-07*(nf-1))/nw)+(nf+1-int((nf+1)/2)*2)*(1e-07/nf/nw) \
+        nrs=(nf-int(nf/2)*2)*(1e-07*1e-07/(1e-07+1e-07*(nf-1))/nw)+(nf+1-int((nf+1)/2)*2)*(1e-07*1e-07*1e-07/(1e-07*1e-07*(nf-2)+1e-07*(1e-07+1e-07))/nw) \
+        sa=nsa sb=nsb sca=0 scb=0 scc=0
+ends inv
+// End of subcircuit definition.
+
+// Library name: tsmcN65
+// Cell name: pass
+// View name: schematic
+subckt pass A C CB Gb Pb Y
+parameters pl=60n pw=200n pf=1 psd=200n psa=175n psb=175n nl=60n \
+        nw=200n nf=1 nsd=200n nsa=175n nsb=175n
+    M0 (A CB Y Pb) pch l=pl w=pw*pf m=1 nf=pf sd=psd \
+        ad=((pf-int(pf/2)*2)*(1.75e-07+((pf-1)*2e-07)/2+0)+(pf+1-int((pf+1)/2)*2)*((pf/2)*2e-07))*pw \
+        as=((pf-int(pf/2)*2)*(1.75e-07+((pf-1)*2e-07)/2+0)+(pf+1-int((pf+1)/2)*2)*(1.75e-07+1.75e-07+(pf/2-1)*2e-07+0+0))*pw \
+        pd=(pf-int(pf/2)*2)*((1.75e-07+((pf-1)*2e-07)/2+0)*2+(pf+1)*pw)+(pf+1-int((pf+1)/2)*2)*(((pf/2)*2e-07)*2+pf*pw) \
+        ps=(pf-int(pf/2)*2)*((1.75e-07+((pf-1)*2e-07)/2+0)*2+(pf+1)*pw)+(pf+1-int((pf+1)/2)*2)*((1.75e-07+1.75e-07+(pf/2-1)*2e-07+0+0)*2+(pf+2)*pw) \
+        nrd=(pf-int(pf/2)*2)*(1e-07*1e-07/(1e-07+1e-07*(pf-1))/pw)+(pf+1-int((pf+1)/2)*2)*(1e-07/pf/pw) \
+        nrs=(pf-int(pf/2)*2)*(1e-07*1e-07/(1e-07+1e-07*(pf-1))/pw)+(pf+1-int((pf+1)/2)*2)*(1e-07*1e-07*1e-07/(1e-07*1e-07*(pf-2)+1e-07*(1e-07+1e-07))/pw) \
+        sa=psa sb=psb sca=0 scb=0 scc=0
+    M1 (A C Y Gb) nch l=nl w=nw*nf m=1 nf=nf sd=nsd \
+        ad=((nf-int(nf/2)*2)*(1.75e-07+((nf-1)*2e-07)/2+0)+(nf+1-int((nf+1)/2)*2)*((nf/2)*2e-07))*nw \
+        as=((nf-int(nf/2)*2)*(1.75e-07+((nf-1)*2e-07)/2+0)+(nf+1-int((nf+1)/2)*2)*(1.75e-07+1.75e-07+(nf/2-1)*2e-07+0+0))*nw \
+        pd=(nf-int(nf/2)*2)*((1.75e-07+((nf-1)*2e-07)/2+0)*2+(nf+1)*nw)+(nf+1-int((nf+1)/2)*2)*(((nf/2)*2e-07)*2+nf*nw) \
+        ps=(nf-int(nf/2)*2)*((1.75e-07+((nf-1)*2e-07)/2+0)*2+(nf+1)*nw)+(nf+1-int((nf+1)/2)*2)*((1.75e-07+1.75e-07+(nf/2-1)*2e-07+0+0)*2+(nf+2)*nw) \
+        nrd=(nf-int(nf/2)*2)*(1e-07*1e-07/(1e-07+1e-07*(nf-1))/nw)+(nf+1-int((nf+1)/2)*2)*(1e-07/nf/nw) \
+        nrs=(nf-int(nf/2)*2)*(1e-07*1e-07/(1e-07+1e-07*(nf-1))/nw)+(nf+1-int((nf+1)/2)*2)*(1e-07*1e-07*1e-07/(1e-07*1e-07*(nf-2)+1e-07*(1e-07+1e-07))/nw) \
+        sa=nsa sb=nsb sca=0 scb=0 scc=0
+ends pass
+// End of subcircuit definition.
+
+// Library name: BER_simu
+// Cell name: dff
+// View name: schematic
+subckt dff D gnd Q vdd clk nQ
+    I13 (gnd gnd cn c vdd vdd) inv m=1 pl=60n pw=200n pf=1 psd=200n \
+        psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n nsa=175n \
+        nsb=175n
+    I9 (gnd gnd Q nQ vdd vdd) inv m=1 pl=60n pw=200n pf=1 psd=200n \
+        psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n nsa=175n \
+        nsb=175n
+    I8 (gnd gnd net21 Q vdd vdd) inv m=1 pl=60n pw=200n pf=1 psd=200n \
+        psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n nsa=175n \
+        nsb=175n
+    I5 (gnd gnd net20 net38 vdd vdd) inv m=1 pl=60n pw=200n pf=1 \
+        psd=200n psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n \
+        nsa=175n nsb=175n
+    I3 (gnd gnd net11 net20 vdd vdd) inv m=1 pl=60n pw=200n pf=1 \
+        psd=200n psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n \
+        nsa=175n nsb=175n
+    I0 (gnd gnd clk cn vdd vdd) inv m=1 pl=60n pw=200n pf=1 psd=200n \
+        psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n nsa=175n \
+        nsb=175n
+    I10 (nQ cn c gnd vdd net21) pass m=1 pl=60n pw=200n pf=1 psd=200n \
+        psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n nsa=175n \
+        nsb=175n
+    I7 (net20 c cn gnd vdd net21) pass m=1 pl=60n pw=200n pf=1 psd=200n \
+        psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n nsa=175n \
+        nsb=175n
+    I6 (net38 c cn gnd vdd net11) pass m=1 pl=60n pw=200n pf=1 psd=200n \
+        psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n nsa=175n \
+        nsb=175n
+    I2 (D cn c gnd vdd net11) pass m=1 pl=60n pw=200n pf=1 psd=200n \
+        psa=175n psb=175n nl=60n nw=200n nf=1 nsd=200n nsa=175n \
+        nsb=175n
+ends dff
+// End of subcircuit definition.
+
+// Library name: BER_simu
+// Cell name: tb_dff
+// View name: schematic
+I0 (net3 0 net7 net6 net1 net8) dff
+V0 (net6 0) vsource dc=2.5 type=dc
+V2 (net3 0) vsource type=pulse val0=0 val1=2.5 period=18n
+V1 (net1 0) vsource type=pulse val0=0 val1=2.5 period=10n

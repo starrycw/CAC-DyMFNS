@@ -1,0 +1,4 @@
+    R0 (port_a port_b) resistor r=400
+    C0 (port_a port_b) capacitor c=3f
+ends MISModel_DiagonalXtalk
+// End of subcircuit definition.

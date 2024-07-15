@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"design" "(\"TransitionSimu_MISModel\" \"MISModel_TransitionSimu_230410\" \"schematic\" \"\")"
+"simulator" "spectre"
+"temperature" "27"
+"host" ""
+"date" "Apr 10 20:40:13 2023"
+"title" ""
+"analysisList" "()"
+END

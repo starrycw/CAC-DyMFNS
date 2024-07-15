@@ -1,0 +1,84 @@
+// Generated for: spectre
+// Generated on: Apr  9 17:38:02 2023
+// Design library name: TransitionSimu_MISModel
+// Design cell name: Test_TSVXtalk_230409
+// Design view name: schematic
+simulator lang=spectre
+global 0
+include "/eda/home/wc/Projects/Virtuoso/TSV_Transition_Simu/TSV_Transition_202304/TSMC-65nm(OA)/PDK_files/tsmcN65/../models/spectre/toplevel.scs" section=tt_lib
+
+// Library name: TransitionSimu_MISModel
+// Cell name: MISModel_AdjacentXtalk
+// View name: schematic
+subckt MISModel_AdjacentXtalk port_a port_b
+    C0 (port_a port_b) capacitor c=12.0f
+    R0 (port_a port_b) resistor r=100
+ends MISModel_AdjacentXtalk
+// End of subcircuit definition.
+
+// Library name: TransitionSimu_MISModel
+// Cell name: MISModel_Aggressor
+// View name: schematic
+subckt MISModel_Aggressor tsv_coupling tsv_in tsv_out
+    R1 (net09 tsv_out) resistor r=1u
+    R0 (net07 tsv_coupling) resistor r=1u
+    C0 (tsv_coupling 0) capacitor c=2.1f
+    L1 (tsv_coupling net09) inductor l=5p
+    L0 (tsv_in net07) inductor l=5p
+ends MISModel_Aggressor
+// End of subcircuit definition.
+
+// Library name: TransitionSimu_MISModel
+// Cell name: Test_TSVXtalk_230409
+// View name: schematic
+R4 (net38 net16) resistor r=50
+R3 (net23 net14) resistor r=50
+R2 (net51 net10) resistor r=50
+R1 (net41 net8) resistor r=50
+R0 (net28 net12) resistor r=50
+C16 (net34 0) capacitor c=1p
+C17 (net39 net33) capacitor c=1p
+C15 (net18 0) capacitor c=1p
+C14 (net19 net20) capacitor c=1p
+C0 (net22 0) capacitor c=1p
+C10 (net27 0) capacitor c=1p
+C11 (net30 net29) capacitor c=1p
+C18 (net3 net49) capacitor c=1p
+C8 (net3 net43) capacitor c=1p
+C9 (net40 net48) capacitor c=1p
+C7 (net47 0) capacitor c=1p
+C12 (net3 net52) capacitor c=1p
+C13 (net3 net50) capacitor c=1p
+V20 (net38 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=1n rise=50p \
+        fall=50p
+V19 (net23 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=1n rise=50p \
+        fall=50p
+V2 (net28 0) vsource dc=1.2 type=pulse val0=1.2 val1=0 period=1n rise=50p \
+        fall=50p
+V18 (net51 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=1n rise=50p \
+        fall=50p
+V17 (net41 0) vsource dc=1.2 type=pulse val0=0 val1=1.2 period=1n rise=50p \
+        fall=50p
+I107 (net49 net33) MISModel_AdjacentXtalk
+I72 (net43 net48) MISModel_AdjacentXtalk
+I93 (net52 net29) MISModel_AdjacentXtalk
+I96 (net50 net20) MISModel_AdjacentXtalk
+I106 (net39 net16 net34) MISModel_Aggressor
+I97 (net19 net14 net18) MISModel_Aggressor
+I0 (net3 net12 net22) MISModel_Aggressor
+I92 (net30 net10 net27) MISModel_Aggressor
+I71 (net40 net8 net47) MISModel_Aggressor
+simulatorOptions options reltol=1e-3 vabstol=1e-6 iabstol=1e-12 temp=27 \
+    tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 maxnotes=5 maxwarns=5 \
+    digits=5 cols=80 pivrel=1e-3 sensfile="../psf/sens.output" \
+    checklimitdest=psf 
+tran tran stop=10n errpreset=moderate write="spectre.ic" \
+    writefinal="spectre.fc" annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts where=rawfile
+saveOptions options save=allpub

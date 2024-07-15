@@ -1,0 +1,10 @@
+CADENCE IHNL11140
+$model
+TransitionSimu_MISModel/Test_Inverter_230408/schematic Test_Inverter_230408
+tsmcN65/inv/schematic inv
+$endmodel
+$net
+gnd! 0
+$endnet
+$param
+$endparam

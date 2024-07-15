@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"I13n I9n I8n I5n I3n I0n" "inv"
+"I10n I7n I6n I2n" "pass"
+"Dv" ":1v"
+"GNDv" ":2v"
+"Qv" ":3v"
+"VDDv" ":4v"
+"clkv" ":5v"
+"nQv" ":6v"

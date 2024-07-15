@@ -1,0 +1,10 @@
+
+// Library name: TransitionSimu_RCDelayModel2013
+// Cell name: Test_20230409
+// View name: schematic
+R2 (net2 net02) resistor r=50
+R1 (net5 net2) resistor r=200m
+R0 (net1 net5) resistor r=50
+C1 (net02 0) capacitor c=2f
+C0 (net1 0) capacitor c=2f
+V0 (net1 0) vsource type=pulse val0=0 val1=1 period=2n rise=50p fall=50p

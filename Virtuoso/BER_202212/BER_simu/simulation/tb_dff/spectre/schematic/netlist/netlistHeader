@@ -1,0 +1,7 @@
+// Generated for: spectre
+// Generated on: Mar 25 14:07:54 2021
+// Design library name: BER_simu
+// Design cell name: tb_dff
+// Design view name: schematic
+simulator lang=spectre
+global 0

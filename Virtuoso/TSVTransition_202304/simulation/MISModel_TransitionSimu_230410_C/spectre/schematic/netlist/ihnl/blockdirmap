@@ -1,0 +1,7 @@
+CADENCE IHNL11145
+
+TransitionSimu_MISModel MISModel_DiagonalXtalk schematic cds0
+TransitionSimu_MISModel MISModel_Aggressor schematic cds1
+TransitionSimu_MISModel MISModel_AdjacentXtalk schematic cds2
+tsmcN65 inv schematic cds3
+TransitionSimu_MISModel MISModel_TransitionSimu_230410_C schematic cds4

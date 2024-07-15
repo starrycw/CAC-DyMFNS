@@ -1,0 +1,7 @@
+
+// Library name: tsmcN65
+// Cell name: inv
+// View name: schematic
+subckt inv G Gb IN OUT P Pb
+parameters pl=60n pw=200n pf=1 psd=200n psa=175n psb=175n nl=60n \
+        nw=200n nf=1 nsd=200n nsa=175n nsb=175n

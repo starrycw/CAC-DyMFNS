@@ -1,0 +1,20 @@
+//Verilog HDL for "BER_simu", "v_check_132" "functional"
+
+
+module v_check_132 (clk, bit_rec, bit_ref, flag );
+	input wire clk;
+	input wire [131:0] bit_rec;
+	input wire [131:0] bit_ref;
+	output reg [131:0] flag;
+	wire [131:0] flag_temp;
+
+	assign flag_temp[131:0] = bit_rec[131:0] ^ bir_ref[131:0];
+
+	always @(negedge clk) begin
+		flag[131:0] <= flag_temp[131:0];
+	end
+
+	always @(posedge clk) begin
+		$display("%d", flag);
+	end
+endmodule

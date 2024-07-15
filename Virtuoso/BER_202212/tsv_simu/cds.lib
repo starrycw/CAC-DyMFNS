@@ -1,0 +1,11 @@
+# File Created by root at Tue Jan  5 13:34:47 2021
+# assisted by CdsLibEditor
+DEFINE cdsDefTechLib /opt/cadence/IC617/tools/dfII/etc/cdsDefTechLib
+DEFINE smic18ee ./smic18ee
+DEFINE smic65_OA "smic 65nm/smic65llrf_121825_2tm_cds_1P10M_2010_3_9_0.4.1/smic65_OA"
+DEFINE analogLib /opt/cadence/IC617/tools.lnx86/dfII/etc/cdslib/artist/analogLib
+DEFINE basic /opt/cadence/IC617/tools.lnx86/dfII/etc/cdslib/basic
+DEFINE cdsSymbolicDevice /opt/cadence/IC617/tools.lnx86/dfII/etc/cdslib/cdsSymbolicDevice
+DEFINE tsv_simu /mnt/mydata/Workspace/tsv_simu/tsv_simu
+DEFINE smic65llrf_121825_2tm "smic 65nm/smic65llrf_121825_2tm_cds_1P10M_2010_3_9_0.4.1/smic65llrf_121825_2tm"
+DEFINE sc12_logic0065ll_base_svt /mnt/mydata/Workspace/Library/SM08LB003-FB-00000-r0p0-00eac0_svt/arm/smic/logic0065ll/sc12_base_svt/r0p0-00eac0/oa/sc12_logic0065ll_base_svt

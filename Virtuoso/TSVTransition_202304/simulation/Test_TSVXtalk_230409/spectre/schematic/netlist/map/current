@@ -1,0 +1,22 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "Test_TSVXtalk_230409"
+  repList "spectre cmos_sch cmos.sch schematic veriloga"
+  stopList "spectre"
+  globalList "gnd!"
+  hierDelim "."
+  netlistDir "/eda/home/wc/Projects/Virtuoso/TSV_Transition_Simu/TSV_Transition_202304/simulation/Test_TSVXtalk_230409/spectre/schematic/netlist"
+ )
+( net
+( "gnd!" "0" )
+ )
+( model
+( "TransitionSimu_MISModel/Test_TSVXtalk_230409/schematic" "Test_TSVXtalk_230409" )
+( "TransitionSimu_MISModel/MISModel_Aggressor/schematic" "MISModel_Aggressor" )
+( "TransitionSimu_MISModel/MISModel_AdjacentXtalk/schematic" "MISModel_AdjacentXtalk" )
+ )
+( "Test_TSVXtalk_230409" "ihnl/cds2/map" )
+( "MISModel_Aggressor" "ihnl/cds1/map" )
+( "MISModel_AdjacentXtalk" "ihnl/cds0/map" )
+ )

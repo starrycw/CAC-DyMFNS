@@ -1,0 +1,20 @@
+ncvlog(64): 14.10-s014: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
+TOOL:	ncvlog(64)	14.10-s014: Started on Mar 27, 2021 at 17:35:32 CST
+ncvlog
+    -use5x
+    -SPECIFICUNIT v_check
+    -zparse /tmp/vamsZparcb5950
+    -NOWARN DLNOHV
+    -work BER_simu
+    -view functional
+    -nostdout
+    -logfile /home/IC/EDA/Virtuoso/.cadence/dfII/TextSupport/Logs/Parser/verilog/BER_simu/functional/compile0.log
+    -messages
+    -cdslib /opt/Cadence/IC617/share/cdssetup/cds.lib
+    /home/IC/EDA/Virtuoso/BER_simu/BER_simu/v_check/functional/verilog.v
+
+file: /home/IC/EDA/Virtuoso/BER_simu/BER_simu/v_check/functional/verilog.v
+	module BER_simu.v_check:functional
+		errors: 0, warnings: 0
+	 writing out DPL output:
+TOOL:	ncvlog(64)	14.10-s014: Exiting on Mar 27, 2021 at 17:35:32 CST  (total: 00:00:00)

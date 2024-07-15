@@ -1,0 +1,7 @@
+// Generated for: spectre
+// Generated on: Apr  9 15:18:30 2023
+// Design library name: TransitionSimu_RCDelayModel2013
+// Design cell name: Test_20230409
+// Design view name: schematic
+simulator lang=spectre
+global 0

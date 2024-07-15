@@ -1,0 +1,12 @@
+CADENCE IHNL11140
+$model
+BER_simu/tb_dff/schematic tb_dff
+tsmcN65/inv/schematic inv
+tsmcN65/pass/schematic pass
+BER_simu/dff/schematic dff
+$endmodel
+$net
+gnd! 0
+$endnet
+$param
+$endparam

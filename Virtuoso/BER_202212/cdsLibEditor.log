@@ -1,0 +1,26 @@
+\o Program:		@(#)$CDS: cdsLibEditor version 6.1.7 - CAT35 10/18/2015 00:07 (sjfnl678) $
+\o Sub version:		sub-version  p009 
+\o Arguments:		-display :8 -mpssession virtuoso162495 -mpshost server315 -namespace CDBA -cdslib /eda/home/wc/Projects/Virtuoso/DyMFNS/BER_202212_202107_main/cds.lib 
+\o Working Directory:	server315:/eda/home/wc/Projects/Virtuoso/DyMFNS/BER_202212_202107_main
+\o 64-bit offsets
+\a nrSetWindowVisibility(cdsLibEditor "show")
+\o Qt version: 		4.8.5
+\a nrSetCurrentWindow(cdsLibEditor)
+\a nrListItemAction(cdsLibEditor->mainTable 0 0)
+\o Active cell: 0 0 "cdsDefTechLib"
+\a nrResizeWindow(cdsLibEditor list(40 70 500 400))
+\a nrListItemAction(cdsLibEditor->mainTable 8 1)
+\o Active cell: 8 1 "/home/socrate/EDA/Virtuoso/verilog_test/verilog_test"
+\a nrSetCurrentWindow(cdsLibEditor)
+\a nrResizeWindow(cdsLibEditor list(385 319 500 400))
+\a nrSetCurrentWindow(cdsLibEditor)
+\a nrResizeWindow(cdsLibEditor list(614 460 500 400))
+\a nrSetCurrentWindow(cdsLibEditor)
+\a nrListItemAction(cdsLibEditor->mainTable 9 1)
+\o Active cell: 9 1 "/home/socrate/EDA/Virtuoso/BER_ahdlLib/BER_ahdlLib"
+\a nrListItemAction(cdsLibEditor->mainTable 14 1)
+\o Active cell: 14 1 ""
+\a cdsLibEditor->fileSaveButton->value = t
+\a cdsLibEditor->fileExitButton->value = t
+\a nrSetWindowVisibility(cdsLibEditor "hide")
+\a exit(0)

@@ -1,0 +1,8 @@
+
+// Library name: BER_simu
+// Cell name: tb_dff
+// View name: schematic
+I0 (net3 0 net7 net6 net1 net8) dff
+V0 (net6 0) vsource dc=2.5 type=dc
+V2 (net3 0) vsource type=pulse val0=0 val1=2.5 period=18n
+V1 (net1 0) vsource type=pulse val0=0 val1=2.5 period=10n
